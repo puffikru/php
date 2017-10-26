@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: igorbulakh
- * Date: 26.10.2017
- * Time: 22:32
- */
-<?php
 session_start();
 
 include_once "config.php";
