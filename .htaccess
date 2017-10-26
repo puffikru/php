@@ -1,0 +1,23 @@
+php_flag display_errors on
+AddDefaultCharset utf-8
+Options FollowSymLinks
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php?qstring=$0 [QSA]
+</IfModule>
+
+
+DirectoryIndex index.php
+
+<FilesMatch "\.(php)$">
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "index.(php)$">
+    Allow from all
+</FilesMatch>
+
+#ErrorDocument 403 http://php:8888/course/php_1/blog-cpu/err403.sql

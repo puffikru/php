@@ -1,0 +1,20 @@
+
+08:28:10
+::1
+
+core\Exceptions\BaseException: class controller\PostsController not found! in /Applications/MAMP/htdocs/blog-final-oop3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\Post...')
+#1 /Applications/MAMP/htdocs/blog-final-oop3/index.php(52): spl_autoload_call('controller\\Post...')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+08:28:10
+::1
+
+core\Exceptions\BaseException: class controller\PostsController not found! in /Applications/MAMP/htdocs/blog-final-oop3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\Post...')
+#1 /Applications/MAMP/htdocs/blog-final-oop3/index.php(52): spl_autoload_call('controller\\Post...')
+#2 {main}
+-------------------------------------------------------------------------------------

@@ -1,0 +1,106 @@
+
+07:41:10
+::1
+
+core\Exceptions\Fatal: Table 'blog.news1' doesn't exist in /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php:79
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php(23): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-final-oop3/model/Messages.php(30): core\DBDriver->select('SELECT * FROM n...')
+#2 /Applications/MAMP/htdocs/blog-final-oop3/controller/PostController.php(29): model\Messages->getAll()
+#3 /Applications/MAMP/htdocs/blog-final-oop3/index.php(59): controller\PostController->indexAction()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+07:41:10
+::1
+
+core\Exceptions\Fatal: Table 'blog.news1' doesn't exist in /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php:79
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php(23): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-final-oop3/model/Messages.php(30): core\DBDriver->select('SELECT * FROM n...')
+#2 /Applications/MAMP/htdocs/blog-final-oop3/controller/PostController.php(29): model\Messages->getAll()
+#3 /Applications/MAMP/htdocs/blog-final-oop3/index.php(59): controller\PostController->indexAction()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+08:27:10
+::1
+
+core\Exceptions\Fatal: Table 'blog.news1' doesn't exist in /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php(23): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-final-oop3/model/Messages.php(30): core\DBDriver->select('SELECT * FROM n...')
+#2 /Applications/MAMP/htdocs/blog-final-oop3/controller/PostController.php(29): model\Messages->getAll()
+#3 /Applications/MAMP/htdocs/blog-final-oop3/index.php(53): controller\PostController->indexAction()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+08:27:10
+::1
+
+core\Exceptions\Fatal: Table 'blog.news1' doesn't exist in /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php(23): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-final-oop3/model/Messages.php(30): core\DBDriver->select('SELECT * FROM n...')
+#2 /Applications/MAMP/htdocs/blog-final-oop3/controller/PostController.php(29): model\Messages->getAll()
+#3 /Applications/MAMP/htdocs/blog-final-oop3/index.php(53): controller\PostController->indexAction()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+08:27:10
+::1
+
+core\Exceptions\Fatal: Table 'blog.news1' doesn't exist in /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php(23): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-final-oop3/model/Messages.php(30): core\DBDriver->select('SELECT * FROM n...')
+#2 /Applications/MAMP/htdocs/blog-final-oop3/controller/PostController.php(29): model\Messages->getAll()
+#3 /Applications/MAMP/htdocs/blog-final-oop3/index.php(53): controller\PostController->indexAction()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+08:28:10
+::1
+
+core\Exceptions\Fatal: Table 'blog.news1' doesn't exist in /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php(23): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-final-oop3/model/Messages.php(30): core\DBDriver->select('SELECT * FROM n...')
+#2 /Applications/MAMP/htdocs/blog-final-oop3/controller/PostController.php(29): model\Messages->getAll()
+#3 /Applications/MAMP/htdocs/blog-final-oop3/index.php(53): controller\PostController->indexAction()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+08:28:10
+::1
+
+core\Exceptions\Fatal: class controller\PostsController not found! in /Applications/MAMP/htdocs/blog-final-oop3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\Post...')
+#1 /Applications/MAMP/htdocs/blog-final-oop3/index.php(52): spl_autoload_call('controller\\Post...')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+08:40:10
+::1
+
+core\Exceptions\Fatal: Unknown column 'news_title' in 'field list' in /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php(59): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-final-oop3/model/BaseModel.php(55): core\DBDriver->update('news', Array, 'id_news=:pk', Array)
+#2 /Applications/MAMP/htdocs/blog-final-oop3/controller/PostController.php(140): model\BaseModel->edit('27', Array)
+#3 /Applications/MAMP/htdocs/blog-final-oop3/index.php(53): controller\PostController->editAction()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+08:40:10
+::1
+
+core\Exceptions\Fatal: Unknown column 'news_title' in 'field list' in /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/core/DBDriver.php(59): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-final-oop3/model/BaseModel.php(55): core\DBDriver->update('news', Array, 'id_news=:pk', Array)
+#2 /Applications/MAMP/htdocs/blog-final-oop3/controller/PostController.php(140): model\BaseModel->edit('27', Array)
+#3 /Applications/MAMP/htdocs/blog-final-oop3/index.php(53): controller\PostController->editAction()
+#4 {main}
+-------------------------------------------------------------------------------------

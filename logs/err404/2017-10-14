@@ -1,0 +1,123 @@
+
+07:37:10
+::1
+
+core\Exceptions\Error404: Undefined action adAction in /Applications/MAMP/htdocs/blog-final-oop3/controller/FrontController.php:32
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/index.php(59): controller\FrontController->__call('adAction', Array)
+#1 {main}
+-------------------------------------------------------------------------------------
+
+07:39:10
+::1
+
+core\Exceptions\Error404: Такой статьи не существует! in /Applications/MAMP/htdocs/blog-final-oop3/controller/PostController.php:57
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/index.php(59): controller\PostController->oneAction()
+#1 {main}
+-------------------------------------------------------------------------------------
+
+07:42:10
+::1
+
+core\Exceptions\Error404: Такой статьи не существует! in /Applications/MAMP/htdocs/blog-final-oop3/controller/PostController.php:57
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/index.php(59): controller\PostController->oneAction()
+#1 {main}
+-------------------------------------------------------------------------------------
+
+07:43:10
+::1
+
+core\Exceptions\Error404: Undefined action adddAction in /Applications/MAMP/htdocs/blog-final-oop3/controller/FrontController.php:32
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/index.php(59): controller\FrontController->__call('adddAction', Array)
+#1 {main}
+-------------------------------------------------------------------------------------
+
+08:28:10
+::1
+
+core\Exceptions\Error404: class controller\PostsController not found! in /Applications/MAMP/htdocs/blog-final-oop3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\Post...')
+#1 /Applications/MAMP/htdocs/blog-final-oop3/index.php(52): spl_autoload_call('controller\\Post...')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+08:29:10
+::1
+
+core\Exceptions\Error404: class controller\PostsController not found! in /Applications/MAMP/htdocs/blog-final-oop3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\Post...')
+#1 /Applications/MAMP/htdocs/blog-final-oop3/index.php(52): spl_autoload_call('controller\\Post...')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+08:29:10
+::1
+
+core\Exceptions\Error404: Такой статьи не существует! in /Applications/MAMP/htdocs/blog-final-oop3/controller/PostController.php:54
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/index.php(53): controller\PostController->oneAction()
+#1 {main}
+-------------------------------------------------------------------------------------
+
+08:29:10
+::1
+
+core\Exceptions\Error404: Undefined action adAction in /Applications/MAMP/htdocs/blog-final-oop3/controller/FrontController.php:32
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/index.php(53): controller\FrontController->__call('adAction', Array)
+#1 {main}
+-------------------------------------------------------------------------------------
+
+08:29:10
+::1
+
+core\Exceptions\Error404: Undefined action adAction in /Applications/MAMP/htdocs/blog-final-oop3/controller/FrontController.php:32
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-final-oop3/index.php(53): controller\FrontController->__call('adAction', Array)
+#1 {main}
+-------------------------------------------------------------------------------------
+
+08:59:10
+::1
+
+core\Exceptions\Error404: class controller\45Controller not found! in /Applications/MAMP/htdocs/blog-final-oop3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\45Co...')
+#1 /Applications/MAMP/htdocs/blog-final-oop3/index.php(52): spl_autoload_call('controller\\45Co...')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+08:59:10
+::1
+
+core\Exceptions\Error404: class controller\45Controller not found! in /Applications/MAMP/htdocs/blog-final-oop3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\45Co...')
+#1 /Applications/MAMP/htdocs/blog-final-oop3/index.php(52): spl_autoload_call('controller\\45Co...')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+09:00:10
+::1
+
+core\Exceptions\Error404: class controller\45Controller not found! in /Applications/MAMP/htdocs/blog-final-oop3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\45Co...')
+#1 /Applications/MAMP/htdocs/blog-final-oop3/index.php(52): spl_autoload_call('controller\\45Co...')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+09:00:10
+::1
+
+core\Exceptions\Error404: class controller\45Controller not found! in /Applications/MAMP/htdocs/blog-final-oop3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\45Co...')
+#1 /Applications/MAMP/htdocs/blog-final-oop3/index.php(52): spl_autoload_call('controller\\45Co...')
+#2 {main}
+-------------------------------------------------------------------------------------
