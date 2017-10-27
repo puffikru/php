@@ -6,7 +6,8 @@
             <li><a href="<?= ROOT ?>texts">Тексты</a></li>
             <li><a href="<?= ROOT ?>?auth=off" type="button">Выйти</a></li>
         <? else: ?>
-            <li><a href="<?= ROOT ?>login">Войти</a></li>
+            <li><a href="<?= ROOT ?>user/login">Войти</a></li>
+            <li><a href="<?= ROOT ?>user/sign-up">Регистрация</a></li>
         <? endif; ?>
     </ul>
 </div>

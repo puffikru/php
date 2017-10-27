@@ -1,0 +1,10 @@
+
+21:02:10
+::1
+
+core\Exceptions\Error404: class controller\SignupController not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\Sign...')
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(52): spl_autoload_call('controller\\Sign...')
+#2 {main}
+-------------------------------------------------------------------------------------

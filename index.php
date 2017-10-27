@@ -32,7 +32,16 @@ if(isset($params[0])) {
 
 if(isset($params[1]) && $params !== '') {
     if(!is_numeric($params[1])) {
-        $action = trim($params[1]) . 'Action';
+        $exp = explode('-', $params[1]);
+        if(isset($exp[1])){
+            $exp[1] = ucfirst($exp[1]);
+            $exp = implode('', $exp);
+        }else{
+            $exp = $exp[0];
+        }
+
+        $action = trim($exp) . 'Action';
+
         $id = $params[2] ?? null;
 
     }else {
