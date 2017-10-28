@@ -1,0 +1,154 @@
+
+18:36:10
+::1
+
+core\Exceptions\Fatal: Unknown column 'password' in 'field list' in /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php(41): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php(46): core\DBDriver->insert('users', Array)
+#2 /Applications/MAMP/htdocs/blog-php3/model/Users.php(42): model\BaseModel->add(Array)
+#3 /Applications/MAMP/htdocs/blog-php3/core/User.php(28): model\Users->signUp(Array)
+#4 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(29): core\User->signUp(Array)
+#5 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\UserController->signUpAction()
+#6 {main}
+-------------------------------------------------------------------------------------
+
+18:38:10
+::1
+
+core\Exceptions\Fatal: Unknown column 'pass_confirm' in 'field list' in /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php(41): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php(46): core\DBDriver->insert('users', Array)
+#2 /Applications/MAMP/htdocs/blog-php3/model/Users.php(42): model\BaseModel->add(Array)
+#3 /Applications/MAMP/htdocs/blog-php3/core/User.php(28): model\Users->signUp(Array)
+#4 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(29): core\User->signUp(Array)
+#5 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\UserController->signUpAction()
+#6 {main}
+-------------------------------------------------------------------------------------
+
+18:39:10
+::1
+
+core\Exceptions\Fatal: Unknown column 'pass_confirm' in 'field list' in /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php(41): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php(46): core\DBDriver->insert('users', Array)
+#2 /Applications/MAMP/htdocs/blog-php3/model/Users.php(42): model\BaseModel->add(Array)
+#3 /Applications/MAMP/htdocs/blog-php3/core/User.php(28): model\Users->signUp(Array)
+#4 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(29): core\User->signUp(Array)
+#5 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\UserController->signUpAction()
+#6 {main}
+-------------------------------------------------------------------------------------
+
+19:06:10
+::1
+
+core\Exceptions\Fatal: Unknown column 'pass_confirm' in 'field list' in /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php(41): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php(47): core\DBDriver->insert('users', Array)
+#2 /Applications/MAMP/htdocs/blog-php3/model/Users.php(42): model\BaseModel->add(Array)
+#3 /Applications/MAMP/htdocs/blog-php3/core/User.php(28): model\Users->signUp(Array)
+#4 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(29): core\User->signUp(Array)
+#5 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\UserController->signUpAction()
+#6 {main}
+-------------------------------------------------------------------------------------
+
+19:06:10
+::1
+
+core\Exceptions\Fatal: Unknown column 'pass_confirm' in 'field list' in /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php(41): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php(47): core\DBDriver->insert('users', Array)
+#2 /Applications/MAMP/htdocs/blog-php3/model/Users.php(42): model\BaseModel->add(Array)
+#3 /Applications/MAMP/htdocs/blog-php3/core/User.php(28): model\Users->signUp(Array)
+#4 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(29): core\User->signUp(Array)
+#5 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\UserController->signUpAction()
+#6 {main}
+-------------------------------------------------------------------------------------
+
+19:15:10
+::1
+
+core\Exceptions\Fatal: Unknown column 'pass_confirm' in 'field list' in /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php(41): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php(47): core\DBDriver->insert('users', Array)
+#2 /Applications/MAMP/htdocs/blog-php3/model/Users.php(42): model\BaseModel->add(Array)
+#3 /Applications/MAMP/htdocs/blog-php3/core/User.php(28): model\Users->signUp(Array)
+#4 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(29): core\User->signUp(Array)
+#5 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\UserController->signUpAction()
+#6 {main}
+-------------------------------------------------------------------------------------
+
+19:15:10
+::1
+
+core\Exceptions\Fatal: Unknown column 'pass_confirm' in 'field list' in /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php(41): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php(47): core\DBDriver->insert('users', Array)
+#2 /Applications/MAMP/htdocs/blog-php3/model/Users.php(42): model\BaseModel->add(Array)
+#3 /Applications/MAMP/htdocs/blog-php3/core/User.php(28): model\Users->signUp(Array)
+#4 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(29): core\User->signUp(Array)
+#5 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\UserController->signUpAction()
+#6 {main}
+-------------------------------------------------------------------------------------
+
+19:17:10
+::1
+
+core\Exceptions\Fatal: Unknown column 'pass_confirm' in 'field list' in /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php(41): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php(47): core\DBDriver->insert('users', Array)
+#2 /Applications/MAMP/htdocs/blog-php3/model/Users.php(42): model\BaseModel->add(Array)
+#3 /Applications/MAMP/htdocs/blog-php3/core/User.php(28): model\Users->signUp(Array)
+#4 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(29): core\User->signUp(Array)
+#5 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\UserController->signUpAction()
+#6 {main}
+-------------------------------------------------------------------------------------
+
+19:17:10
+::1
+
+core\Exceptions\Fatal: Unknown column 'pass_confirm' in 'field list' in /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php(41): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php(47): core\DBDriver->insert('users', Array)
+#2 /Applications/MAMP/htdocs/blog-php3/model/Users.php(42): model\BaseModel->add(Array)
+#3 /Applications/MAMP/htdocs/blog-php3/core/User.php(28): model\Users->signUp(Array)
+#4 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(29): core\User->signUp(Array)
+#5 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\UserController->signUpAction()
+#6 {main}
+-------------------------------------------------------------------------------------
+
+19:18:10
+::1
+
+core\Exceptions\Fatal: Unknown column 'pass_confirm' in 'field list' in /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php(41): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php(47): core\DBDriver->insert('users', Array)
+#2 /Applications/MAMP/htdocs/blog-php3/model/Users.php(42): model\BaseModel->add(Array)
+#3 /Applications/MAMP/htdocs/blog-php3/core/User.php(28): model\Users->signUp(Array)
+#4 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(29): core\User->signUp(Array)
+#5 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\UserController->signUpAction()
+#6 {main}
+-------------------------------------------------------------------------------------
+
+19:21:10
+::1
+
+core\Exceptions\Fatal: Unknown column 'pass_confirm' in 'field list' in /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php(41): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php(47): core\DBDriver->insert('users', Array)
+#2 /Applications/MAMP/htdocs/blog-php3/model/Users.php(42): model\BaseModel->add(Array)
+#3 /Applications/MAMP/htdocs/blog-php3/core/User.php(28): model\Users->signUp(Array)
+#4 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(29): core\User->signUp(Array)
+#5 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\UserController->signUpAction()
+#6 {main}
+-------------------------------------------------------------------------------------

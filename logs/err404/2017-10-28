@@ -1,0 +1,9 @@
+
+18:16:10
+::1
+
+core\Exceptions\Error404: Undefined action loginAction in /Applications/MAMP/htdocs/blog-php3/controller/FrontController.php:32
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\FrontController->__call('loginAction', Array)
+#1 {main}
+-------------------------------------------------------------------------------------

@@ -9,19 +9,36 @@
 namespace controller;
 
 
+use core\User;
 use model\Texts;
+use model\Users;
 
 class UserController extends FrontController
 {
     public function signUpAction()
     {
         $text = new Texts();
-        $msg = '';
+        $errors = '';
+
+        if($this->request->isPost()){
+            $mUser = new Users();
+
+            $user = new User($mUser);
+
+            try {
+                $user->signUp($this->request->post());
+                header('location:'. ROOT);
+            }catch(\Exception $e){
+                $errors = $e->getMessage();
+            }
+
+        }
+
 
         $this->menu = $this->build('v_menu');
         $this->sidebar = $this->build('v_left');
         $this->texts = $text->getTexts() ?? null;
         $this->title = 'Регистрация';
-        $this->content = $this->build('v_signup', ['msg' => $msg]);
+        $this->content = $this->build('v_signup', ['errors' => $errors]);
     }
 }

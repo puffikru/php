@@ -8,10 +8,4 @@
     <input type="submit" value="Отправить"><br>
 </form>
 <a href="<?= ROOT ?>">На главную</a><br><br>
-<?
-if(!empty($error)):
-foreach($error as $item):
-    echo $item . "<br>";
-endforeach;
-endif;
-?>
+<?=$error; ?>

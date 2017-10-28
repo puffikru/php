@@ -32,14 +32,20 @@ abstract class BaseModel
         return $res[0] ?? null;
     }
 
-    public function add($obj)
+    public function add($obj, $needValidation = true)
     {
-        $this->validation->execute($obj);
-        if($this->validation->success()) {
-            return $this->db->insert($this->table, $this->validation->clean());
-        }else{
-            return $this->validation->errors();
+
+        if($needValidation){
+            $this->validation->execute($obj);
+            if($this->validation->success()) {
+                $obj =  $this->validation->clean();
+            }else{
+                throw new \Exception($this->validation->errors()[0]);
+            }
         }
+
+        return $this->db->insert($this->table, $obj);
+
     }
 
     public function edit($pk, $obj)

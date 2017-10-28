@@ -75,19 +75,19 @@ class PostController extends FrontController
 
         $messages = new Messages();
         $users = new Users();
-        $user = $users->getOne($_SESSION['login']);
+        $user = $users->getOne($this->request->session('login'));
         $title = '';
 
         if($this->request->isPost()) {
 
             extract($this->request->post());
 
-            $id = $messages->add(['title' => $title, 'content' => $content ?? '', 'id_user' => $user['id_user']]);
-            if(gettype($id) == 'array') {
-                $error = $id;
-            }else {
+            try {
+                $id = $messages->add(['title' => $title, 'content' => $content ?? '', 'id_user' => $user['id_user']]);
                 header("Location: " . ROOT . "post/$id");
                 exit();
+            }catch(\Exception $e){
+                $error = $e->getMessage();
             }
 
         }else {
@@ -136,12 +136,11 @@ class PostController extends FrontController
 
             extract($this->request->post());
 
-            $res = $messages->edit($id, ['title' => $title, 'content' => $content]);
-            if(gettype($res) == 'array'){
-                $error = $res;
-            }else {
+            try {
+                $messages->edit($id, ['title' => $title, 'content' => $content]);
                 header('Location: ' . ROOT);
-                exit();
+            }catch(\Exception $e){
+                $error = $e->getMessage();
             }
 
         }
