@@ -152,3 +152,17 @@ Stack trace:
 #5 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\UserController->signUpAction()
 #6 {main}
 -------------------------------------------------------------------------------------
+
+20:37:10
+::1
+
+core\Exceptions\Fatal: Duplicate entry 'test@test.com' for key 'login' in /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/DBDriver.php(41): core\DBDriver->check_error(Object(PDOStatement))
+#1 /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php(47): core\DBDriver->insert('users', Array)
+#2 /Applications/MAMP/htdocs/blog-php3/model/Users.php(42): model\BaseModel->add(Array)
+#3 /Applications/MAMP/htdocs/blog-php3/core/User.php(29): model\Users->signUp(Array)
+#4 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(23): core\User->signUp(Array)
+#5 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\UserController->signUpAction()
+#6 {main}
+-------------------------------------------------------------------------------------

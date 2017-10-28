@@ -2,6 +2,9 @@
 
 namespace model;
 
+use core\Cookie;
+use core\Session;
+
 class Users extends BaseModel
 {
 
@@ -12,7 +15,7 @@ class Users extends BaseModel
         $this->pk = 'id_user';
     }
 
-    public function getOne($login)
+    public function getByLogin($login)
     {
         $query = $this->db->select("SELECT * FROM {$this->table} WHERE login= :login", ['login' => $login]);
         return $query[0] ?? null;
@@ -42,6 +45,71 @@ class Users extends BaseModel
                 'pass' => $this->getHash($fields['pass'])
             ]
         );
+    }
+
+    public function login(array $fields)
+    {
+        /*debug($fields);*/
+
+        $this->validation->execute($fields);
+        if(!$this->validation->success()){
+            throw new \Exception($this->validation->errors()[0]);
+        }
+        $user = $this->getByLogin($fields['login']);
+
+        /*debug($user);
+        debug($user['pass']);
+        debug($this->getHash($fields['password']));
+        die;*/
+        if(!$user){
+            return false;
+        }
+
+        if($this->getHash($fields['password']) == $user['pass']){
+            $session = new Session();
+            $session->set('login', $fields['login']);
+            $session->set('pass', $this->getHash($fields['password']));
+            $session->set('isAuth', true);
+
+            if(isset($fields['remember'])){
+                Cookie::set('login', $fields['login'], 3600 * 24 * 7);
+                Cookie::set('pass', $this->getHash($fields['password']), 3600 * 24 * 7);
+            }
+
+            if(isset($_SESSION['returnUrl'])) {
+                header('Location:' . $_SESSION['returnUrl']);
+                unset($_SESSION['returnUrl']);
+                exit();
+
+            }else {
+
+                header('Location: ' . ROOT);
+                exit();
+
+            }
+        }else{
+            throw new \Exception('Введненные данные неверны. Попробуйте снова.');
+        }
+
+    }
+
+    public static function isAuth()
+    {
+        $isAuth = false;
+
+        if(isset($_SESSION['isAuth']) && $_SESSION['isAuth']) {
+
+            $isAuth = true;
+
+        }elseif(isset($_COOKIE['login']) && isset($_COOKIE['pass'])) {
+
+            if($_COOKIE['login'] == $_SESSION['login'] && $_COOKIE['pass'] == self::getHash($_SESSION['pass'])) {
+
+                $_SESSION['isAuth'] = true;
+                $isAuth = true;
+            }
+        }
+        return $isAuth;
     }
 
     private function getHash($pass){

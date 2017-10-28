@@ -12,7 +12,7 @@ class PostController extends FrontController
 {
     public function indexAction()
     {
-        $isAuth = Auth::isAuth();
+        $isAuth = Users::isAuth();
         $text = new Texts();
         unset($_SESSION['returnUrl']);
 
@@ -65,17 +65,17 @@ class PostController extends FrontController
 
     public function addAction()
     {
-        $isAuth = Auth::isAuth();
+        $isAuth = Users::isAuth();
         $text = new Texts();
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . 'add';
-            header('Location: ' . ROOT . 'login?auth=off');
+            header('Location: ' . ROOT . 'user/login?auth=off');
             exit();
         }
 
         $messages = new Messages();
         $users = new Users();
-        $user = $users->getOne($this->request->session('login'));
+        $user = $users->getByLogin($this->request->session('login'));
         $title = '';
 
         if($this->request->isPost()) {
@@ -105,7 +105,7 @@ class PostController extends FrontController
 
     public function editAction()
     {
-        $isAuth = Auth::isAuth();
+        $isAuth = Users::isAuth();
 
         $id = $this->request->get('id');
         $staticTexts = new Texts();
@@ -154,11 +154,11 @@ class PostController extends FrontController
 
     public function deleteAction()
     {
-        $isAuth = Auth::isAuth();
+        $isAuth = Users::isAuth();
         unset($_SESSION['returnUrl']);
 
         if(!$isAuth) {
-            header('Location: ' . ROOT . 'login?auth=off');
+            header('Location: ' . ROOT . 'user/login?auth=off');
             exit();
         }
         $messages = new Messages();

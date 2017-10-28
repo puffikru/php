@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: igorbulakh
- * Date: 27.10.2017
- * Time: 21:46
- */
 
 namespace controller;
 
@@ -20,15 +14,15 @@ class UserController extends FrontController
         $text = new Texts();
         $errors = '';
 
-        if($this->request->isPost()){
+        if($this->request->isPost()) {
             $mUser = new Users();
 
             $user = new User($mUser);
 
             try {
                 $user->signUp($this->request->post());
-                header('location:'. ROOT);
-            }catch(\Exception $e){
+                header('Location:' . ROOT);
+            }catch(\Exception $e) {
                 $errors = $e->getMessage();
             }
 
@@ -40,5 +34,34 @@ class UserController extends FrontController
         $this->texts = $text->getTexts() ?? null;
         $this->title = 'Регистрация';
         $this->content = $this->build('v_signup', ['errors' => $errors]);
+    }
+
+    public function loginAction()
+    {
+        $text = new Texts();
+        $errors = '';
+
+        if(isset($_GET['auth'])) {
+            if($_GET['auth'] === 'off') {
+                $errors = 'У вас нет прав для просмотра данной страницы!';
+            }
+        }
+
+        if($this->request->isPost()){
+            $mUser = new Users();
+
+            try {
+                $mUser->login($this->request->post());
+                header('Location' . ROOT);
+            }catch(\Exception $e){
+                $errors = $e->getMessage();
+            }
+        }
+
+        $this->menu = $this->build('v_menu');
+        $this->content = $this->build('v_login', ['errors' => $errors]);
+        $this->sidebar = $this->build('v_left');
+        $this->texts = $text->getTexts() ?? null;
+        $this->title = 'Авторизация';
     }
 }

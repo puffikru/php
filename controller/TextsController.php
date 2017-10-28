@@ -5,16 +5,17 @@ namespace controller;
 use core\Validation;
 use model\Auth;
 use model\Texts;
+use model\Users;
 
 class TextsController extends FrontController
 {
     public function indexAction()
     {
-        $isAuth = Auth::isAuth();
+        $isAuth = Users::isAuth();
 
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . 'texts';
-            header('Location: ' . ROOT . 'login?auth=off');
+            header('Location: ' . ROOT . 'user/login?auth=off');
             exit();
         }
 
@@ -37,11 +38,11 @@ class TextsController extends FrontController
 
     public function addAction()
     {
-        $isAuth = Auth::isAuth();
+        $isAuth = Users::isAuth();
 
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . 'add-text';
-            header('Location: ' . ROOT . 'login?auth=off');
+            header('Location: ' . ROOT . 'user/login?auth=off');
             exit();
         }
 
@@ -53,14 +54,14 @@ class TextsController extends FrontController
 
             extract($this->request->post());
 
-            $res = $staticTexts->add(['alias' => $alias, 'content' => $content]);
-
-            if(gettype($res) == 'array') {
-                $errors = $res;
-            }else {
+            try {
+                $staticTexts->add(['alias' => $alias, 'content' => $content]);
                 header("Location: " . ROOT . "texts");
                 exit();
+            }catch(\Exception $e){
+                $errors = $e->getMessage();
             }
+
 
         }else {
             $alias = '';
@@ -77,7 +78,7 @@ class TextsController extends FrontController
 
     public function editAction()
     {
-        $isAuth = Auth::isAuth();
+        $isAuth = Users::isAuth();
 
         $id = $this->request->get('id');
         $err404 = false;
@@ -85,7 +86,7 @@ class TextsController extends FrontController
         // Проверка авторизации
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . "edit-text/$id";
-            header('Location: ' . ROOT . 'login?auth=off');
+            header('Location: ' . ROOT . 'user/login?auth=off');
             exit();
         }
 
@@ -107,13 +108,12 @@ class TextsController extends FrontController
 
             extract($this->request->post());
 
-            $res = $staticTexts->edit($id, ['alias' => $alias, 'content' => $content]);
-
-            if(gettype($res) == 'array') {
-                $errors = $res;
-            }else {
+            try {
+                $staticTexts->edit($id, ['alias' => $alias, 'content' => $content]);
                 header('Location: ' . ROOT . "texts");
                 exit();
+            }catch(\Exception $e){
+                $errors = $e->getMessage();
             }
 
         }
@@ -125,11 +125,11 @@ class TextsController extends FrontController
 
     public function deleteAction()
     {
-        $isAuth = Auth::isAuth();
+        $isAuth = Users::isAuth();
         unset($_SESSION['returnUrl']);
 
         if(!$isAuth) {
-            header('Location: ' . ROOT . 'login?auth=off');
+            header('Location: ' . ROOT . 'user/login?auth=off');
             exit();
         }
         $staticTexts = new Texts();

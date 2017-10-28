@@ -7,4 +7,4 @@
     <input type="submit" value="Войти">
 </form>
 <a href="<?= ROOT ?>">На главную</a><br><br>
-<?= $msg; ?>
+<?= $errors; ?>
