@@ -12,7 +12,11 @@ class DBDriver
 
     public function __construct()
     {
-        $this->db = new \PDO('mysql:host=' . Settings::HOST . ';dbname=' . Settings::DBNAME, Settings::LOGIN, Settings::PASS);
+        $opt = [
+            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+            \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
+        ];
+        $this->db = new \PDO('mysql:host=' . Settings::HOST . ';dbname=' . Settings::DBNAME, Settings::LOGIN, Settings::PASS, $opt);
         $this->db->exec('SET NAMES UTF8');
     }
 

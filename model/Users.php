@@ -96,11 +96,12 @@ class Users extends BaseModel
             $isAuth = true;
 
         }elseif(isset($_COOKIE['login']) && isset($_COOKIE['pass'])) {
+            if(isset($_SESSION['login'])) {
+                if($_COOKIE['login'] == $_SESSION['login'] && $_COOKIE['pass'] == self::getHash($_SESSION['pass'])) {
 
-            if($_COOKIE['login'] == $_SESSION['login'] && $_COOKIE['pass'] == self::getHash($_SESSION['pass'])) {
-
-                $_SESSION['isAuth'] = true;
-                $isAuth = true;
+                    $_SESSION['isAuth'] = true;
+                    $isAuth = true;
+                }
             }
         }
         return $isAuth;
