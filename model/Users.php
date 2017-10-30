@@ -49,18 +49,12 @@ class Users extends BaseModel
 
     public function login(array $fields)
     {
-        /*debug($fields);*/
-
         $this->validation->execute($fields);
         if(!$this->validation->success()){
             throw new \Exception($this->validation->errors()[0]);
         }
         $user = $this->getByLogin($fields['login']);
 
-        /*debug($user);
-        debug($user['pass']);
-        debug($this->getHash($fields['password']));
-        die;*/
         if(!$user){
             return false;
         }
@@ -110,6 +104,16 @@ class Users extends BaseModel
             }
         }
         return $isAuth;
+    }
+
+    public function logout()
+    {
+        $session = new Session();
+        $session->del('login');
+        $session->del('pass');
+        $session->del('isAuth');
+        Cookie::del('login');
+        Cookie::del('pass');
     }
 
     private function getHash($pass){

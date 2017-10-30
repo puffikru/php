@@ -1,0 +1,58 @@
+
+09:03:10
+::1
+
+core\Exceptions\Error404: class controller\ApplicationsController not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\Appl...')
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(62): spl_autoload_call('controller\\Appl...')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+09:03:10
+::1
+
+core\Exceptions\Error404: class controller\ApplicationsController not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\Appl...')
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(62): spl_autoload_call('controller\\Appl...')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+09:04:10
+::1
+
+core\Exceptions\Error404: class controller\ApplicationsController not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\Appl...')
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(62): spl_autoload_call('controller\\Appl...')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+09:04:10
+::1
+
+core\Exceptions\Error404: class controller\ApplicationsController not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('controller\\Appl...')
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(62): spl_autoload_call('controller\\Appl...')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+09:09:10
+::1
+
+core\Exceptions\Error404: Такой статьи не существует! in /Applications/MAMP/htdocs/blog-php3/controller/PostController.php:53
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\PostController->oneAction()
+#1 {main}
+-------------------------------------------------------------------------------------
+
+09:10:10
+::1
+
+core\Exceptions\Error404: Такой статьи не существует! in /Applications/MAMP/htdocs/blog-php3/controller/PostController.php:53
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/index.php(63): controller\PostController->oneAction()
+#1 {main}
+-------------------------------------------------------------------------------------

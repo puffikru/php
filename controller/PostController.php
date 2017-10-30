@@ -37,7 +37,7 @@ class PostController extends FrontController
 
     public function oneAction()
     {
-        $isAuth = Auth::isAuth();
+        $isAuth = Users::isAuth();
 
         $id = $this->request->get('id');
 
@@ -57,8 +57,7 @@ class PostController extends FrontController
         $this->menu = $this->build('v_menu', ['isAuth' => $isAuth]);
         $this->sidebar = $this->build('v_left');
         $this->texts = $text->getTexts() ?? null;
-        $this->content = $this->build('v_post', [/*'err404' => $err404, */
-            'content' => $content, 'isAuth' => $isAuth]);
+        $this->content = $this->build('v_post', ['content' => $content, 'isAuth' => $isAuth]);
         $this->title = 'Просмотр сообщения';
 
     }
@@ -113,7 +112,7 @@ class PostController extends FrontController
         // Проверка авторизации
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . "edit/$id";
-            header('Location: ' . ROOT . 'login?auth=off');
+            header('Location: ' . ROOT . 'user/login?auth=off');
             exit();
         }
 

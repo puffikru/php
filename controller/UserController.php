@@ -43,7 +43,7 @@ class UserController extends FrontController
 
         if(isset($_GET['auth'])) {
             if($_GET['auth'] === 'off') {
-                $errors = 'У вас нет прав для просмотра данной страницы!';
+                throw new \Exception('У вас нет прав для просмотра данной страницы!');
             }
         }
 
@@ -63,5 +63,12 @@ class UserController extends FrontController
         $this->sidebar = $this->build('v_left');
         $this->texts = $text->getTexts() ?? null;
         $this->title = 'Авторизация';
+    }
+
+    public function logoutAction()
+    {
+        $user = new Users();
+        $user->logout();
+        header('Location:' . ROOT );
     }
 }
