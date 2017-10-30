@@ -82,5 +82,6 @@ try {
         $controller->render();
     }
 }catch(\Exception $e){
+    echo $e->getMessage();
     echo "Все пропало!";
 }

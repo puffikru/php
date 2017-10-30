@@ -153,6 +153,18 @@ em { color: #5d6d1e; }
     display: inline;
 }
 
+#templatemo_menu ul li.current_user {
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: 280px;
+}
+
+#templatemo_menu ul li.current_user i {
+    margin-right: 5px;
+}
+
 #templatemo_menu ul li a {
     float: left;
     display: block;

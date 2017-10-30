@@ -15,10 +15,11 @@ class PostController extends FrontController
         $isAuth = Users::isAuth();
         $text = new Texts();
         unset($_SESSION['returnUrl']);
+        $user = new Users();
 
         if(isset($_GET['auth'])) {
             if($_GET['auth'] == 'off') {
-                Auth::logOff();
+                $user->logout();
                 header('Location: ' . ROOT);
                 exit();
             }
@@ -26,9 +27,9 @@ class PostController extends FrontController
 
         $messages = new Messages();
         $articles = $messages->getAll();
+        $cUser = $user->getByLogin($this->request->session('login'));
 
-
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth]);
+        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->sidebar = $this->build('v_left');
         $this->texts = $text->getTexts() ?? null;
         $this->title = 'Главная';

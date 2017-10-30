@@ -43,7 +43,8 @@ class UserController extends FrontController
 
         if(isset($_GET['auth'])) {
             if($_GET['auth'] === 'off') {
-                throw new \Exception('У вас нет прав для просмотра данной страницы!');
+                //throw new \Exception('У вас нет прав для просмотра данной страницы!');
+                //$this->logoutAction();
             }
         }
 
