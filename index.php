@@ -65,7 +65,7 @@ try {
 }catch(\core\Exceptions\Error404 $e) {
     header("HTTP/1.0 404 Not Found");
     $controller = new controller\PostController($request);
-    if(DEV_MODE == 0){
+    if(DEV_MODE){
         $controller->error404($e);
         $controller->render();
     }else{
@@ -74,7 +74,7 @@ try {
     }
 }catch(\core\Exceptions\Fatal $e) {
     $controller = new controller\PostController($request);
-    if(DEV_MODE == 0){
+    if(DEV_MODE){
         $controller->error404($e);
         $controller->render();
     }else{
