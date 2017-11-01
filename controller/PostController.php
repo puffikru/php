@@ -3,7 +3,7 @@
 namespace controller;
 
 use core\Exceptions\Error404;
-use model\Auth;
+use core\Exceptions\ValidateException;
 use model\Messages;
 use model\Texts;
 use model\Users;
@@ -20,7 +20,7 @@ class PostController extends FrontController
         if(isset($_GET['auth'])) {
             if($_GET['auth'] == 'off') {
                 $user->logout();
-                header('Location: ' . ROOT);
+                $this->redirect(ROOT);
                 exit();
             }
         }
@@ -43,6 +43,8 @@ class PostController extends FrontController
         $id = $this->request->get('id');
 
         $text = new Texts();
+        $user = new Users();
+        $cUser = $user->getByLogin($this->request->session('login'));
 
         if($id === null || $id == '' || !preg_match('/^[0-9]+$/', $id)) {
             throw new Error404("Статьи номер $id не существует!");
@@ -55,7 +57,7 @@ class PostController extends FrontController
             }
         }
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth]);
+        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->sidebar = $this->build('v_left');
         $this->texts = $text->getTexts() ?? null;
         $this->content = $this->build('v_post', ['content' => $content, 'isAuth' => $isAuth]);
@@ -69,7 +71,7 @@ class PostController extends FrontController
         $text = new Texts();
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . 'add';
-            header('Location: ' . ROOT . 'user/login?auth=off');
+            $this->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
 
@@ -84,9 +86,9 @@ class PostController extends FrontController
 
             try {
                 $id = $messages->add(['title' => $title, 'content' => $content ?? '', 'id_user' => $user['id_user']]);
-                header("Location: " . ROOT . "post/$id");
+                $this->redirect(ROOT . "post/$id");
                 exit();
-            }catch(\Exception $e){
+            }catch(ValidateException $e){
                 $error = $e->getMessage();
             }
 
@@ -96,7 +98,7 @@ class PostController extends FrontController
             $error = '';
         }
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth]);
+        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $user['name']]);
         $this->sidebar = $this->build('v_left');
         $this->texts = $text->getTexts() ?? null;
         $this->title = 'Новое сообщение';
@@ -109,11 +111,13 @@ class PostController extends FrontController
 
         $id = $this->request->get('id');
         $staticTexts = new Texts();
+        $user = new Users();
+        $cUser = $user->getByLogin($this->request->session('login'));
 
         // Проверка авторизации
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . "edit/$id";
-            header('Location: ' . ROOT . 'user/login?auth=off');
+            $this->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
 
@@ -133,19 +137,18 @@ class PostController extends FrontController
 
         if($this->request->isPost()) {
 
-
             extract($this->request->post());
 
             try {
                 $messages->edit($id, ['title' => $title, 'content' => $content]);
-                header('Location: ' . ROOT);
-            }catch(\Exception $e){
+                $this->redirect(ROOT);
+            }catch(ValidateException $e){
                 $error = $e->getMessage();
             }
 
         }
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth]);
+        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->title = 'Редактирование сообщения';
         $this->sidebar = $this->build('v_left');
         $this->texts = $staticTexts->getTexts() ?? null;
@@ -158,7 +161,7 @@ class PostController extends FrontController
         unset($_SESSION['returnUrl']);
 
         if(!$isAuth) {
-            header('Location: ' . ROOT . 'user/login?auth=off');
+            $this->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
         $messages = new Messages();
@@ -168,7 +171,7 @@ class PostController extends FrontController
             echo "Такой статьи не существует!";
         }else {
             $messages->delete($id);
-            header('Location:' . ROOT);
+            $this->redirect(ROOT);
             exit();
         }
     }

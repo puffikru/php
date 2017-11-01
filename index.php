@@ -55,7 +55,6 @@ if($id) {
     $_GET['id'] = $id;
 }
 
-
 $request = new \core\Request($_GET, $_POST, $_SERVER, $_COOKIE, $_SESSION, $_FILES);
 
 try {
@@ -81,7 +80,4 @@ try {
         $controller->error503();
         $controller->render();
     }
-}catch(\Exception $e){
-    echo $e->getMessage();
-    echo "Все пропало!";
 }

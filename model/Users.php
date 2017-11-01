@@ -4,6 +4,7 @@ namespace model;
 
 use core\Cookie;
 use core\Session;
+use core\Exceptions\ValidateException;
 
 class Users extends BaseModel
 {
@@ -51,7 +52,7 @@ class Users extends BaseModel
     {
         $this->validation->execute($fields);
         if(!$this->validation->success()){
-            throw new \Exception($this->validation->errors()[0]);
+            throw new ValidateException($this->validation->errors()[0]);
         }
         $user = $this->getByLogin($fields['login']);
 
@@ -59,32 +60,28 @@ class Users extends BaseModel
             return false;
         }
 
-        if($this->getHash($fields['password']) == $user['pass']){
-            $session = new Session();
-            $session->set('login', $fields['login']);
-            $session->set('pass', $this->getHash($fields['password']));
-            $session->set('isAuth', true);
+        if($this->getHash($fields['password']) != $user['pass']){
+            throw new ValidateException('Введненные данные неверны. Попробуйте снова.');
+        }
+        $session = new Session();
+        $session->set('login', $fields['login']);
+        $session->set('pass', $this->getHash($fields['password']));
+        $session->set('isAuth', true);
 
-            if(isset($fields['remember'])){
-                Cookie::set('login', $fields['login'], 3600 * 24 * 7);
-                Cookie::set('pass', $this->getHash($fields['password']), 3600 * 24 * 7);
-            }
-
-            if(isset($_SESSION['returnUrl'])) {
-                header('Location:' . $_SESSION['returnUrl']);
-                unset($_SESSION['returnUrl']);
-                exit();
-
-            }else {
-
-                header('Location: ' . ROOT);
-                exit();
-
-            }
-        }else{
-            throw new \Exception('Введненные данные неверны. Попробуйте снова.');
+        if(isset($fields['remember'])){
+            Cookie::set('login', $fields['login'], 3600 * 24 * 7);
+            Cookie::set('pass', $this->getHash($fields['password']), 3600 * 24 * 7);
         }
 
+        if(isset($_SESSION['returnUrl'])) {
+            header('Location:' . $_SESSION['returnUrl']);
+            unset($_SESSION['returnUrl']);
+            exit();
+
+        }else {
+            header('Location: ' . ROOT);
+            exit();
+        }
     }
 
     public static function isAuth()

@@ -37,6 +37,10 @@ class FrontController
         echo $this->build('v_main', ['title' => $this->title, 'content' => $this->content, 'menu' => $this->menu, 'sidebar' => $this->sidebar, 'texts' => $this->texts]);
     }
 
+    public function redirect($dest){
+        header('Location' . $dest);
+    }
+
     protected function build($fname, $params = [])
     {
         extract($params);

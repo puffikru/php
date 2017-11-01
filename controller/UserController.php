@@ -3,7 +3,9 @@
 namespace controller;
 
 
+use core\Exceptions\ValidateException;
 use core\User;
+use model\Sessions;
 use model\Texts;
 use model\Users;
 
@@ -16,12 +18,13 @@ class UserController extends FrontController
 
         if($this->request->isPost()) {
             $mUser = new Users();
+            $mSession = new Sessions();
 
-            $user = new User($mUser);
+            $user = new User($mUser, $mSession);
 
             try {
                 $user->signUp($this->request->post());
-                header('Location:' . ROOT);
+                $this->redirect(ROOT);
             }catch(\Exception $e) {
                 $errors = $e->getMessage();
             }
@@ -41,20 +44,22 @@ class UserController extends FrontController
         $text = new Texts();
         $errors = '';
 
-        if(isset($_GET['auth'])) {
+        /*if(isset($_GET['auth'])) {
             if($_GET['auth'] === 'off') {
                 //throw new \Exception('У вас нет прав для просмотра данной страницы!');
                 //$this->logoutAction();
             }
-        }
+        }*/
 
         if($this->request->isPost()){
             $mUser = new Users();
-
+            $mSession = new Sessions();
+            $user = new User($mUser, $mSession);
             try {
-                $mUser->login($this->request->post());
-                header('Location' . ROOT);
-            }catch(\Exception $e){
+                //$mUser->login($this->request->post());
+                $user->login($this->request->post());
+                $this->redirect(ROOT);
+            }catch(ValidateException $e){
                 $errors = $e->getMessage();
             }
         }
@@ -70,6 +75,6 @@ class UserController extends FrontController
     {
         $user = new Users();
         $user->logout();
-        header('Location:' . ROOT );
+        $this->redirect(ROOT);
     }
 }

@@ -2,8 +2,6 @@
 
 namespace controller;
 
-use core\Validation;
-use model\Auth;
 use model\Texts;
 use model\Users;
 
@@ -15,21 +13,24 @@ class TextsController extends FrontController
 
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . 'texts';
-            header('Location: ' . ROOT . 'user/login?auth=off');
+            $this->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
 
+        $user = new Users();
+
         if(isset($_GET['auth'])) {
             if($_GET['auth'] == 'off') {
-                Auth::logOff();
-                header('Location: ' . ROOT . "texts");
+                $user->logout();
+                $this->redirect(ROOT . "texts");
                 exit();
             }
         }
         $staticTexts = new Texts();
         $texts = $staticTexts->all();
+        $cUser = $user->getByLogin($this->request->session('login'));
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth]);
+        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->sidebar = $this->build('v_left');
         $this->content = $this->build('v_texts', ['texts' => $texts]);
         $this->texts = $staticTexts->getTexts() ?? null;
@@ -42,13 +43,15 @@ class TextsController extends FrontController
 
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . 'add-text';
-            header('Location: ' . ROOT . 'user/login?auth=off');
+            $this->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
 
         $staticTexts = new Texts();
         $alias = '';
         $content = '';
+        $user = new Users();
+        $cUser = $user->getByLogin($this->request->session('login'));
 
         if($this->request->isPost()) {
 
@@ -56,7 +59,7 @@ class TextsController extends FrontController
 
             try {
                 $staticTexts->add(['alias' => $alias, 'content' => $content]);
-                header("Location: " . ROOT . "texts");
+                $this->redirect(ROOT . "texts");
                 exit();
             }catch(\Exception $e){
                 $errors = $e->getMessage();
@@ -69,7 +72,7 @@ class TextsController extends FrontController
             $errors = '';
         }
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth]);
+        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->sidebar = $this->build('v_left');
         $this->content = $this->build('v_add-text', ['alias' => $alias, 'content' => $content, 'errors' => $errors]);
         $this->texts = $staticTexts->getTexts() ?? null;
@@ -86,7 +89,7 @@ class TextsController extends FrontController
         // Проверка авторизации
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . "edit-text/$id";
-            header('Location: ' . ROOT . 'user/login?auth=off');
+            $this->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
 
@@ -99,6 +102,8 @@ class TextsController extends FrontController
         $errors = '';
         $alias = '';
         $content = '';
+        $user = new Users();
+        $cUser = $user->getByLogin($this->request->session('login'));
 
         if(!$text) {
             $errors = $text;
@@ -110,7 +115,7 @@ class TextsController extends FrontController
 
             try {
                 $staticTexts->edit($id, ['alias' => $alias, 'content' => $content]);
-                header('Location: ' . ROOT . "texts");
+                $this->redirect(ROOT . "texts");
                 exit();
             }catch(\Exception $e){
                 $errors = $e->getMessage();
@@ -118,7 +123,7 @@ class TextsController extends FrontController
 
         }
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth]);
+        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->content = $this->build('v_edit-text', ['err404' => $err404, 'text' => $text, 'errors' => $errors]);
         $this->title = 'Редактирование текста';
     }
@@ -129,7 +134,7 @@ class TextsController extends FrontController
         unset($_SESSION['returnUrl']);
 
         if(!$isAuth) {
-            header('Location: ' . ROOT . 'user/login?auth=off');
+            $this->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
         $staticTexts = new Texts();
@@ -140,7 +145,7 @@ class TextsController extends FrontController
             echo "Такого текста не существует!";
         }else {
             $staticTexts->delete($id);
-            header('Location:' . ROOT . "texts");
+            $this->redirect(ROOT . "texts");
             exit();
         }
     }
