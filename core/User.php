@@ -36,13 +36,15 @@ class User
 
     public function login(array $fields)
     {
-
+        //TODO: Доделать логин
     }
 
-    public function isAuth(){
-
+    public function isAuth()
+    {
+        //TODO: Доделать проверку авторизации
     }
 
+    //TODO: Перенести хеширование в core/User
     private function getHash($pass){
         return hash('sha256', $pass . SALT);
     }
@@ -52,6 +54,7 @@ class User
         if($password['pass'] == $password['pass_confirm']){
             return true;
         }
+        return false;
     }
 
     private function sid(){
