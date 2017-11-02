@@ -4,7 +4,6 @@ namespace controller;
 
 
 use core\Exceptions\ValidateException;
-use core\User;
 use model\Sessions;
 use model\Texts;
 use model\Users;
@@ -20,17 +19,14 @@ class UserController extends FrontController
             $mUser = new Users();
             $mSession = new Sessions();
 
-            $user = new User($mUser, $mSession);
-
             try {
-                $user->signUp($this->request->post());
+                $mUser->signUp($this->request->post(), $mSession, $this->request);
                 $this->redirect(ROOT);
             }catch(\Exception $e) {
                 $errors = $e->getMessage();
             }
 
         }
-
 
         $this->menu = $this->build('v_menu');
         $this->sidebar = $this->build('v_left');
@@ -54,10 +50,8 @@ class UserController extends FrontController
         if($this->request->isPost()){
             $mUser = new Users();
             $mSession = new Sessions();
-            $user = new User($mUser, $mSession);
             try {
-                //$mUser->login($this->request->post());
-                $user->login($this->request->post());
+                $mUser->login($this->request->post(), $mSession, $this->request);
                 $this->redirect(ROOT);
             }catch(ValidateException $e){
                 $errors = $e->getMessage();
@@ -73,6 +67,7 @@ class UserController extends FrontController
 
     public function logoutAction()
     {
+        //TODO: Сделать деавторизацию
         $user = new Users();
         $user->logout();
         $this->redirect(ROOT);

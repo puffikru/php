@@ -1,7 +1,7 @@
 <div id="templatemo_menu">
     <ul>
         <li><a href="<?= ROOT ?>" class="current">Главная</a></li>
-        <? if(\model\Users::isAuth()): ?>
+        <? if($isAuth): ?>
             <li><a href="<?= ROOT ?>post/add">Добавить</a></li>
             <li><a href="<?= ROOT ?>texts">Тексты</a></li>
             <li><a href="<?= ROOT ?>user/logout" type="button">Выйти</a></li>

@@ -5,6 +5,7 @@ namespace controller;
 use core\Exceptions\Error404;
 use core\Exceptions\ValidateException;
 use model\Messages;
+use model\Sessions;
 use model\Texts;
 use model\Users;
 
@@ -12,10 +13,11 @@ class PostController extends FrontController
 {
     public function indexAction()
     {
-        $isAuth = Users::isAuth();
         $text = new Texts();
         unset($_SESSION['returnUrl']);
         $user = new Users();
+        $session = new Sessions();
+        $isAuth = $user->isAuth($session, $this->request);
 
         if(isset($_GET['auth'])) {
             if($_GET['auth'] == 'off') {
@@ -27,7 +29,7 @@ class PostController extends FrontController
 
         $messages = new Messages();
         $articles = $messages->getAll();
-        $cUser = $user->getByLogin($this->request->session('login'));
+        $cUser = $user->getBySid($this->request->session('sid'));
 
         $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->sidebar = $this->build('v_left');
@@ -38,13 +40,15 @@ class PostController extends FrontController
 
     public function oneAction()
     {
-        $isAuth = Users::isAuth();
+        $user = new Users();
+        $session = new Sessions();
+        $isAuth = $user->isAuth($session, $this->request);
 
         $id = $this->request->get('id');
 
         $text = new Texts();
         $user = new Users();
-        $cUser = $user->getByLogin($this->request->session('login'));
+        $cUser = $user->getBySid($this->request->session('sid'));
 
         if($id === null || $id == '' || !preg_match('/^[0-9]+$/', $id)) {
             throw new Error404("Статьи номер $id не существует!");
@@ -67,7 +71,9 @@ class PostController extends FrontController
 
     public function addAction()
     {
-        $isAuth = Users::isAuth();
+        $users = new Users();
+        $session = new Sessions();
+        $isAuth = $users->isAuth($session, $this->request);
         $text = new Texts();
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . 'add';
@@ -76,8 +82,7 @@ class PostController extends FrontController
         }
 
         $messages = new Messages();
-        $users = new Users();
-        $user = $users->getByLogin($this->request->session('login'));
+        $user = $users->getBySid($this->request->session('sid'));
         $title = '';
 
         if($this->request->isPost()) {
@@ -107,12 +112,13 @@ class PostController extends FrontController
 
     public function editAction()
     {
-        $isAuth = Users::isAuth();
+        $user = new Users();
+        $session = new Sessions();
+        $isAuth = $user->isAuth($session, $this->request);
 
         $id = $this->request->get('id');
         $staticTexts = new Texts();
-        $user = new Users();
-        $cUser = $user->getByLogin($this->request->session('login'));
+        $cUser = $user->getBySid($this->request->session('sid'));
 
         // Проверка авторизации
         if(!$isAuth) {
@@ -157,7 +163,9 @@ class PostController extends FrontController
 
     public function deleteAction()
     {
-        $isAuth = Users::isAuth();
+        $user = new Users();
+        $session = new Sessions();
+        $isAuth = $user->isAuth($session, $this->request);
         unset($_SESSION['returnUrl']);
 
         if(!$isAuth) {

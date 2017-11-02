@@ -26,7 +26,8 @@ class Sessions extends BaseModel
         ];
     }
 
-    public function getBySid(){
-
+    public function getBySid($sid)
+    {
+        return $this->db->select("SELECT * FROM {$this->table} WHERE 'sid' = :sid", ['sid' => $sid]);
     }
 }

@@ -3,6 +3,7 @@
 namespace model;
 
 use core\DBDriver;
+use core\Exceptions\ValidateException;
 use core\Validation;
 
 abstract class BaseModel
@@ -40,7 +41,7 @@ abstract class BaseModel
             if($this->validation->success()) {
                 $obj =  $this->validation->clean();
             }else{
-                throw new \Exception($this->validation->errors()[0]);
+                throw new ValidateException($this->validation->errors()[0]);
             }
         }
 

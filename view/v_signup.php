@@ -1,6 +1,6 @@
 <form method="post">
     Имя:<br>
-    <input type="text" name="name" placeholder="Введите ваш email"><br>
+    <input type="text" name="name" placeholder="Введите ваше имя"><br>
     Email:<br>
     <input type="text" name="login" placeholder="Введите ваш email"><br>
     Пароль:<br>

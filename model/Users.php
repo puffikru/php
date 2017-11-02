@@ -2,9 +2,9 @@
 
 namespace model;
 
-use core\Cookie;
-use core\Session;
+use core\Request;
 use core\Exceptions\ValidateException;
+use core\User;
 
 class Users extends BaseModel
 {
@@ -14,12 +14,6 @@ class Users extends BaseModel
         parent::__construct();
         $this->table = 'users';
         $this->pk = 'id_user';
-    }
-
-    public function getByLogin($login)
-    {
-        $query = $this->db->select("SELECT * FROM {$this->table} WHERE login= :login", ['login' => $login]);
-        return $query[0] ?? null;
     }
 
     public function validationMap()
@@ -34,88 +28,58 @@ class Users extends BaseModel
         ];
     }
 
-    public function signUp(array $fields)
-    {
-        $this->validation->execute($fields);
-        if(!$this->validation->success()){
-            throw new \Exception($this->validation->errors()[0]);
-        }
-        return $this->add(
-            [
-                'login' => $fields['login'],
-                'pass' => $this->getHash($fields['pass'])
-            ]
-        );
-    }
-
-    public function login(array $fields)
+    public function signUp(array $fields, Sessions $session, Request $request)
     {
         $this->validation->execute($fields);
         if(!$this->validation->success()){
             throw new ValidateException($this->validation->errors()[0]);
         }
-        $user = $this->getByLogin($fields['login']);
 
-        if(!$user){
-            return false;
-        }
-
-        if($this->getHash($fields['password']) != $user['pass']){
-            throw new ValidateException('Введненные данные неверны. Попробуйте снова.');
-        }
-        $session = new Session();
-        $session->set('login', $fields['login']);
-        $session->set('pass', $this->getHash($fields['password']));
-        $session->set('isAuth', true);
-
-        if(isset($fields['remember'])){
-            Cookie::set('login', $fields['login'], 3600 * 24 * 7);
-            Cookie::set('pass', $this->getHash($fields['password']), 3600 * 24 * 7);
-        }
-
-        if(isset($_SESSION['returnUrl'])) {
-            header('Location:' . $_SESSION['returnUrl']);
-            unset($_SESSION['returnUrl']);
-            exit();
-
-        }else {
-            header('Location: ' . ROOT);
-            exit();
-        }
+        $user = new User($this, $session, $request);
+        $user->signUp($fields);
     }
 
-    public static function isAuth()
+    public function login(array $fields, Sessions $session, Request $request)
     {
-        $isAuth = false;
-
-        if(isset($_SESSION['isAuth']) && $_SESSION['isAuth']) {
-
-            $isAuth = true;
-
-        }elseif(isset($_COOKIE['login']) && isset($_COOKIE['pass'])) {
-            if(isset($_SESSION['login'])) {
-                if($_COOKIE['login'] == $_SESSION['login'] && $_COOKIE['pass'] == self::getHash($_SESSION['pass'])) {
-
-                    $_SESSION['isAuth'] = true;
-                    $isAuth = true;
-                }
-            }
+        $this->validation->execute($fields);
+        if(!$this->validation->success()){
+            throw new ValidateException($this->validation->errors()[0]);
         }
-        return $isAuth;
+
+        $user = new User($this, $session, $request);
+        $user->login($fields);
+
+    }
+
+    public function isAuth(Sessions $session, Request $request)
+    {
+        $user = new User($this, $session, $request);
+        return $user->isAuth();
+    }
+
+    public function getByLogin($login)
+    {
+        $query = $this->db->select("SELECT * FROM {$this->table} WHERE login= :login", ['login' => $login]);
+        return $query[0] ?? null;
+    }
+
+    public function getBySid($sid){
+        $query = $this->db->select("SELECT * FROM {$this->table} JOIN sessions USING($this->pk) WHERE sid=:sid", ['sid' => $sid]);
+        return $query[0] ?? null;
     }
 
     public function logout()
     {
-        $session = new Session();
+        /*$session = new Session();
         $session->del('login');
         $session->del('pass');
         $session->del('isAuth');
         Cookie::del('login');
-        Cookie::del('pass');
+        Cookie::del('pass');*/
     }
 
-    private function getHash($pass){
+    /*private function getHash($pass){
         return hash('sha256', $pass . SALT);
-    }
+    }*/
 
 }

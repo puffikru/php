@@ -17,36 +17,106 @@ class User
 {
     private $mUser;
     private $mSession;
+    private $request;
+    private $db;
 
-    public function __construct(Users $mUser, Sessions $mSession)
+    public function __construct(Users $mUser, Sessions $mSession, Request $request)
     {
         $this->mUser = $mUser;
         $this->mSession = $mSession;
+        $this->request = $request;
+        $this->db = new DBDriver();
     }
 
     public function signUp(array $fields)
     {
         if(!$this->comparePass($fields)){
             throw new ValidateException('Пароли не совпадают');
-        }else{
-            unset($fields['pass_confirm']);
-            $this->mUser->signUp($fields);
         }
+        unset($fields['pass_confirm']);
+        $this->db->insert('users', [
+            'name' => $fields['name'],
+            'login' => $fields['login'],
+            'pass' => $this->getHash($fields['pass'])
+        ]);
     }
 
     public function login(array $fields)
     {
-        //TODO: Доделать логин
+        $user = $this->mUser->getByLogin($fields['login']);
+
+        if(!$user){
+            throw new ValidateException('Такого пользователя не существует!');
+        }
+
+        if($this->getHash($fields['password']) !== $user['pass']){
+            throw new ValidateException('Введен неверный пароль!');
+        }
+
+        if(isset($fields['remember'])){
+            Cookie::set('login', $fields['login'], 3600 * 24 * 7);
+            Cookie::set('pass', $this->getHash($fields['password']), 3600 * 24 * 7);
+        }
+
+        $this->openSession($user['id_user']);
+
+        if(isset($_SESSION['returnUrl'])) {
+            header('Location:' . $_SESSION['returnUrl']);
+            unset($_SESSION['returnUrl']);
+        }else {
+            header('Location: ' . ROOT);
+        }
+
+        return true;
     }
 
     public function isAuth()
     {
-        //TODO: Доделать проверку авторизации
+        $user = false;
+        $sid = $this->request->session('sid');
+        $login = $this->request->cookie('login');
+
+        if(!$sid && !$login){
+            return false;
+        }
+
+        if($sid){
+            $user = $this->mUser->getBySid($sid);
+        }
+
+        if($user){
+            $this->mSession->edit($user['id_user'], [
+                'time_last' => date("Y-m-d H:i:s")
+            ]);
+        }
+
+        if($login){
+            $user = $this->mUser->getByLogin($login);
+        }
+
+        if($user){
+            $this->openSession($user['id_user']);
+        }
+
+        return $user;
     }
 
-    //TODO: Перенести хеширование в core/User
-    private function getHash($pass){
-        return hash('sha256', $pass . SALT);
+    private function openSession($id_user)
+    {
+        $sid = $this->generateSid();
+
+        $now = date("Y-m-d H:i:s");
+        $obj = [];
+        $obj['id_user'] = $id_user;
+        $obj['sid'] = $sid;
+        $obj['time_start'] = $now;
+        $obj['time_last'] = $now;
+        $this->db->insert('sessions', $obj);
+
+        $session = new Session();
+        $session->set('sid', $sid);
+
+        return $sid;
     }
 
     private function comparePass($password)
@@ -57,14 +127,16 @@ class User
         return false;
     }
 
-    private function sid(){
-        $pattern = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        $sid = '';
-        for($i = 0; $i < 10; $i++){
-            $letter = mt_rand(0, strlen($pattern) - 1);
-            $sid .= $pattern[$letter];
-        }
-        return $sid;
+    private function getHash($pass){
+        return hash('sha256', $pass . SALT);
     }
 
+    private function generateSid($number = 10){
+        $pattern = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        $code = '';
+        for($i = 0; $i < $number; $i++){
+            $code .= $pattern[mt_rand(0, strlen($pattern) - 1)];
+        }
+        return $code;
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace controller;
 
+use model\Sessions;
 use model\Texts;
 use model\Users;
 
@@ -9,15 +10,15 @@ class TextsController extends FrontController
 {
     public function indexAction()
     {
-        $isAuth = Users::isAuth();
+        $user = new Users();
+        $session = new Sessions();
+        $isAuth = $user->isAuth($session, $this->request);
 
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . 'texts';
             $this->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
-
-        $user = new Users();
 
         if(isset($_GET['auth'])) {
             if($_GET['auth'] == 'off') {
@@ -28,7 +29,7 @@ class TextsController extends FrontController
         }
         $staticTexts = new Texts();
         $texts = $staticTexts->all();
-        $cUser = $user->getByLogin($this->request->session('login'));
+        $cUser = $user->getBySid($this->request->session('sid'));
 
         $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->sidebar = $this->build('v_left');
@@ -39,7 +40,9 @@ class TextsController extends FrontController
 
     public function addAction()
     {
-        $isAuth = Users::isAuth();
+        $user = new Users();
+        $session = new Sessions();
+        $isAuth = $user->isAuth($session, $this->request);
 
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . 'add-text';
@@ -50,8 +53,7 @@ class TextsController extends FrontController
         $staticTexts = new Texts();
         $alias = '';
         $content = '';
-        $user = new Users();
-        $cUser = $user->getByLogin($this->request->session('login'));
+        $cUser = $user->getBySid($this->request->session('sid'));
 
         if($this->request->isPost()) {
 
@@ -81,7 +83,9 @@ class TextsController extends FrontController
 
     public function editAction()
     {
-        $isAuth = Users::isAuth();
+        $user = new Users();
+        $session = new Sessions();
+        $isAuth = $user->isAuth($session, $this->request);
 
         $id = $this->request->get('id');
         $err404 = false;
@@ -102,8 +106,7 @@ class TextsController extends FrontController
         $errors = '';
         $alias = '';
         $content = '';
-        $user = new Users();
-        $cUser = $user->getByLogin($this->request->session('login'));
+        $cUser = $user->getBySid($this->request->session('sid'));
 
         if(!$text) {
             $errors = $text;
@@ -130,7 +133,9 @@ class TextsController extends FrontController
 
     public function deleteAction()
     {
-        $isAuth = Users::isAuth();
+        $user = new Users();
+        $session = new Sessions();
+        $isAuth = $user->isAuth($session, $this->request);
         unset($_SESSION['returnUrl']);
 
         if(!$isAuth) {
