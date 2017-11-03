@@ -1,0 +1,43 @@
+
+05:43:11
+::1
+
+core\Exceptions\ValidateException: Длина поля content не может быть меньше 20 in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(95): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(62): controller\PostController->addAction()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+06:06:11
+::1
+
+core\Exceptions\ValidateException: Введен неверный пароль! in /Applications/MAMP/htdocs/blog-php3/core/User.php:53
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/model/Users.php(50): core\User->login(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(57): model\Users->login(Array, Object(model\Sessions), Object(core\Request))
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(62): controller\UserController->loginAction()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+06:43:11
+::1
+
+core\Exceptions\ValidateException: Такого пользователя не существует! in /Applications/MAMP/htdocs/blog-php3/core/User.php:49
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/model/Users.php(50): core\User->login(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(56): model\Users->login(Array, Object(model\Sessions), Object(core\Request))
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(62): controller\UserController->loginAction()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+06:43:11
+::1
+
+core\Exceptions\ValidateException: Введен неверный пароль! in /Applications/MAMP/htdocs/blog-php3/core/User.php:53
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/model/Users.php(50): core\User->login(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(56): model\Users->login(Array, Object(model\Sessions), Object(core\Request))
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(62): controller\UserController->loginAction()
+#3 {main}
+-------------------------------------------------------------------------------------

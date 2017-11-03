@@ -16,10 +16,10 @@ class Cookie
     }
 
     public static function set($name, $value, $time){
-        setcookie($name, $value, strtotime("+$time"), '/');
+        setcookie($name, $value, time() + $time, '/');
     }
 
     public static function del($name){
-        setcookie($name, '', time() - 1);
+        setcookie($name, '', 1, '/');
     }
 }

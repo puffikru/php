@@ -22,7 +22,7 @@ class TextsController extends FrontController
 
         if(isset($_GET['auth'])) {
             if($_GET['auth'] == 'off') {
-                $user->logout();
+                $user->logout($session, $this->request);
                 $this->redirect(ROOT . "texts");
                 exit();
             }

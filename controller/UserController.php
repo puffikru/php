@@ -3,6 +3,7 @@
 namespace controller;
 
 
+use core\Cookie;
 use core\Exceptions\ValidateException;
 use model\Sessions;
 use model\Texts;
@@ -14,10 +15,10 @@ class UserController extends FrontController
     {
         $text = new Texts();
         $errors = '';
+        $mUser = new Users();
+        $mSession = new Sessions();
 
         if($this->request->isPost()) {
-            $mUser = new Users();
-            $mSession = new Sessions();
 
             try {
                 $mUser->signUp($this->request->post(), $mSession, $this->request);
@@ -39,6 +40,8 @@ class UserController extends FrontController
     {
         $text = new Texts();
         $errors = '';
+        $mUser = new Users();
+        $mSession = new Sessions();
 
         /*if(isset($_GET['auth'])) {
             if($_GET['auth'] === 'off') {
@@ -48,8 +51,7 @@ class UserController extends FrontController
         }*/
 
         if($this->request->isPost()){
-            $mUser = new Users();
-            $mSession = new Sessions();
+
             try {
                 $mUser->login($this->request->post(), $mSession, $this->request);
                 $this->redirect(ROOT);
@@ -67,9 +69,9 @@ class UserController extends FrontController
 
     public function logoutAction()
     {
-        //TODO: Сделать деавторизацию
-        $user = new Users();
-        $user->logout();
+        $mUser = new Users();
+        $session = new Sessions();
+        $mUser->logout($session, $this->request);
         $this->redirect(ROOT);
     }
 }

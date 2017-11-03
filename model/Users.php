@@ -68,18 +68,9 @@ class Users extends BaseModel
         return $query[0] ?? null;
     }
 
-    public function logout()
+    public function logout(Sessions $session, Request $request)
     {
-        /*$session = new Session();
-        $session->del('login');
-        $session->del('pass');
-        $session->del('isAuth');
-        Cookie::del('login');
-        Cookie::del('pass');*/
+        $user = new User($this, $session, $request);
+        $user->logOut();
     }
-
-    /*private function getHash($pass){
-        return hash('sha256', $pass . SALT);
-    }*/
-
 }

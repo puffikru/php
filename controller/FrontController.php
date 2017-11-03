@@ -38,7 +38,7 @@ class FrontController
     }
 
     public function redirect($dest){
-        header('Location' . $dest);
+        header('Location:' . $dest);
     }
 
     protected function build($fname, $params = [])

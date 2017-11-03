@@ -72,7 +72,6 @@ class User
 
     public function isAuth()
     {
-        $user = false;
         $sid = $this->request->session('sid');
         $login = $this->request->cookie('login');
 
@@ -82,23 +81,22 @@ class User
 
         if($sid){
             $user = $this->mUser->getBySid($sid);
-        }
-
-        if($user){
-            $this->mSession->edit($user['id_user'], [
-                'time_last' => date("Y-m-d H:i:s")
-            ]);
+            if($user){
+                $this->mSession->edit($user['id_user'], [
+                    'time_last' => date("Y-m-d H:i:s")
+                ]);
+                return true;
+            }
         }
 
         if($login){
             $user = $this->mUser->getByLogin($login);
+            if($user){
+                $this->openSession($user['id_user']);
+                return true;
+            }
         }
-
-        if($user){
-            $this->openSession($user['id_user']);
-        }
-
-        return $user;
+        return false;
     }
 
     private function openSession($id_user)
@@ -127,16 +125,26 @@ class User
         return false;
     }
 
-    private function getHash($pass){
+    private function getHash($pass)
+    {
         return hash('sha256', $pass . SALT);
     }
 
-    private function generateSid($number = 10){
+    private function generateSid($number = 10)
+    {
         $pattern = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         $code = '';
         for($i = 0; $i < $number; $i++){
             $code .= $pattern[mt_rand(0, strlen($pattern) - 1)];
         }
         return $code;
+    }
+
+    public function logOut()
+    {
+        $session = new Session();
+        $session->del('sid');
+        Cookie::del('login');
+        Cookie::del('pass');
     }
 }

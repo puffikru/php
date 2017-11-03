@@ -19,13 +19,13 @@ class PostController extends FrontController
         $session = new Sessions();
         $isAuth = $user->isAuth($session, $this->request);
 
-        if(isset($_GET['auth'])) {
+        /*if(isset($_GET['auth'])) {
             if($_GET['auth'] == 'off') {
-                $user->logout();
+                $user->logout($session, $this->request);
                 $this->redirect(ROOT);
                 exit();
             }
-        }
+        }*/
 
         $messages = new Messages();
         $articles = $messages->getAll();
@@ -75,6 +75,8 @@ class PostController extends FrontController
         $session = new Sessions();
         $isAuth = $users->isAuth($session, $this->request);
         $text = new Texts();
+        $error = '';
+
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . 'add';
             $this->redirect(ROOT . 'user/login?auth=off');
@@ -92,7 +94,6 @@ class PostController extends FrontController
             try {
                 $id = $messages->add(['title' => $title, 'content' => $content ?? '', 'id_user' => $user['id_user']]);
                 $this->redirect(ROOT . "post/$id");
-                exit();
             }catch(ValidateException $e){
                 $error = $e->getMessage();
             }
