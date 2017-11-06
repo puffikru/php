@@ -39,6 +39,8 @@ class User
             'login' => $fields['login'],
             'pass' => $this->getHash($fields['pass'])
         ]);
+        unset($fields['name']);
+        $this->login($fields);
     }
 
     public function login(array $fields)
@@ -49,7 +51,7 @@ class User
             throw new ValidateException('Такого пользователя не существует!');
         }
 
-        if($this->getHash($fields['password']) !== $user['pass']){
+        if($this->getHash($fields['pass']) !== $user['pass']){
             throw new ValidateException('Введен неверный пароль!');
         }
 
@@ -58,7 +60,8 @@ class User
             Cookie::set('pass', $this->getHash($fields['password']), 3600 * 24 * 7);
         }
 
-        $this->openSession($user['id_user']);
+        $token = $this->generateSid();
+        $this->mSession->openSession($user['id_user'], $token);
 
         if(isset($_SESSION['returnUrl'])) {
             header('Location:' . $_SESSION['returnUrl']);
@@ -82,39 +85,23 @@ class User
         if($sid){
             $user = $this->mUser->getBySid($sid);
             if($user){
-                $this->mSession->edit($user['id_user'], [
+                $this->mSession->edit($user['id_session'], [
                     'time_last' => date("Y-m-d H:i:s")
                 ]);
                 return true;
             }
-        }
+        }else {
 
-        if($login){
-            $user = $this->mUser->getByLogin($login);
-            if($user){
-                $this->openSession($user['id_user']);
-                return true;
+            if($login) {
+                $user = $this->mUser->getByLogin($login);
+                if($user) {
+                    $token = $this->generateSid();
+                    $this->mSession->openSession($user['id_user'], $token);
+                    return true;
+                }
             }
         }
         return false;
-    }
-
-    private function openSession($id_user)
-    {
-        $sid = $this->generateSid();
-
-        $now = date("Y-m-d H:i:s");
-        $obj = [];
-        $obj['id_user'] = $id_user;
-        $obj['sid'] = $sid;
-        $obj['time_start'] = $now;
-        $obj['time_last'] = $now;
-        $this->db->insert('sessions', $obj);
-
-        $session = new Session();
-        $session->set('sid', $sid);
-
-        return $sid;
     }
 
     private function comparePass($password)

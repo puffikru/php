@@ -2,8 +2,6 @@
 
 namespace controller;
 
-
-use core\Cookie;
 use core\Exceptions\ValidateException;
 use model\Sessions;
 use model\Texts;
@@ -42,6 +40,7 @@ class UserController extends FrontController
         $errors = '';
         $mUser = new Users();
         $mSession = new Sessions();
+        $mSession->clearSessions();
 
         /*if(isset($_GET['auth'])) {
             if($_GET['auth'] === 'off') {

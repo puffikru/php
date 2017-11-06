@@ -1,0 +1,12 @@
+
+12:58:11
+::1
+
+core\Exceptions\ValidateException: Введен неверный пароль! in /Applications/MAMP/htdocs/blog-php3/core/User.php:55
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/User.php(43): core\User->login(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/model/Users.php(39): core\User->signUp(Array)
+#2 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(22): model\Users->signUp(Array, Object(model\Sessions), Object(core\Request))
+#3 /Applications/MAMP/htdocs/blog-php3/index.php(62): controller\UserController->signUpAction()
+#4 {main}
+-------------------------------------------------------------------------------------
