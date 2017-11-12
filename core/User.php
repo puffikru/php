@@ -8,7 +8,6 @@
 
 namespace core;
 
-
 use core\Exceptions\ValidateException;
 use model\Sessions;
 use model\Users;
