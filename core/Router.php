@@ -23,6 +23,7 @@ class Router
     }
 
     public function init(string $uri, $params){
+        //TODO: Доделать обработку методов GET и POST
 
         $type = $this->getType($params['REQUEST_METHOD'], $params['QUERY_STRING']);
         $arr = explode(':', $uri);
