@@ -8,8 +8,113 @@
 
 namespace core;
 
-
 class Router
+{
+    private $routes = [];
+
+    public function addRoute($uri, \Closure $closure){
+        $this->routes[$uri] = $closure;
+    }
+
+    public function getAllRoutes(){
+        debug($this->routes);
+    }
+
+    public function init($uri){
+        $parsedUri = $this->parseUri($uri);
+        $method = $this->checkRequestMethod();
+
+        switch($method){
+            case "GET":
+                $this->get($uri, $this->routes[$parsedUri['uri']], [$parsedUri['user']]);
+                break;
+            case "POST":
+                $this->post($uri, $this->routes[$parsedUri['uri']], [$parsedUri['user']]);
+                break;
+            default:
+                die('Error method');
+        }
+    }
+
+    private function checkRequestMethod(){
+        $method = $_SERVER['REQUEST_METHOD'];
+        return $method;
+    }
+
+    private function get($uri, \Closure $closure, $params  = []){
+        echo "Запрос направлени методом GET <br>";
+        echo $uri . "<br>";
+        call_user_func_array($closure, $params);
+    }
+
+    private function post($uri, \Closure $closure, $params = []){
+        echo "Запрос направлен методом POST <br>";
+        echo $uri . "<br>";
+        call_user_func_array($closure, $params);
+    }
+
+    private function parseUri($uri){
+        $getName = explode(':', $uri);
+        $arr = [];
+        if(count($getName) > 1){
+            $arr['user'] = $getName[1];
+            $uri_string = explode('/', $getName[0]);
+            $end = count($uri_string) - 1;
+            if($uri_string[$end] === ''){
+                unset($uri_string[$end]);
+            }
+            if($uri_string[0] === ''){
+                unset($uri_string[0]);
+            }
+            $arr['uri'] = $uri_string[1];
+        }else{
+            $uri_string = explode('/', $uri);
+            $end = count($uri_string) - 1;
+            if($uri_string[$end] === ''){
+                unset($uri_string[$end]);
+            }
+            if($uri_string[0] === ''){
+                unset($uri_string[0]);
+            }
+            $arr['uri'] = $uri_string[1];
+        }
+
+        return $arr ?? null;
+    }
+
+    public static function greeting($user){
+        if($user){
+            echo "Привет " . ucfirst($user) . "!";
+        }else{
+            echo "Привет гость!";
+        }
+    }
+}
+
+$route = new Router();
+$route->addRoute('post', function($user = ''){
+    echo "Список статей <br>";
+    Router::greeting($user);
+});
+
+$route->addRoute('texts', function($user = ''){
+    echo "Список текстов <br>";
+    Router::greeting($user);
+});
+
+$route->addRoute('user', function($user = ''){
+    echo "Пользователи <br>";
+    Router::greeting($user);
+});
+
+$route->getAllRoutes();
+
+$query = $_SERVER['REQUEST_URI'];
+
+$route->init($query);
+
+
+/*class Router
 {
     private $routes = [];
     protected $user;
@@ -33,9 +138,9 @@ class Router
             $this->user = $arr[1];
         }
 
-        /*if(!$type){
+        if(!$type){
             return false;
-        }*/
+        }
 
         $data = [];
 
@@ -118,4 +223,4 @@ echo $router->init('/', $_SERVER);
 echo $router->init('/posts/', $_SERVER);
 echo $router->init('/posts/6', $_SERVER);
 $query  = $_SERVER['REQUEST_URI'];
-echo $router->init($query, $_SERVER);
+echo $router->init($query, $_SERVER);*/
