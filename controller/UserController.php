@@ -3,6 +3,8 @@
 namespace controller;
 
 use core\Exceptions\ValidateException;
+use core\Forms\FormBuilder;
+use forms\SignUp;
 use model\Sessions;
 use model\Texts;
 use model\Users;
@@ -15,14 +17,18 @@ class UserController extends FrontController
         $errors = '';
         $mUser = new Users();
         $mSession = new Sessions();
+        $form = new SignUp();
+        $formBuilder = new FormBuilder($form);
 
         if($this->request->isPost()) {
 
             try {
-                $mUser->signUp($this->request->post(), $mSession, $this->request);
+                //$mUser->signUp($this->request->post(), $mSession, $this->request);
+                $mUser->signUp($form->handleRequest($this->request), $mSession, $this->request);
                 $this->redirect(ROOT);
-            }catch(\Exception $e) {
-                $errors = $e->getMessage();
+            }catch(ValidateException $e) {
+                //$errors = $e->getMessage();
+                $form->addErrors($e->getErrors());
             }
 
         }
@@ -31,7 +37,7 @@ class UserController extends FrontController
         $this->sidebar = $this->build('v_left');
         $this->texts = $text->getTexts() ?? null;
         $this->title = 'Регистрация';
-        $this->content = $this->build('v_signup', ['errors' => $errors]);
+        $this->content = $this->build('v_signup', ['form' => $formBuilder]);
     }
 
     public function loginAction()

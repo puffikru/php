@@ -1,13 +1,7 @@
-<form method="post">
-    Имя:<br>
-    <input type="text" name="name" placeholder="Введите ваше имя"><br>
-    Email:<br>
-    <input type="text" name="login" placeholder="Введите ваш email"><br>
-    Пароль:<br>
-    <input type="password" name="pass" placeholder="Введите пароль"><br>
-    Пароль:<br>
-    <input type="password" name="pass_confirm" placeholder="Введите пароль"><br><br>
-    <input type="submit" value="Зарегистрироваться">
+<form <?=$form->method();?> class="form sign-up">
+    <?=$form->inputSign();?>
+    <? foreach($form->fields() as $field):?>
+            <?=$field;?>
+    <? endforeach;?>
 </form>
-<a href="<?= ROOT ?>">На главную</a><br><br>
-<?= $errors; ?>
+<a href="<?= ROOT;?>">На главную</a><br><br>

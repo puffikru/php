@@ -5,6 +5,7 @@ define('CHARSET', 'UTF-8');
 define('LOG_DIR', 'logs');
 define('DEV_MODE', 1);
 define('SALT','fa47wyt');
+define('FORM_SIGN', '/#@=@/');
 
 // locale is RU excluding numeric
 setlocale(LC_ALL, 'ru_RU.UTF-8');

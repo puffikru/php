@@ -188,6 +188,19 @@ em { color: #5d6d1e; }
     background: url(../images/templatemo_menu_hover.png) bottom no-repeat;
 }
 
+#templatemo_right_column form.form .sign-up{
+    display: flex;
+    flex-direction: column;
+}
+
+#templatemo_right_column form.form .sign-up input{
+    padding: 5px;
+    width: 50%;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    margin: 0 auto 10px auto;
+}
+
 /* end of menu */
 
 #templatemo_left_column {
@@ -433,12 +446,12 @@ em { color: #5d6d1e; }
     margin-bottom: 15px;
 }
 
-#comment_form form input {
+/*#comment_form form input {
     margin-top: 5px;
     width: 200px;
     background:#FFFFFF none repeat fixed 0 0;
     border: 1px solid #CCC;
-}
+}*/
 
 #comment_form .submit_btn {
     width: 80px;
