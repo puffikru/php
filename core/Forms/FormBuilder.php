@@ -51,15 +51,22 @@ class FormBuilder
             unset($attributes['errors']);
             $errors = '<div>' . implode('</div><div>', $errors) . '</div>';
         }
+        $label = '';
+        if(isset($attributes['label'])){
+            $label = $attributes['label'] . ':' ?? '';
+            unset($attributes['label']);
+        }
 
-        $label = $attributes['label'] ?? null;
-
-        return sprintf('%s <input %s>%s', $label, $this->buildAttributes($attributes), $errors);
+        return sprintf('<label><span>%s</span><input %s></label>%s', $label, $this->buildAttributes($attributes), $errors);
     }
 
     public function inputSign()
     {
-        return $this->input(['type' => 'hidden', 'name' => 'sign', 'value' => $this->form->getSign()]);
+        return $this->input([
+            'type' => 'hidden',
+            'name' => 'sign',
+            'value' => $this->form->getSign()
+        ]);
     }
 
     public function buildAttributes(array $attributes)
