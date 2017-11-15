@@ -29,7 +29,7 @@ if(isset($params[0])) {
     }
 }
 
-if(isset($params[1]) && $params !== '') {
+if(isset($params[1]) && $params !== ''){
     if(!is_numeric($params[1])) {
         $exp = explode('-', $params[1]);
         for($i = 1; $i < count($exp); $i++){
@@ -61,7 +61,7 @@ try {
     $controller->$action();
     $controller->render();
 }catch(\core\Exceptions\Error404 $e) {
-    header("HTTP/1.0 404 Not Found");
+    //header("HTTP/1.0 404 Not Found");
     $controller = new controller\PostController($request);
     if(DEV_MODE){
         $controller->error404($e);

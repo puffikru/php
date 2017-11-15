@@ -153,3 +153,39 @@ Stack trace:
 #4 /Applications/MAMP/htdocs/blog-php3/index.php(22): spl_autoload_call('core\\tags\\PairT...')
 #5 {main}
 -------------------------------------------------------------------------------------
+
+09:02:11
+::1
+
+core\Exceptions\Error404: Undefined action indexAction in /Applications/MAMP/htdocs/blog-php3/controller/FrontController.php:32
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/index.php(88): controller\FrontController->__call('indexAction', Array)
+#1 {main}
+-------------------------------------------------------------------------------------
+
+09:02:11
+::1
+
+core\Exceptions\Error404: Undefined action indexAction in /Applications/MAMP/htdocs/blog-php3/controller/FrontController.php:32
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/index.php(88): controller\FrontController->__call('indexAction', Array)
+#1 {main}
+-------------------------------------------------------------------------------------
+
+09:03:11
+::1
+
+core\Exceptions\Error404: Undefined action indexAction in /Applications/MAMP/htdocs/blog-php3/controller/FrontController.php:32
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/index.php(88): controller\FrontController->__call('indexAction', Array)
+#1 {main}
+-------------------------------------------------------------------------------------
+
+09:03:11
+::1
+
+core\Exceptions\Error404: Undefined action indexAction in /Applications/MAMP/htdocs/blog-php3/controller/FrontController.php:32
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/index.php(88): controller\FrontController->__call('indexAction', Array)
+#1 {main}
+-------------------------------------------------------------------------------------
