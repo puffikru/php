@@ -6,7 +6,7 @@
  * Time: 3:57
  */
 
-namespace tags;
+namespace core\tags;
 
 
 class PairTag extends Tag
@@ -21,5 +21,11 @@ class PairTag extends Tag
 
     public function html($str){
         $this->inner_html = $str;
+        return $this;
+    }
+
+    public function render(){
+        $str = parent::render();
+        return str_replace('%html%', $this->inner_html, $str);
     }
 }

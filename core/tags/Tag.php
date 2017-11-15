@@ -6,7 +6,7 @@
  * Time: 3:47
  */
 
-namespace tags;
+namespace core\tags;
 
 
 abstract class Tag
@@ -22,6 +22,7 @@ abstract class Tag
 
     public function attr($name, $value){
         $this->attributes[$name] = $value;
+        return $this;
     }
 
     public function render(){
@@ -38,7 +39,7 @@ abstract class Tag
         }
 
         $tag = str_replace('%attr%', $str_pair, $tag);
-        return $tag;
 
+        return $tag;
     }
 }

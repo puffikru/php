@@ -1,0 +1,155 @@
+
+06:39:11
+::1
+
+core\Exceptions\Error404: class tags\PairTag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('tags\\PairTag')
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(23): spl_autoload_call('tags\\PairTag')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+06:39:11
+::1
+
+core\Exceptions\Error404: class tags\PairTag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('tags\\PairTag')
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(23): spl_autoload_call('tags\\PairTag')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+06:41:11
+::1
+
+core\Exceptions\Error404: class tags\PairTag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('tags\\PairTag')
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(23): spl_autoload_call('tags\\PairTag')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+06:41:11
+::1
+
+core\Exceptions\Error404: class tags\PairTag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('tags\\PairTag')
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(23): spl_autoload_call('tags\\PairTag')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+06:43:11
+::1
+
+core\Exceptions\Error404: class tags\PairTag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('tags\\PairTag')
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(23): spl_autoload_call('tags\\PairTag')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+06:43:11
+::1
+
+core\Exceptions\Error404: class tags\PairTag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('tags\\PairTag')
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(23): spl_autoload_call('tags\\PairTag')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+06:45:11
+::1
+
+core\Exceptions\Error404: class tags\PairTag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('tags\\PairTag')
+#1 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(19): spl_autoload_call('tags\\PairTag')
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(62): controller\UserController->signUpAction()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+06:47:11
+::1
+
+core\Exceptions\Error404: class tags\SingleTag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('tags\\SingleTag')
+#1 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(20): spl_autoload_call('tags\\SingleTag')
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(62): controller\UserController->signUpAction()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+06:47:11
+::1
+
+core\Exceptions\Error404: class tags\SingleTag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('tags\\SingleTag')
+#1 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(20): spl_autoload_call('tags\\SingleTag')
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(62): controller\UserController->signUpAction()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+06:48:11
+::1
+
+core\Exceptions\Error404: class SingleTag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('SingleTag')
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(22): spl_autoload_call('SingleTag')
+#2 {main}
+-------------------------------------------------------------------------------------
+
+06:50:11
+::1
+
+core\Exceptions\Error404: class tags\Tag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('tags\\Tag')
+#1 /Applications/MAMP/htdocs/blog-php3/core/tags/PairTag.php(14): spl_autoload_call('tags\\Tag')
+#2 /Applications/MAMP/htdocs/blog-php3/autoload.php(6): include_once('/Applications/M...')
+#3 [internal function]: {closure}('core\\tags\\PairT...')
+#4 /Applications/MAMP/htdocs/blog-php3/index.php(22): spl_autoload_call('core\\tags\\PairT...')
+#5 {main}
+-------------------------------------------------------------------------------------
+
+06:50:11
+::1
+
+core\Exceptions\Error404: class tags\Tag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('tags\\Tag')
+#1 /Applications/MAMP/htdocs/blog-php3/core/tags/PairTag.php(14): spl_autoload_call('tags\\Tag')
+#2 /Applications/MAMP/htdocs/blog-php3/autoload.php(6): include_once('/Applications/M...')
+#3 [internal function]: {closure}('core\\tags\\PairT...')
+#4 /Applications/MAMP/htdocs/blog-php3/index.php(22): spl_autoload_call('core\\tags\\PairT...')
+#5 {main}
+-------------------------------------------------------------------------------------
+
+06:52:11
+::1
+
+core\Exceptions\Error404: class tags\Tag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('tags\\Tag')
+#1 /Applications/MAMP/htdocs/blog-php3/core/tags/PairTag.php(14): spl_autoload_call('tags\\Tag')
+#2 /Applications/MAMP/htdocs/blog-php3/autoload.php(6): include_once('/Applications/M...')
+#3 [internal function]: {closure}('core\\tags\\PairT...')
+#4 /Applications/MAMP/htdocs/blog-php3/index.php(22): spl_autoload_call('core\\tags\\PairT...')
+#5 {main}
+-------------------------------------------------------------------------------------
+
+06:52:11
+::1
+
+core\Exceptions\Error404: class tags\Tag not found! in /Applications/MAMP/htdocs/blog-php3/autoload.php:8
+Stack trace:
+#0 [internal function]: {closure}('tags\\Tag')
+#1 /Applications/MAMP/htdocs/blog-php3/core/tags/PairTag.php(14): spl_autoload_call('tags\\Tag')
+#2 /Applications/MAMP/htdocs/blog-php3/autoload.php(6): include_once('/Applications/M...')
+#3 [internal function]: {closure}('core\\tags\\PairT...')
+#4 /Applications/MAMP/htdocs/blog-php3/index.php(22): spl_autoload_call('core\\tags\\PairT...')
+#5 {main}
+-------------------------------------------------------------------------------------

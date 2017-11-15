@@ -6,7 +6,7 @@
  * Time: 3:57
  */
 
-namespace tags;
+namespace core\tags;
 
 
 class SingleTag extends Tag
