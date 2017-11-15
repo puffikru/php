@@ -188,6 +188,7 @@ em { color: #5d6d1e; }
     background: url(../images/templatemo_menu_hover.png) bottom no-repeat;
 }
 
+
 /* end of menu */
 
 #templatemo_left_column {
@@ -433,12 +434,12 @@ em { color: #5d6d1e; }
     margin-bottom: 15px;
 }
 
-#comment_form form input {
+/*#comment_form form input {
     margin-top: 5px;
     width: 200px;
     background:#FFFFFF none repeat fixed 0 0;
     border: 1px solid #CCC;
-}
+}*/
 
 #comment_form .submit_btn {
     width: 80px;
@@ -581,4 +582,51 @@ em { color: #5d6d1e; }
 
 #templatemo_right_column .texts th{
     color: #ca0d11;
+}
+
+.sign-up, .sign-in{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.sign-up .line, .sign-in .line{
+    margin: 10px;
+}
+
+.sign-up .line label, .sign-in .line label{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sign-up .line label span, .sign-in .line label span{
+    margin: 10px 0;
+    flex-basis: 100px;
+    font-size: 16px;
+    font-family: Helevetica,Arial,sans-serif;
+}
+
+.sign-up input, .sign-in input{
+    flex-grow: 1;
+    flex-basis: 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.sign-in input[type=checkbox]{
+    flex-basis: 0;
+    flex-grow: 0;
+    border: none;
+}
+
+.sign-up input[type=submit], .sign-in input[type=submit]{
+    background-color: #38b21a;
+    color: #fff;
+}
+
+.sign-up input[type=submit]:hover, .sign-in input[type=submit]:hover{
+    background-color: #3aa91a;
+    color: #fff;
 }

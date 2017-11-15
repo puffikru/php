@@ -1,10 +1,9 @@
-<form method="post">
-    Логин<br>
-    <input type="text" name="login" placeholder="Введите логин"><br>
-    Пароль<br>
-    <input type="password" name="pass" placeholder="Введите пароль"><br>
-    <input type="checkbox" name="remember">Запомнить<br>
-    <input type="submit" value="Войти">
+<form <?=$form->method();?> class="sign-in">
+    <?=$form->inputSign();?>
+    <? foreach($form->fields() as $field):?>
+        <div class="line">
+            <?=$field;?>
+        </div>
+    <? endforeach;?>
 </form>
-<a href="<?= ROOT ?>">На главную</a><br><br>
-<?= $errors; ?>
+<a href="<?= ROOT;?>">На главную</a>

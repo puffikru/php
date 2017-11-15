@@ -17,7 +17,6 @@ $controller = '';
 $action = 'indexAction';
 $id = '';
 
-
 if(isset($params[0]) && $params[0] !== '') {
     $controller = trim('controller\\' . ucfirst($params[0]) . 'Controller');
 }else {

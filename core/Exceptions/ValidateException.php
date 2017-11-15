@@ -13,9 +13,17 @@ use Throwable;
 
 class ValidateException extends BaseException
 {
-    public function __construct($message = "", $code = 0, Throwable $previous = null)
+    private $errors;
+
+    public function __construct($message = "validation exception", $code = 403, array $errors, Throwable $previous = null)
     {
         $this->dest .= '/validate';
         parent::__construct($message, $code, $previous);
+        $this->errors = $errors;
+    }
+
+    public function getErrors()
+    {
+        return $this->errors;
     }
 }

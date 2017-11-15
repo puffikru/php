@@ -3,6 +3,9 @@
 namespace controller;
 
 use core\Exceptions\ValidateException;
+use core\Forms\FormBuilder;
+use forms\SignIn;
+use forms\SignUp;
 use model\Sessions;
 use model\Texts;
 use model\Users;
@@ -15,14 +18,18 @@ class UserController extends FrontController
         $errors = '';
         $mUser = new Users();
         $mSession = new Sessions();
+        $form = new SignUp();
+        $formBuilder = new FormBuilder($form);
 
         if($this->request->isPost()) {
 
             try {
-                $mUser->signUp($this->request->post(), $mSession, $this->request);
+                //$mUser->signUp($this->request->post(), $mSession, $this->request);
+                $mUser->signUp($form->handleRequest($this->request), $mSession, $this->request);
                 $this->redirect(ROOT);
-            }catch(\Exception $e) {
-                $errors = $e->getMessage();
+            }catch(ValidateException $e) {
+                //$errors = $e->getMessage();
+                $form->addErrors($e->getErrors());
             }
 
         }
@@ -31,7 +38,7 @@ class UserController extends FrontController
         $this->sidebar = $this->build('v_left');
         $this->texts = $text->getTexts() ?? null;
         $this->title = 'Регистрация';
-        $this->content = $this->build('v_signup', ['errors' => $errors]);
+        $this->content = $this->build('v_signup', ['form' => $formBuilder]);
     }
 
     public function loginAction()
@@ -41,6 +48,8 @@ class UserController extends FrontController
         $mUser = new Users();
         $mSession = new Sessions();
         $mSession->clearSessions();
+        $form = new SignIn();
+        $formBuilder = new FormBuilder($form);
 
         /*if(isset($_GET['auth'])) {
             if($_GET['auth'] === 'off') {
@@ -52,15 +61,17 @@ class UserController extends FrontController
         if($this->request->isPost()){
 
             try {
-                $mUser->login($this->request->post(), $mSession, $this->request);
+                //$mUser->login($this->request->post(), $mSession, $this->request);
+                $mUser->login($form->handleRequest($this->request), $mSession, $this->request);
                 $this->redirect(ROOT);
             }catch(ValidateException $e){
-                $errors = $e->getMessage();
+                //$errors = $e->getMessage();
+                $form->addErrors($e->getErrors());
             }
         }
 
         $this->menu = $this->build('v_menu');
-        $this->content = $this->build('v_login', ['errors' => $errors]);
+        $this->content = $this->build('v_login', ['form' => $formBuilder]);
         $this->sidebar = $this->build('v_left');
         $this->texts = $text->getTexts() ?? null;
         $this->title = 'Авторизация';
