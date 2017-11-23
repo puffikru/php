@@ -13,9 +13,9 @@ class PostController extends FrontController
 {
     public function indexAction()
     {
-        $text = new Texts();
+        $text = $this->container->get('model.texts');
         unset($_SESSION['returnUrl']);
-        $user = new Users();
+        $user = $this->container->get('model.user');
         //$session = new Sessions();
         $session = $this->container->get('model.session');
         $isAuth = $user->isAuth($session, $this->request);
@@ -44,20 +44,20 @@ class PostController extends FrontController
 
     public function oneAction()
     {
-        $user = new Users();
-        $session = new Sessions();
+        $user = $this->container->get('model.user');
+        $session = $this->container->get('model.session');
         $isAuth = $user->isAuth($session, $this->request);
 
         $id = $this->request->get('id');
 
-        $text = new Texts();
+        $text = $this->container->get('model.texts');
         $cUser = $user->getBySid($this->request->session('sid'));
 
 
         if($id === null || $id == '' || !preg_match('/^[0-9]+$/', $id)) {
             throw new Error404("Статьи номер $id не существует!");
         }else {
-            $messages = new Messages();
+            $messages = $this->container->get('model.post');
             $content = $messages->one($id);
 
             if(!$content) {

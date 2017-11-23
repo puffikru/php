@@ -12,6 +12,7 @@ namespace core\providers;
 use core\ServiceContainer;
 use model\Messages;
 use model\Sessions;
+use model\Texts;
 use model\Users;
 
 class ModelProvider implements ProviderInterface
@@ -28,6 +29,10 @@ class ModelProvider implements ProviderInterface
 
         $container->register('model.session', function(){
             return new Sessions();
+        });
+
+        $container->register('model.texts', function(){
+            return new Texts();
         });
     }
 }
