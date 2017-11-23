@@ -1615,3 +1615,70 @@ Stack trace:
 #2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
 #3 {main}
 -------------------------------------------------------------------------------------
+
+12:54:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:60
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(155): model\BaseModel->edit('45', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(44): controller\PostController->editAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+12:58:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/core/User.php:50
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/model/Users.php(63): core\User->login(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(65): model\Users->login(Array, Object(model\Sessions), Object(core\Request))
+#2 /Applications/MAMP/htdocs/blog-php3/core/Application.php(44): controller\UserController->loginAction()
+#3 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+12:58:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/Users.php:59
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(65): model\Users->login(Array, Object(model\Sessions), Object(core\Request))
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(44): controller\UserController->loginAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+13:10:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(97): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(44): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+14:42:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/Users.php:59
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(65): model\Users->login(Array, Object(model\Sessions), Object(core\Request))
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(44): controller\UserController->loginAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+15:15:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/Users.php:59
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/UserController.php(65): model\Users->login(Array, Object(model\Sessions), Object(core\Request))
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(44): controller\UserController->loginAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------

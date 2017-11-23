@@ -33,15 +33,14 @@ class FormBuilder
 
     public function fields()
     {
+        $inputs = [];
         foreach($this->form->getFields() as $field) {
 
             if($field['tag'] === 'input') {
-                $inputs[] = $this->input($field);
+                $inputs[] = $this->input($field, $this->form->getValues()['title']);
             }elseif($field['tag'] === 'textarea'){
-                $label = $field['label'] . ':' ?? '';
-                $span = (new PairTag('span'))->html($label)->render();
-                $textarea = (new PairTag('textarea'))->attr('name', 'content')->attr('placeholder', $field['placeholder'])->attr('rows', '8')->render();
-                $tag_label = (new PairTag('label'))->attr('class', 'textarea')->html($span . $textarea)->render();
+
+                $tag_label = $this->textArea($field);
                 if(isset($field['errors'])){
                     $errors = $field['errors'];
                     unset($field['errors']);
@@ -57,7 +56,7 @@ class FormBuilder
         return $inputs;
     }
 
-    public function input(array $attributes)
+    public function input(array $attributes, $value = '')
     {
         $errors = '';
 
@@ -66,7 +65,7 @@ class FormBuilder
             $attributes['class'] = trim(sprintf('%s error', $class));
             $errors = $attributes['errors'];
             unset($attributes['errors']);
-            //$errors = '<div>' . implode('</div><div>', $errors) . '</div>';
+
             $errors = '<div class="login-error">' . $errors . '</div>';
         }
         $label = '';
@@ -76,7 +75,22 @@ class FormBuilder
         }
         unset($attributes['tag']);
 
+        if($attributes['type'] !== 'submit' && $attributes['type'] !== 'hidden') {
+            $attributes['value'] = $value;
+        }
+
         return sprintf('<label><span>%s</span><input %s></label>%s', $label, $this->buildAttributes($attributes), $errors);
+    }
+
+    public function textArea($field)
+    {
+        $label = $field['label'] . ':' ?? '';
+
+        $span = (new PairTag('span'))->html($label)->render();
+
+        $textarea = (new PairTag('textarea'))->attr('name', 'content')->attr('placeholder', $field['placeholder'])->attr('rows', '8')->html($this->form->getValues()['content'])->render();
+
+        return $tag_label = (new PairTag('label'))->attr('class', 'textarea')->html($span . $textarea)->render();
     }
 
     public function inputSign()
@@ -97,4 +111,5 @@ class FormBuilder
 
         return implode(' ', $arr);
     }
+
 }

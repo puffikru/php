@@ -17,6 +17,7 @@ abstract class Form
     protected $action;
     protected $method;
     protected $fields;
+    protected $values;
 
     public function getName()
     {
@@ -85,5 +86,21 @@ abstract class Form
                 $this->fields[$key]['errors'] = $errors[$name];
             }
         }
+    }
+
+    public function saveValues(array $params)
+    {
+        if(!empty($params)){
+            foreach($params as $key => $value){
+                $this->values[$key] = $value;
+            }
+        }
+
+        return true;
+    }
+
+    public function getValues()
+    {
+        return $this->values;
     }
 }

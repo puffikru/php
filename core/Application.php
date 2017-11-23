@@ -9,6 +9,8 @@
 namespace core;
 
 use controller\PostController;
+use core\Exceptions\Error404;
+use core\Exceptions\Fatal;
 use core\providers\ModelProvider;
 use core\providers\UserProvider;
 
@@ -29,6 +31,9 @@ class Application
         (new ModelProvider())->register($this->container);
         (new UserProvider())->register($this->container);
 
+        $router = new Router();
+        $router->parseUri($this->request->server('REQUEST_URI'));
+
     }
 
     public function run()
@@ -38,8 +43,8 @@ class Application
             $action = $this->action;
             $controller->$action();
             $controller->render();
-        }catch(\core\Exceptions\Error404 $e) {
-            //header("HTTP/1.0 404 Not Found");
+        }catch(Error404 $e) {
+            header("HTTP/1.0 404 Not Found");
             $controller = new PostController($this->request, $this->container);
             if(DEV_MODE){
                 $controller->error404($e);
@@ -48,7 +53,7 @@ class Application
                 $controller->error404();
                 $controller->render();
             }
-        }catch(\core\Exceptions\Fatal $e) {
+        }catch(Fatal $e) {
             $controller = new PostController($this->request, $this->container);
             if(DEV_MODE){
                 $controller->error404($e);

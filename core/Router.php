@@ -10,54 +10,27 @@ namespace core;
 
 class Router
 {
-    private $routes = [];
+    public $uri;
+    public $params;
 
-    public function get($uri, \Closure $closure)
+    public function parseUri(string $uri)
     {
-        $uri = $this->getUri($uri);
-        if(isset($this->routes['GET'][$uri])){
+        if(empty($uri)){
             return false;
         }
-        $this->routes['GET'][$uri] = $closure;
-    }
 
-    public function post($uri, \Closure $closure)
-    {
-        $uri = $this->getUri($uri);
-        if(isset($this->routes['POST'][$uri])){
-            return false;
+        $uri = explode('/', $uri);
+        if($uri[0] == ''){
+            unset($uri[0]);
         }
-        $this->routes['POST'][$uri] = $closure;
-    }
-
-    public function init($uri, $params = [])
-    {
-        $method = $this->getMethod();
-        if(!isset($this->routes[$method][$uri])){
-            return false;
+        $end = count($uri);
+        if($uri[$end] == ''){
+            unset($uri[$end]);
         }
-        call_user_func_array($this->routes[$method][$uri], [$params]);
-    }
 
-    private function getMethod(){
-        return $_SERVER['REQUEST_METHOD'];
-    }
+        $uri = array_values($uri);
 
-    public function showRouts()
-    {
-        debug($this->routes);
-    }
-
-    private function getUri($uri)
-    {
-        $uripart = explode(':', $uri);
-        return trim($uripart[0], '/');
-    }
-
-    public function getParams($uri)
-    {
-        $uripart = explode(':', $uri);
-        return trim($uripart[1], '/');
+        return $uri;
     }
 }
 

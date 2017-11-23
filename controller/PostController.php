@@ -6,6 +6,7 @@ use core\Exceptions\Error404;
 use core\Exceptions\ValidateException;
 use core\Forms\FormBuilder;
 use forms\AddPost;
+use forms\EditPost;
 use model\Messages;
 use model\Sessions;
 use model\Texts;
@@ -113,13 +114,15 @@ class PostController extends FrontController
 
     public function editAction()
     {
-        $user = new Users();
-        $session = new Sessions();
+        $user = $this->container->get('model.user');
+        $session = $this->container->get('model.session');
         $isAuth = $user->isAuth($session, $this->request);
 
         $id = $this->request->get('id');
-        $staticTexts = new Texts();
+        $staticTexts = $this->container->get('model.texts');
         $cUser = $user->getBySid($this->request->session('sid'));
+        $form = new EditPost();
+        $formBuilding = new FormBuilder($form);
 
         // Проверка авторизации
         if(!$isAuth) {
@@ -132,7 +135,7 @@ class PostController extends FrontController
             throw new Error404("Статьи номер $id не существует!");
         }
 
-        $messages = new Messages();
+        $messages = $this->container->get('model.post');
         $text = $messages->one($id);
         $error = '';
         $title = '';
@@ -142,15 +145,19 @@ class PostController extends FrontController
             throw new Error404("Такой статьи не существует!");
         }
 
+        $form->saveValues($text);
+
         if($this->request->isPost()) {
 
             extract($this->request->post());
+
+            $form->saveValues($this->request->post());
 
             try {
                 $messages->edit($id, ['title' => $title, 'content' => $content]);
                 $this->redirect(ROOT);
             }catch(ValidateException $e){
-                $error = $e->getErrors();
+                $form->addErrors($e->getErrors());
             }
 
         }
@@ -159,7 +166,7 @@ class PostController extends FrontController
         $this->title = 'Редактирование сообщения';
         $this->sidebar = $this->build('v_left');
         $this->texts = $staticTexts->getTexts() ?? null;
-        $this->content = $this->build('v_edit', ['title' => $this->title, 'text' => $text, 'error' => $error]);
+        $this->content = $this->build('v_edit', ['form' => $formBuilding]);
     }
 
     public function deleteAction()
