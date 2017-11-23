@@ -54,7 +54,8 @@ class Router
         return trim($uripart[0], '/');
     }
 
-    public function getParams($uri){
+    public function getParams($uri)
+    {
         $uripart = explode(':', $uri);
         return trim($uripart[1], '/');
     }

@@ -4,7 +4,10 @@ session_start();
 include_once "config.php";
 include_once "autoload.php";
 
-$qstring = $_GET['qstring'] ?? null;
+$app = new \core\Application();
+$app->run();
+
+/*$qstring = $_GET['qstring'] ?? null;
 $params = explode('/', $qstring);
 $end = count($params) - 1;
 $err404 = false;
@@ -79,4 +82,4 @@ try {
         $controller->error503();
         $controller->render();
     }
-}
+}*/

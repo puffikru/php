@@ -30,7 +30,7 @@ class User
     public function signUp(array $fields)
     {
         if(!$this->comparePass($fields)){
-            throw new ValidateException('Пароли не совпадают');
+            throw new ValidateException(['Пароли не совпадают']);
         }
         unset($fields['pass_confirm']);
         $this->db->insert('users', [
@@ -47,11 +47,11 @@ class User
         $user = $this->mUser->getByLogin($fields['login']);
 
         if(!$user){
-            throw new ValidateException('Такого пользователя не существует!');
+            throw new ValidateException(['login' => 'Такого пользователя не существует!']);
         }
 
         if($this->getHash($fields['pass']) !== $user['pass']){
-            throw new ValidateException('Введен неверный пароль!');
+            throw new ValidateException(['pass' => 'Введен неверный пароль!']);
         }
 
         if(isset($fields['remember'])){

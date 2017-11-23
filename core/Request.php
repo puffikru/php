@@ -39,6 +39,7 @@ class Request
         if(isset($this->get[$key])) {
             $get = $this->get[$key];
         }
+
         return $get ?? $_GET;
     }
 

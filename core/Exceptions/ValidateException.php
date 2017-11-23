@@ -15,7 +15,7 @@ class ValidateException extends BaseException
 {
     private $errors;
 
-    public function __construct($message = "validation exception", $code = 403, array $errors, Throwable $previous = null)
+    public function __construct(array $errors, $message = "validation exception", $code = 403, Throwable $previous = null)
     {
         $this->dest .= '/validate';
         parent::__construct($message, $code, $previous);

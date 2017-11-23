@@ -49,7 +49,8 @@ class FormBuilder
             $attributes['class'] = trim(sprintf('%s error', $class));
             $errors = $attributes['errors'];
             unset($attributes['errors']);
-            $errors = '<div>' . implode('</div><div>', $errors) . '</div>';
+            //$errors = '<div>' . implode('</div><div>', $errors) . '</div>';
+            $errors = '<div class="login-error">' . $errors . '</div>';
         }
         $label = '';
         if(isset($attributes['label'])){

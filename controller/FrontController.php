@@ -11,6 +11,7 @@ namespace controller;
 
 use core\Exceptions\Error404;
 use core\Request;
+use core\ServiceContainer;
 
 
 class FrontController
@@ -21,10 +22,12 @@ class FrontController
     protected $sidebar;
     protected $texts;
     protected $request;
+    protected $container;
 
-    public function __construct(Request $request)
+    public function __construct(Request $request, ServiceContainer $container)
     {
         $this->request = $request;
+        $this->container = $container;
     }
 
     public function __call($name, $arguments)

@@ -32,18 +32,31 @@ class Users extends BaseModel
     {
         $this->validation->execute($fields);
         if(!$this->validation->success()){
-            throw new ValidateException($this->validation->errors()[0]);
+            throw new ValidateException($this->validation->errors());
         }
+
+        if($this->isUserExists($fields)){
+            throw new ValidateException(['login' => 'Пользователь с таким именем уже существует!']);
+        };
 
         $user = new User($this, $session, $request);
         $user->signUp($fields);
+    }
+
+    public function isUserExists(array $fields)
+    {
+        if($this->getByLogin($fields['login'])){
+            return true;
+        }
+
+        return false;
     }
 
     public function login(array $fields, Sessions $session, Request $request)
     {
         $this->validation->execute($fields);
         if(!$this->validation->success()){
-            throw new ValidateException($this->validation->errors()[0]);
+            throw new ValidateException($this->validation->errors());
         }
 
         $user = new User($this, $session, $request);

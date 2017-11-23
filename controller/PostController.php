@@ -16,7 +16,8 @@ class PostController extends FrontController
         $text = new Texts();
         unset($_SESSION['returnUrl']);
         $user = new Users();
-        $session = new Sessions();
+        //$session = new Sessions();
+        $session = $this->container->get('model.session');
         $isAuth = $user->isAuth($session, $this->request);
 
         /*if(isset($_GET['auth'])) {
@@ -27,7 +28,10 @@ class PostController extends FrontController
             }
         }*/
 
-        $messages = new Messages();
+        //$messages = new Messages();
+
+        $messages = $this->container->get('model.post');
+
         $articles = $messages->getAll();
         $cUser = $user->getBySid($this->request->session('sid'));
 
@@ -47,8 +51,8 @@ class PostController extends FrontController
         $id = $this->request->get('id');
 
         $text = new Texts();
-        $user = new Users();
         $cUser = $user->getBySid($this->request->session('sid'));
+
 
         if($id === null || $id == '' || !preg_match('/^[0-9]+$/', $id)) {
             throw new Error404("Статьи номер $id не существует!");

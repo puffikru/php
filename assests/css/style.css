@@ -630,3 +630,9 @@ em { color: #5d6d1e; }
     background-color: #3aa91a;
     color: #fff;
 }
+
+.login-error{
+    padding: 10px;
+    font-size: 15px;
+    color: red;
+}

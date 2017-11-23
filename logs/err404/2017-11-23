@@ -1,0 +1,20 @@
+
+00:52:11
+::1
+
+core\Exceptions\Error404: Статьи номер Array не существует! in /Applications/MAMP/htdocs/blog-php3/controller/PostController.php:58
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/Application.php(37): controller\PostController->oneAction()
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+00:56:11
+::1
+
+core\Exceptions\Error404: Статьи номер Array не существует! in /Applications/MAMP/htdocs/blog-php3/controller/PostController.php:59
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/core/Application.php(37): controller\PostController->oneAction()
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
