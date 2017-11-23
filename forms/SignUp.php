@@ -21,29 +21,34 @@ class SignUp extends Form
                 'type' => 'text',
                 'placeholder' => 'Введите Ваше имя',
                 'class' => 'login-input',
-                'label' => 'Имя'
+                'label' => 'Имя',
+                'tag' => 'input'
             ],
             [
                 'name' => 'login',
                 'type' => 'text',
                 'placeholder' => 'Введите Ваш Email',
-                'label' => 'Email'
+                'label' => 'Email',
+                'tag' => 'input'
             ],
             [
                 'name' => 'pass',
                 'type' => 'password',
                 'placeholder' => 'Введите пароль',
-                'label' => 'Пароль'
+                'label' => 'Пароль',
+                'tag' => 'input'
             ],
             [
                 'name' => 'pass_confirm',
                 'type' => 'password',
                 'placeholder' => 'Повторите пароль',
-                'label' => 'Пароль'
+                'label' => 'Пароль',
+                'tag' => 'input'
             ],
             [
                 'type' => 'submit',
-                'value' => 'Зарегистрироваться'
+                'value' => 'Зарегистрироваться',
+                'tag' => 'input'
             ]
         ];
 

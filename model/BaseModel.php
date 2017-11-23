@@ -33,12 +33,13 @@ abstract class BaseModel
         return $res[0] ?? null;
     }
 
-    public function add($obj, $needValidation = true)
+    public function add(array $obj, $needValidation = true)
     {
-
         if($needValidation){
+
             $this->validation->execute($obj);
             if($this->validation->success()) {
+
                 $obj =  $this->validation->clean();
             }else{
                 throw new ValidateException($this->validation->errors());

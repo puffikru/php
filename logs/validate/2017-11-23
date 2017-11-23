@@ -955,3 +955,663 @@ Stack trace:
 #2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
 #3 {main}
 -------------------------------------------------------------------------------------
+
+09:22:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+09:25:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+09:26:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+09:26:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+09:27:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+09:29:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+09:29:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+09:35:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+09:41:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+09:42:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:43
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+09:54:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:43
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+09:56:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:43
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+09:57:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:43
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+09:57:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:43
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:02:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:43
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:03:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:43
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:03:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:43
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:04:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:43
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:06:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:43
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:07:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(104): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:09:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(106): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:10:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(107): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:11:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(107): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:11:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(107): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:13:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:13:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:13:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:14:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:14:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:14:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:14:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:15:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:15:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:16:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:16:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:17:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:17:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:18:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:19:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:21:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:21:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:21:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:21:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:21:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:22:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:23:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:23:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:24:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:25:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:29:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:29:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:30:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:30:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:31:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:32:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:33:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:33:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:33:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:33:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+10:33:11
+::1
+
+core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/controller/PostController.php(109): model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/core/Application.php(39): controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(8): core\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------

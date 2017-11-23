@@ -11,7 +11,9 @@ class Validation
     public function execute($obj)
     {
         foreach($obj as $k => $v) {
+
             $value = trim(strip_tags($v));
+
             if(in_array($k, $this->rules['not_empty']) && $value == '') {
                 $this->errors[$k] = "Заполните поле $k!";
             }elseif(isset($this->rules['min_length'][$k]) && $this->minLength($value, $k)) {

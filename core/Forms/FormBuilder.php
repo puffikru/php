@@ -9,6 +9,8 @@
 namespace core\Forms;
 
 
+use core\tags\PairTag;
+
 class FormBuilder
 {
     public $form;
@@ -33,7 +35,22 @@ class FormBuilder
     {
         foreach($this->form->getFields() as $field) {
 
-            $inputs[] = $this->input($field);
+            if($field['tag'] === 'input') {
+                $inputs[] = $this->input($field);
+            }elseif($field['tag'] === 'textarea'){
+                $label = $field['label'] . ':' ?? '';
+                $span = (new PairTag('span'))->html($label)->render();
+                $textarea = (new PairTag('textarea'))->attr('name', 'content')->attr('placeholder', $field['placeholder'])->attr('rows', '8')->render();
+                $tag_label = (new PairTag('label'))->attr('class', 'textarea')->html($span . $textarea)->render();
+                if(isset($field['errors'])){
+                    $errors = $field['errors'];
+                    unset($field['errors']);
+                    $errors = '<div class="login-error">' . $errors . '</div>';
+                    $inputs[] = $tag_label . $errors;
+                }else {
+                    $inputs[] = $tag_label;
+                }
+            }
 
         }
 
@@ -57,6 +74,7 @@ class FormBuilder
             $label = $attributes['label'] . ':' ?? '';
             unset($attributes['label']);
         }
+        unset($attributes['tag']);
 
         return sprintf('<label><span>%s</span><input %s></label>%s', $label, $this->buildAttributes($attributes), $errors);
     }

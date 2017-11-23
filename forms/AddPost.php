@@ -8,7 +8,6 @@
 
 namespace forms;
 
-
 use core\Forms\Form;
 
 class AddPost extends Form
@@ -17,29 +16,26 @@ class AddPost extends Form
     {
         $this->fields = [
             [
-                'name' => 'login',
+                'name' => 'title',
                 'type' => 'text',
-                'placeholder' => 'Введите логин',
-                'label' => 'Логин'
+                'placeholder' => 'Введите заголовок',
+                'label' => 'Название',
+                'tag' => 'input'
             ],
             [
-                'name' => 'pass',
-                'type' => 'password',
-                'placeholder' => 'Введите пароль',
-                'label' => 'Пароль'
-            ],
-            [
-                'name' => 'remember',
-                'type' => 'checkbox',
-                'label' => 'Запомнить'
+                'name' => 'content',
+                'placeholder' => 'Введите содержание новости',
+                'label' => 'Контент',
+                'tag' => 'textarea'
             ],
             [
                 'type' => 'submit',
-                'value' => 'Войти'
+                'value' => 'Отправить',
+                'tag' => 'input'
             ]
         ];
 
-        $this->form_name = 'sign-in';
+        $this->form_name = 'add-post';
         $this->method  = 'POST';
     }
 }

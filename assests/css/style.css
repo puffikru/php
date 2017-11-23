@@ -584,7 +584,7 @@ em { color: #5d6d1e; }
     color: #ca0d11;
 }
 
-.sign-up, .sign-in{
+.sign-up, .sign-in, .add-post{
     max-width: 500px;
     margin: 0 auto;
 }
@@ -593,26 +593,35 @@ em { color: #5d6d1e; }
     margin: 10px;
 }
 
-.sign-up .line label, .sign-in .line label{
+.add-post .line{
+    margin: 20px 0;
+}
+
+.sign-up .line label, .sign-in .line label, .add-post .line label{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.sign-up .line label span, .sign-in .line label span{
+.sign-up .line label span, .sign-in .line label span, .add-post .line label span{
     margin: 10px 0;
     flex-basis: 100px;
     font-size: 16px;
     font-family: Helevetica,Arial,sans-serif;
 }
 
-.sign-up input, .sign-in input{
+.add-post .line label.textarea{
+    align-items: flex-start;
+}
+
+.sign-up input, .sign-in input, .add-post input, .add-post textarea{
     flex-grow: 1;
     flex-basis: 200px;
     padding: 10px;
     border: 1px solid #ddd;
     box-sizing: border-box;
     font-size: 14px;
+    font-family: inherit;
 }
 
 .sign-in input[type=checkbox]{
@@ -621,14 +630,15 @@ em { color: #5d6d1e; }
     border: none;
 }
 
-.sign-up input[type=submit], .sign-in input[type=submit]{
+.sign-up input[type=submit], .sign-in input[type=submit], .add-post input[type=submit]{
     background-color: #38b21a;
     color: #fff;
 }
 
-.sign-up input[type=submit]:hover, .sign-in input[type=submit]:hover{
+.sign-up input[type=submit]:hover, .sign-in input[type=submit]:hover, .add-post input[type=submit]:hover{
     background-color: #3aa91a;
     color: #fff;
+    cursor: pointer;
 }
 
 .login-error{

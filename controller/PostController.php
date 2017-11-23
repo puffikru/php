@@ -4,6 +4,8 @@ namespace controller;
 
 use core\Exceptions\Error404;
 use core\Exceptions\ValidateException;
+use core\Forms\FormBuilder;
+use forms\AddPost;
 use model\Messages;
 use model\Sessions;
 use model\Texts;
@@ -16,19 +18,9 @@ class PostController extends FrontController
         $text = $this->container->get('model.texts');
         unset($_SESSION['returnUrl']);
         $user = $this->container->get('model.user');
-        //$session = new Sessions();
+
         $session = $this->container->get('model.session');
         $isAuth = $user->isAuth($session, $this->request);
-
-        /*if(isset($_GET['auth'])) {
-            if($_GET['auth'] == 'off') {
-                $user->logout($session, $this->request);
-                $this->redirect(ROOT);
-                exit();
-            }
-        }*/
-
-        //$messages = new Messages();
 
         $messages = $this->container->get('model.post');
 
@@ -80,6 +72,8 @@ class PostController extends FrontController
         $isAuth = $users->isAuth($session, $this->request);
         $text = new Texts();
         $error = '';
+        $form = new AddPost();
+        $formBuilder = new FormBuilder($form);
 
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . 'add';
@@ -93,26 +87,28 @@ class PostController extends FrontController
 
         if($this->request->isPost()) {
 
-            extract($this->request->post());
+            foreach($form->handleRequest($this->request) as $fields => $item){
+                $obj[$fields] = $item;
+            }
+            $obj['id_user'] = $user['id_user'];
 
             try {
-                $id = $messages->add(['title' => $title, 'content' => $content ?? '', 'id_user' => $user['id_user']]);
+                $id = $messages->add($obj);
                 $this->redirect(ROOT . "post/$id");
             }catch(ValidateException $e){
-                $error = $e->getErrors();
+                $form->addErrors($e->getErrors());
             }
 
         }else {
             $this->title = '';
             $content = '';
-            $error = '';
         }
 
         $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $user['name']]);
         $this->sidebar = $this->build('v_left');
         $this->texts = $text->getTexts() ?? null;
         $this->title = 'Новое сообщение';
-        $this->content = $this->build('v_add', ['title' => $title, 'content' => $content, 'error' => $error]);
+        $this->content = $this->build('v_add', ['form' => $formBuilder]);
     }
 
     public function editAction()
