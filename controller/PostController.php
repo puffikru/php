@@ -99,7 +99,7 @@ class PostController extends FrontController
                 $id = $messages->add(['title' => $title, 'content' => $content ?? '', 'id_user' => $user['id_user']]);
                 $this->redirect(ROOT . "post/$id");
             }catch(ValidateException $e){
-                $error = $e->getMessage();
+                $error = $e->getErrors();
             }
 
         }else {
@@ -154,7 +154,7 @@ class PostController extends FrontController
                 $messages->edit($id, ['title' => $title, 'content' => $content]);
                 $this->redirect(ROOT);
             }catch(ValidateException $e){
-                $error = $e->getMessage();
+                $error = $e->getErrors();
             }
 
         }

@@ -4,7 +4,7 @@ namespace model;
 
 class Messages extends BaseModel
 {
-    use \core\traits\Singleton;
+    //use \core\traits\Singleton;
 
     public function __construct()
     {

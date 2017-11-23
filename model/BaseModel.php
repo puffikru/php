@@ -41,7 +41,7 @@ abstract class BaseModel
             if($this->validation->success()) {
                 $obj =  $this->validation->clean();
             }else{
-                throw new ValidateException($this->validation->errors()[0]);
+                throw new ValidateException($this->validation->errors());
             }
         }
 
@@ -49,13 +49,14 @@ abstract class BaseModel
 
     }
 
-    public function edit($pk, $obj)
+    public function edit($pk, array $obj)
     {
         $this->validation->execute($obj);
+
         if($this->validation->success()) {
             return $this->db->update($this->table, $obj, "{$this->pk}=:pk", ['pk' => $pk]);
         }else{
-            return $this->validation->errors();
+            throw new ValidateException($this->validation->errors());
         }
     }
 

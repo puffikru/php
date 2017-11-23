@@ -56,7 +56,7 @@ class User
 
         if(isset($fields['remember'])){
             Cookie::set('login', $fields['login'], 3600 * 24 * 7);
-            Cookie::set('pass', $this->getHash($fields['password']), 3600 * 24 * 7);
+            Cookie::set('pass', $this->getHash($fields['pass']), 3600 * 24 * 7);
         }
 
         $token = $this->generateSid();

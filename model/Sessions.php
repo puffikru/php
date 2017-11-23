@@ -49,6 +49,17 @@ class Sessions extends BaseModel
         return $sid;
     }
 
+    public function edit($pk, array $obj)
+    {
+        $this->validation->execute($obj);
+
+        if($this->validation->success()) {
+            return $this->db->update($this->table, $obj, "{$this->pk}=:pk", ['pk' => $pk]);
+        }else{
+            return $this->validation->errors();
+        }
+    }
+
     public function clearSessions()
     {
         $min = date('Y-m-d H:i:s', time() - 60 * 20);
