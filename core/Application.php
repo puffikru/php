@@ -11,7 +11,6 @@ namespace core;
 use controller\PostController;
 use core\Exceptions\Error404;
 use core\Exceptions\Fatal;
-use core\providers\FormProvider;
 use core\providers\ModelProvider;
 use core\providers\UserProvider;
 
@@ -31,11 +30,6 @@ class Application
 
         (new ModelProvider())->register($this->container);
         (new UserProvider())->register($this->container);
-        (new FormProvider())->register($this->container);
-
-        $router = new Router();
-        $router->parseUri($this->request->server('REQUEST_URI'));
-
     }
 
     public function run()

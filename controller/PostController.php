@@ -12,41 +12,33 @@ class PostController extends FrontController
 {
     public function indexAction()
     {
-        $text = $this->container->get('model.texts');
         unset($_SESSION['returnUrl']);
-        $mUser = $this->container->get('model.user');
+        $mUser = $this->container->get('models', 'Users');
 
         $isAuth = $this->container->get('service.user', $this->request)->isAuth();
 
-        $messages = $this->container->get('model.post');
-
-        $articles = $messages->getAll();
+        $articles = $this->container->get('models', 'Messages')->getAll();
         $cUser = $mUser->getBySid($this->request->session('sid'));
 
         $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->sidebar = $this->build('v_left');
-        $this->texts = $text->getTexts() ?? null;
+        $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
         $this->title = 'Главная';
         $this->content = $this->build('v_index', ['articles' => $articles, 'isAuth' => $isAuth]);
     }
 
     public function oneAction()
     {
-        $user = $this->container->get('model.user');
-
         $isAuth = $this->container->get('service.user', $this->request)->isAuth();
 
         $id = $this->request->get('id');
 
-        $text = $this->container->get('model.texts');
-        $cUser = $user->getBySid($this->request->session('sid'));
-
+        $cUser = $this->container->get('models', 'Users')->getBySid($this->request->session('sid'));
 
         if($id === null || $id == '' || !preg_match('/^[0-9]+$/', $id)) {
             throw new Error404("Статьи номер $id не существует!");
         }else {
-            $messages = $this->container->get('model.post');
-            $content = $messages->one($id);
+            $content = $this->container->get('models', 'Messages')->one($id);
 
             if(!$content) {
                 throw new Error404("Такой статьи не существует!");
@@ -55,7 +47,7 @@ class PostController extends FrontController
 
         $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->sidebar = $this->build('v_left');
-        $this->texts = $text->getTexts() ?? null;
+        $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
         $this->content = $this->build('v_post', ['content' => $content, 'isAuth' => $isAuth]);
         $this->title = 'Просмотр сообщения';
 
@@ -63,9 +55,7 @@ class PostController extends FrontController
 
     public function addAction()
     {
-        $users = $this->container->get('model.user');
         $isAuth = $this->container->get('service.user', $this->request)->isAuth();
-        $text = $this->container->get('model.texts');
         $form = new AddPost();
         $formBuilder = new FormBuilder($form);
 
@@ -75,8 +65,7 @@ class PostController extends FrontController
             exit();
         }
 
-        $messages = $this->container->get('model.post');
-        $user = $users->getBySid($this->request->session('sid'));
+        $user = $this->container->get('models', 'Users')->getBySid($this->request->session('sid'));
 
         if($this->request->isPost()) {
 
@@ -86,7 +75,7 @@ class PostController extends FrontController
             $obj['id_user'] = $user['id_user'];
 
             try {
-                $id = $messages->add($obj);
+                $id = $this->container->get('models', 'Messages')->add($obj);
                 $this->redirect(ROOT . "post/$id");
             }catch(ValidateException $e){
                 $form->addErrors($e->getErrors());
@@ -98,19 +87,17 @@ class PostController extends FrontController
 
         $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $user['name']]);
         $this->sidebar = $this->build('v_left');
-        $this->texts = $text->getTexts() ?? null;
+        $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
         $this->title = 'Новое сообщение';
         $this->content = $this->build('v_add', ['form' => $formBuilder]);
     }
 
     public function editAction()
     {
-        $user = $this->container->get('model.user');
         $isAuth = $this->container->get('service.user', $this->request)->isAuth();
 
         $id = $this->request->get('id');
-        $staticTexts = $this->container->get('model.texts');
-        $cUser = $user->getBySid($this->request->session('sid'));
+        $cUser = $this->container->get('models', 'Users')->getBySid($this->request->session('sid'));
         $form = new EditPost();
         $formBuilding = new FormBuilder($form);
 
@@ -125,7 +112,7 @@ class PostController extends FrontController
             throw new Error404("Статьи номер $id не существует!");
         }
 
-        $messages = $this->container->get('model.post');
+        $messages = $this->container->get('models', 'Messages');
         $text = $messages->one($id);
 
         if(!$text) {
@@ -135,7 +122,6 @@ class PostController extends FrontController
         $form->saveValues($text);
 
         if($this->request->isPost()) {
-
             try {
                 $messages->edit($id, $form->handleRequest($this->request));
                 $this->redirect(ROOT);
@@ -148,7 +134,7 @@ class PostController extends FrontController
         $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->title = 'Редактирование сообщения';
         $this->sidebar = $this->build('v_left');
-        $this->texts = $staticTexts->getTexts() ?? null;
+        $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
         $this->content = $this->build('v_edit', ['form' => $formBuilding]);
     }
 
@@ -161,13 +147,12 @@ class PostController extends FrontController
             $this->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
-        $messages = $this->container->get('model.post');
         $id = $this->request->get('id');
 
         if(!isset($id) || $id == '' || !preg_match('/^[0-9]+$/', $id)) {
             echo "Такой статьи не существует!";
         }else {
-            $messages->delete($id);
+            $this->container->get('models', 'Messages')->delete($id);
             $this->redirect(ROOT);
             exit();
         }
@@ -175,21 +160,17 @@ class PostController extends FrontController
 
     public function error404($err = '')
     {
-        $staticTexts = $this->container->get('model.texts');
-
         $this->title = 'Ошибка 404';
         $this->sidebar = $this->build('v_left');
-        $this->texts = $staticTexts->getTexts() ?? null;
+        $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
         $this->content = $this->build('v_err404', ['title' => $this->title, 'error' => $err]);
     }
 
     public function error503($err = '')
     {
-        $staticTexts = $this->container->get('model.texts');
-
         $this->title = 'Временная ошибка сервера!';
         $this->sidebar = $this->build('v_left');
-        $this->texts = $staticTexts->getTexts() ?? null;
+        $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
         $this->content = $this->build('v_err503', ['title' => $this->title, 'error' => $err]);
     }
 }

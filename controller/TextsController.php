@@ -12,7 +12,7 @@ class TextsController extends FrontController
 {
     public function indexAction()
     {
-        $mUser = $this->container->get('model.user');
+        $mUser = $this->container->get('models', 'Users');
         $user = $this->container->get('service.user', $this->request);
         $isAuth = $user->isAuth();
 
@@ -29,7 +29,7 @@ class TextsController extends FrontController
                 exit();
             }
         }
-        $staticTexts = $this->container->get('model.texts');
+        $staticTexts = $this->container->get('models', 'Texts');
         $texts = $staticTexts->all();
         $cUser = $mUser->getBySid($this->request->session('sid'));
 
@@ -42,7 +42,7 @@ class TextsController extends FrontController
 
     public function addAction()
     {
-        $mUser = new Users();
+        $mUser = $this->container->get('models', 'Users');
         $isAuth = $this->container->get('service.user', $this->request)->isAuth();
         $form = new AddText();
         $formBuilder = new FormBuilder($form);
@@ -53,11 +53,10 @@ class TextsController extends FrontController
             exit();
         }
 
-        $staticTexts = $this->container->get('model.texts');
+        $staticTexts = $this->container->get('models', 'Texts');
         $cUser = $mUser->getBySid($this->request->session('sid'));
 
         if($this->request->isPost()) {
-
             try {
                 $staticTexts->add($form->handleRequest($this->request));
                 $this->redirect(ROOT . "texts");
@@ -77,7 +76,7 @@ class TextsController extends FrontController
 
     public function editAction()
     {
-        $mUser = $this->container->get('model.user');
+        $mUser = $this->container->get('models', 'Users');
         $isAuth = $this->container->get('service.user', $this->request)->isAuth();
         $form = new EditText();
         $formBuilder = new FormBuilder($form);
@@ -95,7 +94,7 @@ class TextsController extends FrontController
             $err404 = true;
         }
 
-        $staticTexts = $this->container->get('model.texts');
+        $staticTexts = $this->container->get('models', 'Texts');
         $text = $staticTexts->one($id);
 
         $cUser = $mUser->getBySid($this->request->session('sid'));
@@ -107,7 +106,6 @@ class TextsController extends FrontController
         $form->saveValues($text);
 
         if($this->request->isPost()) {
-
             try {
                 $staticTexts->edit($id, $form->handleRequest($this->request));
                 $this->redirect(ROOT . "texts");
@@ -133,14 +131,13 @@ class TextsController extends FrontController
             $this->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
-        $staticTexts = $this->container->get('model.texts');
 
         $id = $this->request->get('id');
 
         if(!isset($id) || $id == '' || !preg_match('/^[0-9]+$/', $id)) {
             echo "Такого текста не существует!";
         }else {
-            $staticTexts->delete($id);
+            $this->container->get('models', 'Texts')->delete($id);
             $this->redirect(ROOT . "texts");
             exit();
         }

@@ -1,4 +1,3 @@
 <?php
-session_start();
-include_once "init.php";
+require_once "init.php";
 (new \core\Application())->run();

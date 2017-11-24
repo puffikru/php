@@ -8,7 +8,6 @@
 
 namespace core\providers;
 
-
 use core\ServiceContainer;
 use core\User;
 
@@ -18,8 +17,8 @@ class UserProvider implements ProviderInterface
     {
         $container->register('service.user', function($request) use ($container){
             return new User(
-                $container->get('model.user'),
-                $container->get('model.session'),
+                $container->get('models', 'Users'),
+                $container->get('models', 'Sessions'),
                 $request
             );
         });

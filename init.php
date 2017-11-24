@@ -1,5 +1,6 @@
 <?php
 include_once "config.php";
+session_start();
 
 // display errors
 ini_set('display_errors', true);
@@ -17,3 +18,4 @@ date_default_timezone_set('Europe/Moscow');
 // autoload classes
 include_once("autoload.php");
 include_once("vendor/autoload.php");
+

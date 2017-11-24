@@ -21,6 +21,7 @@ class FrontController
     protected $menu;
     protected $sidebar;
     protected $texts;
+
     protected $request;
     protected $container;
 

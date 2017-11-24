@@ -11,14 +11,12 @@ class UserController extends FrontController
 {
     public function signUpAction()
     {
-        $text = $this->container->get('model.texts');
-        $user = $this->container->get('service.user', $this->request);
         $form = new SignUp();
         $formBuilder = new FormBuilder($form);
 
         if($this->request->isPost()) {
             try {
-                $user->signUp($form->handleRequest($this->request));
+                $this->container->get('service.user', $this->request)->signUp($form->handleRequest($this->request));
                 $this->redirect(ROOT);
             }catch(ValidateException $e) {
                 $form->addErrors($e->getErrors());
@@ -28,22 +26,20 @@ class UserController extends FrontController
 
         $this->menu = $this->build('v_menu');
         $this->sidebar = $this->build('v_left');
-        $this->texts = $text->getTexts() ?? null;
+        $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
         $this->title = 'Регистрация';
         $this->content = $this->build('v_signup', ['form' => $formBuilder]);
     }
 
     public function loginAction()
     {
-        $text = $this->container->get('model.texts');
-        $this->container->get('model.session')->clearSessions();
-        $user = $this->container->get('service.user', $this->request);
+        $this->container->get('models', 'Sessions')->clearSessions();
         $form = new SignIn();
         $formBuilder = new FormBuilder($form);
 
         if($this->request->isPost()){
             try {
-                $user->login($form->handleRequest($this->request));
+                $this->container->get('service.user', $this->request)->login($form->handleRequest($this->request));
                 $this->redirect(ROOT);
             }catch(ValidateException $e){
                 $form->addErrors($e->getErrors());
@@ -53,7 +49,7 @@ class UserController extends FrontController
         $this->menu = $this->build('v_menu');
         $this->content = $this->build('v_login', ['form' => $formBuilder]);
         $this->sidebar = $this->build('v_left');
-        $this->texts = $text->getTexts() ?? null;
+        $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
         $this->title = 'Авторизация';
     }
 
