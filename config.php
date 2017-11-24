@@ -2,7 +2,7 @@
 
 define('ROOT', '/');
 define('CHARSET', 'UTF-8');
-define('LOG_DIR', 'logs');
+define('LOG_DIR', 'app/logs');
 define('DEV_MODE', 1);
 define('SALT','fa47wyt');
 define('FORM_SIGN', '/#@=@/');

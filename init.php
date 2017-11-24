@@ -16,6 +16,5 @@ setlocale(LC_NUMERIC, 'C');
 date_default_timezone_set('Europe/Moscow');
 
 // autoload classes
-include_once("autoload.php");
 include_once("vendor/autoload.php");
 
