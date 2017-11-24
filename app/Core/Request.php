@@ -100,4 +100,16 @@ class Request
     {
         return $this->server['REQUEST_METHOD'] === self::METHOD_GET;
     }
+
+    public function file($key = null)
+    {
+        if(!$key){
+            return false;
+        }
+        if(!isset($this->files[$key])){
+            return false;
+        }
+
+        return $this->files[$key];
+    }
 }

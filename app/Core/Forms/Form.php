@@ -18,6 +18,7 @@ abstract class Form
     protected $method;
     protected $fields;
     protected $values;
+    const ENC_TYPE = "enctype='multipart/form-data'";
 
     public function getName()
     {

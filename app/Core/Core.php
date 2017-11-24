@@ -11,6 +11,7 @@ namespace NTSchool\Phpblog\Core;
 use NTSchool\Phpblog\Controller\PostController;
 use NTSchool\Phpblog\Core\Exceptions\Error404;
 use NTSchool\Phpblog\Core\Exceptions\Fatal;
+use NTSchool\Phpblog\Core\Exceptions\ValidationException;
 use NTSchool\Phpblog\Core\providers\ModelProvider;
 use NTSchool\Phpblog\Core\providers\UserProvider;
 
@@ -51,6 +52,15 @@ class Core
                 $controller->render();
             }
         }catch(Fatal $e) {
+            $controller = new PostController($this->request, $this->container);
+            if(DEV_MODE) {
+                $controller->error404($e);
+                $controller->render();
+            }else {
+                $controller->error503();
+                $controller->render();
+            }
+        }catch(ValidationException $e) {
             $controller = new PostController($this->request, $this->container);
             if(DEV_MODE) {
                 $controller->error404($e);

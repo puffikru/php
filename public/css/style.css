@@ -640,6 +640,14 @@ em { color: #5d6d1e; }
     cursor: pointer;
 }
 
+.add-post input[type=file]{
+    border: none;
+}
+
+.add-post .line label.img_upload span{
+    flex-basis: 250px;
+}
+
 .login-error{
     padding: 10px;
     font-size: 15px;

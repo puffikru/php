@@ -29,6 +29,12 @@ class AddPost extends Form
                 'tag' => 'textarea'
             ],
             [
+                'name' => 'img',
+                'type' => 'file',
+                'label' => 'Загрузить изображение',
+                'tag' => 'input'
+            ],
+            [
                 'type' => 'submit',
                 'value' => 'Отправить',
                 'tag' => 'input'

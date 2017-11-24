@@ -1,4 +1,4 @@
-<form <?=$form->method();?> class="add-post">
+<form <?=$form->method();?> class="add-post" <?=$form->encType();?>>
     <?=$form->inputSign();?>
     <? foreach($form->fields() as $field):?>
         <div class="line">

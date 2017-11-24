@@ -31,6 +31,11 @@ class FormBuilder
         return sprintf('method=%s', $method);
     }
 
+    public function encType()
+    {
+        return $this->form::ENC_TYPE;
+    }
+
     public function fields()
     {
         $inputs = [];
@@ -89,7 +94,14 @@ class FormBuilder
             unset($attributes['value']);
         }
 
-        return sprintf('<label><span>%s</span><input %s></label>%s', $label, $this->buildAttributes($attributes), $errors);
+        if($attributes['type'] === 'file' && $attributes['name'] === 'img'){
+            $class = "class='img_upload'";
+            $input =  sprintf('<label %s><span>%s</span><input %s></label>%s',$class ,$label, $this->buildAttributes($attributes), $errors);
+        }else {
+            $input = sprintf('<label><span>%s</span><input %s></label>%s', $label, $this->buildAttributes($attributes), $errors);
+        }
+
+        return $input;
     }
 
     public function textArea(array $field)

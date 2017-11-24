@@ -5,6 +5,7 @@ namespace NTSchool\Phpblog\Controller;
 use NTSchool\Phpblog\Core\Exceptions\Error404;
 use NTSchool\Phpblog\Core\Exceptions\ValidateException;
 use NTSchool\Phpblog\Core\Forms\FormBuilder;
+use NTSchool\Phpblog\Core\Image;
 use NTSchool\Phpblog\Forms\AddPost;
 use NTSchool\Phpblog\Forms\EditPost;
 
@@ -72,7 +73,18 @@ class PostController extends BaseController
             foreach($form->handleRequest($this->request) as $fields => $item){
                 $obj[$fields] = $item;
             }
+
             $obj['id_user'] = $user['id_user'];
+
+            if($this->request->files('img')){
+                $img = new Image();
+                $check = $img->can_upload($this->request->files('img'));
+
+                if(!$check){
+                    throw new ValidateException($img->errors());
+                }
+                $img->make_upload($this->request->files('img'));
+            }
 
             try {
                 $id = $this->container->get('models', 'Messages')->add($obj);
