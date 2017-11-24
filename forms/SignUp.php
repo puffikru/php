@@ -26,7 +26,7 @@ class SignUp extends Form
             ],
             [
                 'name' => 'login',
-                'type' => 'text',
+                'type' => 'email',
                 'placeholder' => 'Введите Ваш Email',
                 'label' => 'Email',
                 'tag' => 'input'

@@ -434,13 +434,6 @@ em { color: #5d6d1e; }
     margin-bottom: 15px;
 }
 
-/*#comment_form form input {
-    margin-top: 5px;
-    width: 200px;
-    background:#FFFFFF none repeat fixed 0 0;
-    border: 1px solid #CCC;
-}*/
-
 #comment_form .submit_btn {
     width: 80px;
     padding: 5px 10px;
@@ -624,6 +617,11 @@ em { color: #5d6d1e; }
     box-sizing: border-box;
     font-size: 14px;
     font-family: inherit;
+}
+
+.sign-in input:focus, .sign-up input:focus{
+    border: 1px solid rgba(5,168, 250, 0.5);
+    box-shadow: 0 0 2px rgba(5,168, 250, 0.5);
 }
 
 .sign-in input[type=checkbox]{

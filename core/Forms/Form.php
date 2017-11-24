@@ -41,9 +41,10 @@ abstract class Form
 
     public function handleRequest(Request $request)
     {
+
         $fields = [];
 
-        foreach($this->getFields() as $field) {
+        foreach($this->getFields() as $key => $field) {
             if(!isset($field['name'])) {
                 continue;
             }
@@ -51,6 +52,7 @@ abstract class Form
             $name = $field['name'];
 
             if($request->post($name) !== null) {
+                $this->fields[$key]['value'] = $request->post($name);
                 $fields[$name] = $request->post($name);
             }
         }

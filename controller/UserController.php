@@ -17,9 +17,8 @@ class UserController extends FrontController
         $formBuilder = new FormBuilder($form);
 
         if($this->request->isPost()) {
-            $form->saveValues($this->request->post());
             try {
-                $user->signUp($this->request->post());
+                $user->signUp($form->handleRequest($this->request));
                 $this->redirect(ROOT);
             }catch(ValidateException $e) {
                 $form->addErrors($e->getErrors());
@@ -43,9 +42,8 @@ class UserController extends FrontController
         $formBuilder = new FormBuilder($form);
 
         if($this->request->isPost()){
-            $form->saveValues($this->request->post());
             try {
-                $user->login($this->request->post());
+                $user->login($form->handleRequest($this->request));
                 $this->redirect(ROOT);
             }catch(ValidateException $e){
                 $form->addErrors($e->getErrors());

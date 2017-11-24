@@ -136,8 +136,6 @@ class PostController extends FrontController
 
         if($this->request->isPost()) {
 
-            $form->saveValues($this->request->post());
-
             try {
                 $messages->edit($id, $form->handleRequest($this->request));
                 $this->redirect(ROOT);

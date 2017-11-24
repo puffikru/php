@@ -17,7 +17,7 @@ class Validation
             if(in_array($k, $this->rules['not_empty']) && $value == '') {
                 $this->errors[$k] = "Заполните поле $k!";
             }elseif(isset($this->rules['min_length'][$k]) && $this->minLength($value, $k)) {
-                $this->errors[$k] = "Длина поля $k не может быть меньше {$this->rules['min_length'][$k]}";
+                $this->errors[$k] = "Длина поля $k не может быть меньше {$this->rules['min_length'][$k]} символов!";
             }else {
                 $this->clean[$k] = $value;
             }

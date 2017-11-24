@@ -108,8 +108,6 @@ class TextsController extends FrontController
 
         if($this->request->isPost()) {
 
-            $form->saveValues($this->request->post());
-
             try {
                 $staticTexts->edit($id, $form->handleRequest($this->request));
                 $this->redirect(ROOT . "texts");

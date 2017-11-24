@@ -58,6 +58,7 @@ class FormBuilder
     public function input(array $attributes, $value = [])
     {
         $errors = '';
+        $label = '';
 
         if(isset($attributes['errors'])) {
             $class = $attributes['class'] ?? '';
@@ -67,7 +68,7 @@ class FormBuilder
 
             $errors = '<div class="login-error">' . $errors . '</div>';
         }
-        $label = '';
+
         if(isset($attributes['label'])){
             $label = $attributes['label'] . ':' ?? '';
             unset($attributes['label']);
@@ -84,10 +85,14 @@ class FormBuilder
             }
         }
 
+        if($attributes['type'] == 'checkbox'){
+            unset($attributes['value']);
+        }
+
         return sprintf('<label><span>%s</span><input %s></label>%s', $label, $this->buildAttributes($attributes), $errors);
     }
 
-    public function textArea($field)
+    public function textArea(array $field)
     {
         $label = $field['label'] . ':' ?? '';
 
