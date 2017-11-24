@@ -17,7 +17,7 @@ class EditText extends Form
     {
         $this->fields = [
             [
-                'name' => 'title',
+                'name' => 'alias',
                 'type' => 'text',
                 'placeholder' => 'Введите алиас',
                 'label' => 'Название',

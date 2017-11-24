@@ -7,10 +7,6 @@ use core\Exceptions\ValidateException;
 use core\Forms\FormBuilder;
 use forms\AddPost;
 use forms\EditPost;
-use model\Messages;
-use model\Sessions;
-use model\Texts;
-use model\Users;
 
 class PostController extends FrontController
 {
@@ -18,15 +14,14 @@ class PostController extends FrontController
     {
         $text = $this->container->get('model.texts');
         unset($_SESSION['returnUrl']);
-        $user = $this->container->get('model.user');
+        $mUser = $this->container->get('model.user');
 
-        $session = $this->container->get('model.session');
-        $isAuth = $user->isAuth($session, $this->request);
+        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
 
         $messages = $this->container->get('model.post');
 
         $articles = $messages->getAll();
-        $cUser = $user->getBySid($this->request->session('sid'));
+        $cUser = $mUser->getBySid($this->request->session('sid'));
 
         $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->sidebar = $this->build('v_left');
@@ -38,8 +33,8 @@ class PostController extends FrontController
     public function oneAction()
     {
         $user = $this->container->get('model.user');
-        $session = $this->container->get('model.session');
-        $isAuth = $user->isAuth($session, $this->request);
+
+        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
 
         $id = $this->request->get('id');
 
@@ -68,11 +63,9 @@ class PostController extends FrontController
 
     public function addAction()
     {
-        $users = new Users();
-        $session = new Sessions();
-        $isAuth = $users->isAuth($session, $this->request);
-        $text = new Texts();
-        $error = '';
+        $users = $this->container->get('model.user');
+        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
+        $text = $this->container->get('model.texts');
         $form = new AddPost();
         $formBuilder = new FormBuilder($form);
 
@@ -82,9 +75,8 @@ class PostController extends FrontController
             exit();
         }
 
-        $messages = new Messages();
+        $messages = $this->container->get('model.post');
         $user = $users->getBySid($this->request->session('sid'));
-        $title = '';
 
         if($this->request->isPost()) {
 
@@ -102,7 +94,6 @@ class PostController extends FrontController
 
         }else {
             $this->title = '';
-            $content = '';
         }
 
         $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $user['name']]);
@@ -115,8 +106,7 @@ class PostController extends FrontController
     public function editAction()
     {
         $user = $this->container->get('model.user');
-        $session = $this->container->get('model.session');
-        $isAuth = $user->isAuth($session, $this->request);
+        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
 
         $id = $this->request->get('id');
         $staticTexts = $this->container->get('model.texts');
@@ -146,8 +136,6 @@ class PostController extends FrontController
 
         if($this->request->isPost()) {
 
-            extract($this->request->post());
-
             $form->saveValues($this->request->post());
 
             try {
@@ -168,16 +156,14 @@ class PostController extends FrontController
 
     public function deleteAction()
     {
-        $user = new Users();
-        $session = new Sessions();
-        $isAuth = $user->isAuth($session, $this->request);
+        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
         unset($_SESSION['returnUrl']);
 
         if(!$isAuth) {
             $this->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
-        $messages = new Messages();
+        $messages = $this->container->get('model.post');
         $id = $this->request->get('id');
 
         if(!isset($id) || $id == '' || !preg_match('/^[0-9]+$/', $id)) {
@@ -191,7 +177,7 @@ class PostController extends FrontController
 
     public function error404($err = '')
     {
-        $staticTexts = new Texts();
+        $staticTexts = $this->container->get('model.texts');
 
         $this->title = 'Ошибка 404';
         $this->sidebar = $this->build('v_left');
@@ -201,7 +187,7 @@ class PostController extends FrontController
 
     public function error503($err = '')
     {
-        $staticTexts = new Texts();
+        $staticTexts = $this->container->get('model.texts');
 
         $this->title = 'Временная ошибка сервера!';
         $this->sidebar = $this->build('v_left');

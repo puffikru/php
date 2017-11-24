@@ -33,74 +33,18 @@ class User
             throw new ValidateException(['Пароли не совпадают']);
         }
         unset($fields['pass_confirm']);
-        $this->db->insert('users', [
-            'name' => $fields['name'],
-            'login' => $fields['login'],
-            'pass' => $this->getHash($fields['pass'])
-        ]);
-        unset($fields['name']);
-        $this->login($fields);
+
+        $this->mUser->signUp($fields);
     }
 
     public function login(array $fields)
     {
-        $user = $this->mUser->getByLogin($fields['login']);
-
-        if(!$user){
-            throw new ValidateException(['login' => 'Такого пользователя не существует!']);
-        }
-
-        if($this->getHash($fields['pass']) !== $user['pass']){
-            throw new ValidateException(['pass' => 'Введен неверный пароль!']);
-        }
-
-        if(isset($fields['remember'])){
-            Cookie::set('login', $fields['login'], 3600 * 24 * 7);
-            Cookie::set('pass', $this->getHash($fields['pass']), 3600 * 24 * 7);
-        }
-
-        $token = $this->generateSid();
-        $this->mSession->openSession($user['id_user'], $token);
-
-        if(isset($_SESSION['returnUrl'])) {
-            header('Location:' . $_SESSION['returnUrl']);
-            unset($_SESSION['returnUrl']);
-        }else {
-            header('Location: ' . ROOT);
-        }
-
-        return true;
+        $this->mUser->login($fields);
     }
 
     public function isAuth()
     {
-        $sid = $this->request->session('sid');
-        $login = $this->request->cookie('login');
-
-        if(!$sid && !$login){
-            return false;
-        }
-
-        if($sid){
-            $user = $this->mUser->getBySid($sid);
-            if($user){
-                $this->mSession->edit($user['id_session'], [
-                    'time_last' => date("Y-m-d H:i:s")
-                ]);
-                return true;
-            }
-        }else {
-
-            if($login) {
-                $user = $this->mUser->getByLogin($login);
-                if($user) {
-                    $token = $this->generateSid();
-                    $this->mSession->openSession($user['id_user'], $token);
-                    return true;
-                }
-            }
-        }
-        return false;
+        return $this->mUser->isAuth($this->request, $this->mSession);
     }
 
     private function comparePass($password)
@@ -111,26 +55,8 @@ class User
         return false;
     }
 
-    private function getHash($pass)
-    {
-        return hash('sha256', $pass . SALT);
-    }
-
-    private function generateSid($number = 10)
-    {
-        $pattern = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        $code = '';
-        for($i = 0; $i < $number; $i++){
-            $code .= $pattern[mt_rand(0, strlen($pattern) - 1)];
-        }
-        return $code;
-    }
-
     public function logOut()
     {
-        $session = new Session();
-        $session->del('sid');
-        Cookie::del('login');
-        Cookie::del('pass');
+        $this->mUser->logout();
     }
 }

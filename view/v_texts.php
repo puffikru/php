@@ -12,7 +12,7 @@
     </tr>
     <? foreach($texts as $text): ?>
         <tr>
-            <td><?= $text['title']; ?></td>
+            <td><?= $text['alias']; ?></td>
             <td><?= $text['content']; ?></td>
             <td>
                 <a href="<?= ROOT ?>texts/edit/<?= $text['id_text']; ?>"><i class="fa fa-pencil-square-o"></i></a>

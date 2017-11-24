@@ -37,7 +37,7 @@ class FormBuilder
         foreach($this->form->getFields() as $field) {
 
             if($field['tag'] === 'input') {
-                $inputs[] = $this->input($field, $this->form->getValues()['title']);
+                $inputs[] = $this->input($field, $this->form->getValues());
             }elseif($field['tag'] === 'textarea'){
                 $tag_label = $this->textArea($field);
                 if(isset($field['errors'])){
@@ -55,7 +55,7 @@ class FormBuilder
         return $inputs;
     }
 
-    public function input(array $attributes, $value = '')
+    public function input(array $attributes, $value = [])
     {
         $errors = '';
 
@@ -74,8 +74,14 @@ class FormBuilder
         }
         unset($attributes['tag']);
 
-        if($attributes['type'] !== 'submit' && $attributes['type'] !== 'hidden') {
-            $attributes['value'] = $value;
+        if(!empty($value)) {
+            foreach($value as $key => $val) {
+                if($attributes['type'] !== 'submit' && $attributes['type'] !== 'hidden') {
+                    if($attributes['name'] === $key) {
+                        $attributes['value'] = $val;
+                    }
+                }
+            }
         }
 
         return sprintf('<label><span>%s</span><input %s></label>%s', $label, $this->buildAttributes($attributes), $errors);

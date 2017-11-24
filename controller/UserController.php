@@ -6,29 +6,22 @@ use core\Exceptions\ValidateException;
 use core\Forms\FormBuilder;
 use forms\SignIn;
 use forms\SignUp;
-use model\Sessions;
-use model\Texts;
-use model\Users;
 
 class UserController extends FrontController
 {
     public function signUpAction()
     {
-        $text = new Texts();
-        $errors = '';
-        $mUser = new Users();
-        $mSession = new Sessions();
+        $text = $this->container->get('model.texts');
+        $user = $this->container->get('service.user', $this->request);
         $form = new SignUp();
         $formBuilder = new FormBuilder($form);
 
         if($this->request->isPost()) {
-
+            $form->saveValues($this->request->post());
             try {
-                //$mUser->signUp($this->request->post(), $mSession, $this->request);
-                $mUser->signUp($form->handleRequest($this->request), $mSession, $this->request);
+                $user->signUp($this->request->post());
                 $this->redirect(ROOT);
             }catch(ValidateException $e) {
-                //$errors = $e->getMessage();
                 $form->addErrors($e->getErrors());
             }
 
@@ -43,18 +36,16 @@ class UserController extends FrontController
 
     public function loginAction()
     {
-        $text = new Texts();
-        $mUser = new Users();
-        $mSession = new Sessions();
-        $mSession->clearSessions();
+        $text = $this->container->get('model.texts');
+        $this->container->get('model.session')->clearSessions();
+        $user = $this->container->get('service.user', $this->request);
         $form = new SignIn();
         $formBuilder = new FormBuilder($form);
 
-
         if($this->request->isPost()){
-
+            $form->saveValues($this->request->post());
             try {
-                $mUser->login($form->handleRequest($this->request), $mSession, $this->request);
+                $user->login($this->request->post());
                 $this->redirect(ROOT);
             }catch(ValidateException $e){
                 $form->addErrors($e->getErrors());
@@ -70,9 +61,7 @@ class UserController extends FrontController
 
     public function logoutAction()
     {
-        $mUser = new Users();
-        $session = new Sessions();
-        $mUser->logout($session, $this->request);
+        $this->container->get('service.user', $this->request)->logOut();
         $this->redirect(ROOT);
     }
 }

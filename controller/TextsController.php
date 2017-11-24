@@ -6,17 +6,15 @@ use core\Exceptions\ValidateException;
 use core\Forms\FormBuilder;
 use forms\AddText;
 use forms\EditText;
-use model\Sessions;
-use model\Texts;
 use model\Users;
 
 class TextsController extends FrontController
 {
     public function indexAction()
     {
-        $user = new Users();
-        $session = new Sessions();
-        $isAuth = $user->isAuth($session, $this->request);
+        $mUser = $this->container->get('model.user');
+        $user = $this->container->get('service.user', $this->request);
+        $isAuth = $user->isAuth();
 
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . 'texts';
@@ -26,14 +24,14 @@ class TextsController extends FrontController
 
         if(isset($_GET['auth'])) {
             if($_GET['auth'] == 'off') {
-                $user->logout($session, $this->request);
+                $user->logout();
                 $this->redirect(ROOT . "texts");
                 exit();
             }
         }
-        $staticTexts = new Texts();
+        $staticTexts = $this->container->get('model.texts');
         $texts = $staticTexts->all();
-        $cUser = $user->getBySid($this->request->session('sid'));
+        $cUser = $mUser->getBySid($this->request->session('sid'));
 
         $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->sidebar = $this->build('v_left');
@@ -44,9 +42,8 @@ class TextsController extends FrontController
 
     public function addAction()
     {
-        $user = new Users();
-        $session = new Sessions();
-        $isAuth = $user->isAuth($session, $this->request);
+        $mUser = new Users();
+        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
         $form = new AddText();
         $formBuilder = new FormBuilder($form);
 
@@ -56,12 +53,10 @@ class TextsController extends FrontController
             exit();
         }
 
-        $staticTexts = new Texts();
-        $cUser = $user->getBySid($this->request->session('sid'));
+        $staticTexts = $this->container->get('model.texts');
+        $cUser = $mUser->getBySid($this->request->session('sid'));
 
         if($this->request->isPost()) {
-
-            extract($this->request->post());
 
             try {
                 $staticTexts->add($form->handleRequest($this->request));
@@ -70,7 +65,6 @@ class TextsController extends FrontController
             }catch(ValidateException $e){
                 $form->addErrors($e->getErrors());
             }
-
 
         }
 
@@ -83,9 +77,8 @@ class TextsController extends FrontController
 
     public function editAction()
     {
-        $user = new Users();
-        $session = new Sessions();
-        $isAuth = $user->isAuth($session, $this->request);
+        $mUser = $this->container->get('model.user');
+        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
         $form = new EditText();
         $formBuilder = new FormBuilder($form);
 
@@ -102,10 +95,10 @@ class TextsController extends FrontController
             $err404 = true;
         }
 
-        $staticTexts = new Texts();
+        $staticTexts = $this->container->get('model.texts');
         $text = $staticTexts->one($id);
 
-        $cUser = $user->getBySid($this->request->session('sid'));
+        $cUser = $mUser->getBySid($this->request->session('sid'));
 
         if(!$text) {
             $errors = $text;
@@ -114,8 +107,6 @@ class TextsController extends FrontController
         $form->saveValues($text);
 
         if($this->request->isPost()) {
-
-            extract($this->request->post());
 
             $form->saveValues($this->request->post());
 
@@ -137,16 +128,14 @@ class TextsController extends FrontController
 
     public function deleteAction()
     {
-        $user = new Users();
-        $session = new Sessions();
-        $isAuth = $user->isAuth($session, $this->request);
+        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
         unset($_SESSION['returnUrl']);
 
         if(!$isAuth) {
             $this->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
-        $staticTexts = new Texts();
+        $staticTexts = $this->container->get('model.texts');
 
         $id = $this->request->get('id');
 
