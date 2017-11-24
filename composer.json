@@ -1,0 +1,16 @@
+{
+    "name": "igorbulakh/blog-php3",
+    "description": "php-blog",
+    "require": {
+        "symfony/symfony": "^3.3",
+        "1g0rbm/handybox": "dev-master",
+        "symfony/dotenv": "^4.1@dev"
+    },
+    "authors": [
+        {
+            "name": "Bulakh Igor",
+            "email": "bulakh.igor@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

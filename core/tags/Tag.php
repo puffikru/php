@@ -20,12 +20,14 @@ abstract class Tag
         $this->name = $name;
     }
 
-    public function attr($name, $value){
+    public function attr($name, $value)
+    {
         $this->attributes[$name] = $value;
         return $this;
     }
 
-    public function render(){
+    public function render()
+    {
         $tag = str_replace('%name%', $this->name, $this->pattern);
         $pairs = [];
         if(count($this->attributes) === 0){
