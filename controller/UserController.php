@@ -44,28 +44,19 @@ class UserController extends FrontController
     public function loginAction()
     {
         $text = new Texts();
-        $errors = '';
         $mUser = new Users();
         $mSession = new Sessions();
         $mSession->clearSessions();
         $form = new SignIn();
         $formBuilder = new FormBuilder($form);
 
-        /*if(isset($_GET['auth'])) {
-            if($_GET['auth'] === 'off') {
-                //throw new \Exception('У вас нет прав для просмотра данной страницы!');
-                //$this->logoutAction();
-            }
-        }*/
 
         if($this->request->isPost()){
 
             try {
-                //$mUser->login($this->request->post(), $mSession, $this->request);
                 $mUser->login($form->handleRequest($this->request), $mSession, $this->request);
                 $this->redirect(ROOT);
             }catch(ValidateException $e){
-                //$errors = $e->getMessage();
                 $form->addErrors($e->getErrors());
             }
         }

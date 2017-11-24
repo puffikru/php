@@ -1,9 +1,10 @@
-<form method="post">
-    Название<br>
-    <input type="text" name="alias" value="<?= $text['alias']; ?>"><br>
-    Контент<br>
-    <textarea name="content"><?= $text['content']; ?></textarea><br>
-    <a href="<?= ROOT ?>texts" type="button">Отмена</a>
-    <input type="submit" value="Сохранить"><br>
+<form <?=$form->method();?> class="edit-text">
+    <?=$form->inputSign();?>
+    <? foreach($form->fields() as $field):?>
+        <div class="line">
+            <?=$field;?>
+        </div>
+    <? endforeach;?>
 </form>
-<?= $errors[0] ?? ''; ?>
+<a href="<?= ROOT ?>texts" type="button">Отмена</a>
+<a href="<?= ROOT;?>">На главную</a>

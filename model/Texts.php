@@ -17,15 +17,15 @@ class Texts extends BaseModel
         $query = $this->db->query("SELECT * FROM {$this->table}");
         $texts = [];
         while($row = $query->fetch()) {
-            $texts[$row['alias']] = $row['content'];
+            $texts[$row['title']] = $row['content'];
         }
         return $texts;
     }
 
     public function validationMap(){
         return [
-            'fields' => ['alias', 'content'],
-            'not_empty' => ['alias', 'content']
+            'fields' => ['title', 'content'],
+            'not_empty' => ['title', 'content']
         ];
     }
 

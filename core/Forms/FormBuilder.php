@@ -39,7 +39,6 @@ class FormBuilder
             if($field['tag'] === 'input') {
                 $inputs[] = $this->input($field, $this->form->getValues()['title']);
             }elseif($field['tag'] === 'textarea'){
-
                 $tag_label = $this->textArea($field);
                 if(isset($field['errors'])){
                     $errors = $field['errors'];

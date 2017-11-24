@@ -2,6 +2,10 @@
 
 namespace controller;
 
+use core\Exceptions\ValidateException;
+use core\Forms\FormBuilder;
+use forms\AddText;
+use forms\EditText;
 use model\Sessions;
 use model\Texts;
 use model\Users;
@@ -43,6 +47,8 @@ class TextsController extends FrontController
         $user = new Users();
         $session = new Sessions();
         $isAuth = $user->isAuth($session, $this->request);
+        $form = new AddText();
+        $formBuilder = new FormBuilder($form);
 
         if(!$isAuth) {
             $_SESSION['returnUrl'] = ROOT . 'add-text';
@@ -51,8 +57,6 @@ class TextsController extends FrontController
         }
 
         $staticTexts = new Texts();
-        $alias = '';
-        $content = '';
         $cUser = $user->getBySid($this->request->session('sid'));
 
         if($this->request->isPost()) {
@@ -60,23 +64,19 @@ class TextsController extends FrontController
             extract($this->request->post());
 
             try {
-                $staticTexts->add(['alias' => $alias, 'content' => $content]);
+                $staticTexts->add($form->handleRequest($this->request));
                 $this->redirect(ROOT . "texts");
                 exit();
-            }catch(\Exception $e){
-                $errors = $e->getMessage();
+            }catch(ValidateException $e){
+                $form->addErrors($e->getErrors());
             }
 
 
-        }else {
-            $alias = '';
-            $content = '';
-            $errors = '';
         }
 
         $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
         $this->sidebar = $this->build('v_left');
-        $this->content = $this->build('v_add-text', ['alias' => $alias, 'content' => $content, 'errors' => $errors]);
+        $this->content = $this->build('v_add-text', ['form' => $formBuilder]);
         $this->texts = $staticTexts->getTexts() ?? null;
         $this->title = 'Новый текст';
     }
@@ -86,9 +86,10 @@ class TextsController extends FrontController
         $user = new Users();
         $session = new Sessions();
         $isAuth = $user->isAuth($session, $this->request);
+        $form = new EditText();
+        $formBuilder = new FormBuilder($form);
 
         $id = $this->request->get('id');
-        $err404 = false;
 
         // Проверка авторизации
         if(!$isAuth) {
@@ -103,31 +104,34 @@ class TextsController extends FrontController
 
         $staticTexts = new Texts();
         $text = $staticTexts->one($id);
-        $errors = '';
-        $alias = '';
-        $content = '';
+
         $cUser = $user->getBySid($this->request->session('sid'));
 
         if(!$text) {
             $errors = $text;
         }
 
+        $form->saveValues($text);
+
         if($this->request->isPost()) {
 
             extract($this->request->post());
 
+            $form->saveValues($this->request->post());
+
             try {
-                $staticTexts->edit($id, ['alias' => $alias, 'content' => $content]);
+                $staticTexts->edit($id, $form->handleRequest($this->request));
                 $this->redirect(ROOT . "texts");
                 exit();
-            }catch(\Exception $e){
-                $errors = $e->getMessage();
+            }catch(ValidateException $e){
+                $form->addErrors($e->getErrors());
             }
 
         }
 
         $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
-        $this->content = $this->build('v_edit-text', ['err404' => $err404, 'text' => $text, 'errors' => $errors]);
+        $this->content = $this->build('v_edit-text', ['form' => $formBuilder]);
+        $this->texts = $staticTexts->getTexts() ?? null;
         $this->title = 'Редактирование текста';
     }
 

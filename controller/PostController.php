@@ -137,9 +137,6 @@ class PostController extends FrontController
 
         $messages = $this->container->get('model.post');
         $text = $messages->one($id);
-        $error = '';
-        $title = '';
-        $content = '';
 
         if(!$text) {
             throw new Error404("Такой статьи не существует!");
@@ -154,7 +151,7 @@ class PostController extends FrontController
             $form->saveValues($this->request->post());
 
             try {
-                $messages->edit($id, ['title' => $title, 'content' => $content]);
+                $messages->edit($id, $form->handleRequest($this->request));
                 $this->redirect(ROOT);
             }catch(ValidateException $e){
                 $form->addErrors($e->getErrors());
