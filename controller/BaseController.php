@@ -14,7 +14,7 @@ use core\Request;
 use core\ServiceContainer;
 
 
-class FrontController
+class BaseController
 {
     protected $title = '';
     protected $content = '';

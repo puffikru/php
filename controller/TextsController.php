@@ -8,7 +8,7 @@ use forms\AddText;
 use forms\EditText;
 use model\Users;
 
-class TextsController extends FrontController
+class TextsController extends BaseController
 {
     public function indexAction()
     {

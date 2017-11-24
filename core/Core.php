@@ -14,14 +14,18 @@ use core\Exceptions\Fatal;
 use core\providers\ModelProvider;
 use core\providers\UserProvider;
 
-class Application
+class Core
 {
+    use \core\traits\Singleton;
+
     public $request;
     private $controller;
     private $action;
     private $container;
 
-    public function __construct()
+    private function __construct(){}
+
+    public function run()
     {
         $this->getController();
         $this->initRequest();
@@ -30,10 +34,7 @@ class Application
 
         (new ModelProvider())->register($this->container);
         (new UserProvider())->register($this->container);
-    }
 
-    public function run()
-    {
         try {
             $controller = new $this->controller($this->request, $this->container);
             $action = $this->action;
@@ -83,7 +84,7 @@ class Application
 
         if(isset($params[0])) {
             if(!file_exists('controller/' . ucfirst($params[0]) . 'Controller.php')) {
-                // throw new Exception
+                throw new Error404('Страница не найдейна');
             }
         }
 

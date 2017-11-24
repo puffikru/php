@@ -8,7 +8,7 @@ use core\Forms\FormBuilder;
 use forms\AddPost;
 use forms\EditPost;
 
-class PostController extends FrontController
+class PostController extends BaseController
 {
     public function indexAction()
     {

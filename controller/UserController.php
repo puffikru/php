@@ -7,7 +7,7 @@ use core\Forms\FormBuilder;
 use forms\SignIn;
 use forms\SignUp;
 
-class UserController extends FrontController
+class UserController extends BaseController
 {
     public function signUpAction()
     {
