@@ -13,10 +13,13 @@ class UserController extends BaseController
     {
         $form = new SignUp();
         $formBuilder = new FormBuilder($form);
+        $user = $this->container->get('service.user', $this->request);
+        $user->isAuth();
+        $access = $user->checkAccess();
 
         if($this->request->isPost()) {
             try {
-                $this->container->get('service.user', $this->request)->signUp($form->handleRequest($this->request));
+                $user->signUp($form->handleRequest($this->request));
                 $this->response->redirect(ROOT);
             }catch(ValidateException $e) {
                 $form->addErrors($e->getErrors());
@@ -24,7 +27,7 @@ class UserController extends BaseController
 
         }
 
-        $this->menu = $this->build('v_menu');
+        $this->menu = $this->build('v_menu', ['access' => $access]);
         $this->sidebar = $this->build('v_left');
         $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
         $this->title = 'Регистрация';
@@ -36,17 +39,20 @@ class UserController extends BaseController
         $this->container->get('models', 'Sessions')->clearSessions();
         $form = new SignIn();
         $formBuilder = new FormBuilder($form);
+        $user = $this->container->get('service.user', $this->request);
+        $user->isAuth();
+        $access = $user->checkAccess();
 
         if($this->request->isPost()){
             try {
-                $this->container->get('service.user', $this->request)->login($form->handleRequest($this->request));
+                $user->login($form->handleRequest($this->request));
                 $this->response->redirect(ROOT);
             }catch(ValidateException $e){
                 $form->addErrors($e->getErrors());
             }
         }
 
-        $this->menu = $this->build('v_menu');
+        $this->menu = $this->build('v_menu', ['access' => $access]);
         $this->content = $this->build('v_login', ['form' => $formBuilder]);
         $this->sidebar = $this->build('v_left');
         $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;

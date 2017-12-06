@@ -19,5 +19,3 @@ DirectoryIndex index.php
 <FilesMatch "index.(php)$">
     Allow from all
 </FilesMatch>
-
-#ErrorDocument 403 http://php:8888/course/php_1/blog-cpu/err403.sql

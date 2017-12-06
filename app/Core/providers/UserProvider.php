@@ -10,7 +10,6 @@ namespace NTSchool\Phpblog\Core\providers;
 
 use NTSchool\Phpblog\Core\ServiceContainer;
 use NTSchool\Phpblog\Core\User;
-use NTSchool\Phpblog\Model\RoleModel;
 
 class UserProvider implements ProviderInterface
 {

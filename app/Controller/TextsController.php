@@ -105,7 +105,6 @@ class TextsController extends BaseController
             try {
                 $staticTexts->edit($id, $form->handleRequest($this->request));
                 $this->response->redirect(ROOT . "texts");
-                exit();
             }catch(ValidateException $e){
                 $form->addErrors($e->getErrors());
             }
@@ -134,8 +133,7 @@ class TextsController extends BaseController
             echo "Такого текста не существует!";
         }else {
             $this->container->get('models', 'Texts')->delete($id);
-            $this->redirect(ROOT . "texts");
-            exit();
+            $this->response->redirect(ROOT . "texts");
         }
     }
 }

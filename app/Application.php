@@ -14,7 +14,7 @@ use NTSchool\Phpblog\Core\providers\ModelProvider;
 use NTSchool\Phpblog\Core\providers\SessionProvider;
 use NTSchool\Phpblog\Core\providers\UserProvider;
 use NTSchool\Phpblog\Core\ServiceContainer;
-use NTSchool\Phpblog\Core\Request;
+use NTSchool\Phpblog\Core\Http\Request;
 use NTSchool\Phpblog\Core\Http\Response;
 use Symfony\Component\Dotenv\Dotenv;
 

@@ -9,6 +9,7 @@
 namespace NTSchool\Phpblog\Core;
 
 use NTSchool\Phpblog\Core\Exceptions\ValidateException;
+use NTSchool\Phpblog\Core\Http\Request;
 use NTSchool\Phpblog\Model\RoleModel;
 use NTSchool\Phpblog\Model\Sessions;
 use NTSchool\Phpblog\Model\Users;

@@ -8,7 +8,6 @@
 
 namespace NTSchool\Phpblog\Core\Http;
 
-
 use NTSchool\Phpblog\Core\Bag;
 use NTSchool\Phpblog\Core\Traits\Singleton;
 

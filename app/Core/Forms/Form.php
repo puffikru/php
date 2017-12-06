@@ -9,7 +9,7 @@
 namespace NTSchool\Phpblog\Core\Forms;
 
 
-use NTSchool\Phpblog\Core\Request;
+use NTSchool\Phpblog\Core\Http\Request;
 
 abstract class Form
 {

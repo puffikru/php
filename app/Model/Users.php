@@ -2,8 +2,8 @@
 
 namespace NTSchool\Phpblog\Model;
 
-use NTSchool\Phpblog\Core\Cookie;
-use NTSchool\Phpblog\Core\Request;
+use NTSchool\Phpblog\Core\Http\Cookie;
+use NTSchool\Phpblog\Core\Http\Request;
 use NTSchool\Phpblog\Core\Exceptions\ValidateException;
 use NTSchool\Phpblog\Core\Http\Session;
 use NTSchool\Phpblog\Core\User;

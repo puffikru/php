@@ -11,7 +11,7 @@ namespace NTSchool\Phpblog\Controller;
 
 use NTSchool\Phpblog\Core\Exceptions\Error404;
 use NTSchool\Phpblog\Core\Http\Response;
-use NTSchool\Phpblog\Core\Request;
+use NTSchool\Phpblog\Core\Http\Request;
 use NTSchool\Phpblog\Core\ServiceContainer;
 
 

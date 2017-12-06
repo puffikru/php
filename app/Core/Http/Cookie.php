@@ -6,7 +6,7 @@
  * Time: 20:59
  */
 
-namespace NTSchool\Phpblog\Core;
+namespace NTSchool\Phpblog\Core\Http;
 
 
 class Cookie

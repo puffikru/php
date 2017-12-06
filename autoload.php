@@ -5,6 +5,6 @@ spl_autoload_register(function($classname){
     if(is_file($file)){
         include_once $file;
     }else{
-        throw new \core\Exceptions\Error404("class $classname not found!");
+        throw new NTSchool\Phpblog\Core\Exceptions\Error404("class $classname not found!");
     }
 });

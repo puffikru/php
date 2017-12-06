@@ -6,8 +6,10 @@
  * Time: 0:54
  */
 
-namespace NTSchool\Phpblog\Core;
+namespace NTSchool\Phpblog\Core\Http;
 
+
+use NTSchool\Phpblog\Core\Bag;
 
 class Request
 {
