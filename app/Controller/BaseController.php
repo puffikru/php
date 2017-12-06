@@ -39,6 +39,11 @@ class BaseController
         throw new Error404("Undefined action $name");
     }
 
+    public function staticAction($message)
+    {
+        $this->content = $message;
+    }
+
     public function render()
     {
         echo $this->build('v_main', ['title' => $this->title, 'content' => $this->content, 'menu' => $this->menu, 'sidebar' => $this->sidebar, 'texts' => $this->texts]);

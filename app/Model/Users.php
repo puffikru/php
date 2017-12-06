@@ -19,32 +19,39 @@ class Users extends BaseModel
 
     public function validationMap()
     {
-        return [
-            'fields' => ['login', 'pass', 'name'],
-            'not_empty' => ['login', 'pass'],
-            'min_length' => [
-                'login' => 5,
-                'pass' => 6
-            ]
-        ];
+        return ['fields' => ['login', 'pass', 'name'], 'not_empty' => ['login', 'pass'], 'min_length' => ['login' => 5, 'pass' => 6]];
+    }
+
+    public function getAllUsers()
+    {
+        $sql = "SELECT
+	              `users`.`name` AS 'username',
+                  `users`.`login` AS 'login',
+                  `roles`.`description` AS 'role',
+                  COUNT(*) AS 'post_number'
+                  FROM `users`
+                  JOIN `news` 
+                    ON `users`.`id_user`=`news`.`id_user`
+                  JOIN `roles` 
+                    ON `users`.`id_role`=`roles`.`id_role`
+                  WHERE `news`.`id_user`=`users`.`id_user`
+                  GROUP BY `users`.`name`";
+
+        return $this->db->select($sql);
     }
 
     public function signUp(array $fields)
     {
         $this->validation->execute($fields);
-        if(!$this->validation->success()){
+        if(!$this->validation->success()) {
             throw new ValidateException($this->validation->errors());
         }
 
-        if($this->isUserExists($fields)){
+        if($this->isUserExists($fields)) {
             throw new ValidateException(['login' => 'Пользователь с таким именем уже существует!']);
         };
 
-        $this->db->insert('users', [
-            'name' => $fields['name'],
-            'login' => $fields['login'],
-            'pass' => $this->getHash($fields['pass'])
-        ]);
+        $this->db->insert('users', ['name' => $fields['name'], 'login' => $fields['login'], 'pass' => $this->getHash($fields['pass'])]);
 
         unset($fields['name']);
         $this->login($fields);
@@ -52,7 +59,7 @@ class Users extends BaseModel
 
     public function isUserExists(array $fields)
     {
-        if($this->getByLogin($fields['login'])){
+        if($this->getByLogin($fields['login'])) {
             return true;
         }
 
@@ -62,21 +69,21 @@ class Users extends BaseModel
     public function login(array $fields)
     {
         $this->validation->execute($fields);
-        if(!$this->validation->success()){
+        if(!$this->validation->success()) {
             throw new ValidateException($this->validation->errors());
         }
 
         $user = $this->getByLogin($fields['login']);
 
-        if(!$user){
+        if(!$user) {
             throw new ValidateException(['login' => 'Такого пользователя не существует!']);
         }
 
-        if($this->getHash($fields['pass']) !== $user['pass']){
+        if($this->getHash($fields['pass']) !== $user['pass']) {
             throw new ValidateException(['pass' => 'Введен неверный пароль!']);
         }
 
-        if(isset($fields['remember'])){
+        if(isset($fields['remember'])) {
             Cookie::set('login', $fields['login'], 3600 * 24 * 7);
             Cookie::set('pass', $this->getHash($fields['pass']), 3600 * 24 * 7);
         }
@@ -97,24 +104,22 @@ class Users extends BaseModel
 
     public function isAuth(Request $request, Sessions $sessions, Session $session, User &$user)
     {
-        if($user->getCurrent()){
+        if($user->getCurrent()) {
             return true;
         }
 
         $sid = $session->collection()->get('sid');
         $login = $request->cookie()->get('login');
 
-        if(!$sid && !$login){
+        if(!$sid && !$login) {
             return false;
         }
 
-        if($sid){
+        if($sid) {
             $user->setCurrent($this->getBySid($sid));
 
-            if($user->getCurrent()){
-                $sessions->edit($user->getCurrent()['id_session'], [
-                    'time_last' => date("Y-m-d H:i:s")
-                ]);
+            if($user->getCurrent()) {
+                $sessions->edit($user->getCurrent()['id_session'], ['time_last' => date("Y-m-d H:i:s")]);
                 return true;
             }
         }else {
@@ -125,7 +130,7 @@ class Users extends BaseModel
                     $sessions->openSession($cUser['id_user'], $token);
                     return true;
                 }
-            }else{
+            }else {
                 return false;
             }
 
@@ -141,7 +146,8 @@ class Users extends BaseModel
         return $query[0] ?? null;
     }
 
-    public function getBySid($sid){
+    public function getBySid($sid)
+    {
         $query = $this->db->select("SELECT * FROM {$this->table} JOIN sessions USING($this->pk) WHERE sid=:sid", ['sid' => $sid]);
         return $query[0] ?? null;
     }
@@ -155,7 +161,7 @@ class Users extends BaseModel
     {
         $pattern = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         $code = '';
-        for($i = 0; $i < $number; $i++){
+        for($i = 0; $i < $number; $i++) {
             $code .= $pattern[mt_rand(0, strlen($pattern) - 1)];
         }
         return $code;

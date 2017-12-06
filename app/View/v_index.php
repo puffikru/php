@@ -9,6 +9,10 @@
                         class="fa fa-times"></i></a>
             <? elseif($access['id_priv'] == 2): ?>
             &nbsp; <a href="<?= ROOT ?>post/edit/<?= $article['id_news']; ?>"><i class="fa fa-pencil-square-o"></i></a>
+                <? if($article['id_user'] == $access['id_user']): ?>
+                    &nbsp; <a href="<?= ROOT ?>post/delete/<?= $article['id_news']; ?>" class="delete"><i
+                                class="fa fa-times"></i></a>
+                <? endif; ?>
             <? elseif($article['id_user'] == $access['id_user']): ?>
                 &nbsp; <a href="<?= ROOT ?>post/edit/<?= $article['id_news']; ?>"><i class="fa fa-pencil-square-o"></i></a>
                 &nbsp; <a href="<?= ROOT ?>post/delete/<?= $article['id_news']; ?>" class="delete"><i

@@ -69,11 +69,11 @@ class UserController extends BaseController
     {
         $mUser = $this->container->get('models', 'Users');
 
-        $users = $mUser->all();
-
         $user = $this->container->get('service.user', $this->request);
         $user->isAuth();
         $access = $user->checkAccess();
+        $all = $mUser->getAllUsers();
+        $roles = $this->container->get('models', 'RoleModel')->all();
 
         if(!$access){
             $this->response->redirect(ROOT);
@@ -84,6 +84,6 @@ class UserController extends BaseController
         $this->sidebar = $this->build('v_left');
         $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
         $this->title = 'Пользователи';
-        $this->content = $this->build('v_users', ['users' => $users, 'access' => $access, 'header' => $this->title]);
+        $this->content = $this->build('v_users', ['all' => $all, 'header' => $this->title, 'roles' => $roles]);
     }
 }

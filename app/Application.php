@@ -8,8 +8,12 @@
 
 namespace NTSchool\Phpblog;
 
+use NTSchool\Phpblog\Controller\BaseController;
 use NTSchool\Phpblog\Controller\PageController;
+use NTSchool\Phpblog\Core\ErrorHandler;
 use NTSchool\Phpblog\Core\Exceptions\Error404;
+use NTSchool\Phpblog\Core\Exceptions\Fatal;
+use NTSchool\Phpblog\Core\Logger;
 use NTSchool\Phpblog\Core\providers\ModelProvider;
 use NTSchool\Phpblog\Core\providers\SessionProvider;
 use NTSchool\Phpblog\Core\providers\UserProvider;
@@ -67,6 +71,8 @@ class Application
         $this->parseUrl();
     }
 
+    //TODO: Доделать обработчики ошибок
+
     public function run()
     {
         try {
@@ -82,8 +88,33 @@ class Application
 
             $this->response->setContent($controller->getFullTemplate());
             $this->response->send();
+        }catch(\PDOException $e){
+            (
+                new ErrorHandler(
+                    new BaseController($this->request, $this->response, $this->container),
+                    new Logger('critical', LOG_DIR),
+                    $this->response,
+                    DEV_MODE
+                )
+            )->handle($e, 'Oooops... Something went wrong!');
         }catch(Error404 $e){
-            //
+            (
+            new ErrorHandler(
+                new BaseController($this->request, $this->response, $this->container),
+                new Logger('Error404', LOG_DIR),
+                $this->response,
+                DEV_MODE
+            )
+            )->handle($e, 'Page not found!');
+        }catch(Fatal $e){
+            (
+            new ErrorHandler(
+                new BaseController($this->request, $this->response, $this->container),
+                new Logger('Fatal Error', LOG_DIR),
+                $this->response,
+                DEV_MODE
+            )
+            )->handle($e, 'Fatal Error');
         }
     }
 
