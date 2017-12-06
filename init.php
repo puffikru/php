@@ -1,6 +1,6 @@
 <?php
 include_once "config.php";
-session_start();
+//session_start();
 
 // display errors
 ini_set('display_errors', true);

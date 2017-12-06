@@ -16,7 +16,7 @@ class DBDriver
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
             \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
         ];
-        $this->db = new \PDO('mysql:host=' . Settings::HOST . ';dbname=' . Settings::DBNAME, Settings::LOGIN, Settings::PASS, $opt);
+        $this->db = new \PDO('mysql:host=' . getenv('DB_HOST') . ';dbname=' . getenv('DB_NAME'), getenv('DB_USER'), getenv('DB_PASS'), $opt);
         $this->db->exec('SET NAMES UTF8');
     }
 

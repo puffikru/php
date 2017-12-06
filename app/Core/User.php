@@ -9,21 +9,30 @@
 namespace NTSchool\Phpblog\Core;
 
 use NTSchool\Phpblog\Core\Exceptions\ValidateException;
+use NTSchool\Phpblog\Model\RoleModel;
 use NTSchool\Phpblog\Model\Sessions;
 use NTSchool\Phpblog\Model\Users;
+use NTSchool\Phpblog\Core\Http\Session;
 
 class User
 {
     private $mUser;
     private $mSession;
     private $request;
+    private $session;
+    private $mRole;
+
     private $db;
 
-    public function __construct(Users $mUser, Sessions $mSession, Request $request)
+    protected $current = null;
+
+    public function __construct(Users $mUser, Sessions $mSession, Request $request, Session $session, RoleModel $mRole)
     {
         $this->mUser = $mUser;
         $this->mSession = $mSession;
         $this->request = $request;
+        $this->session = $session;
+        $this->mRole = $mRole;
         $this->db = new DBDriver();
     }
 
@@ -44,7 +53,26 @@ class User
 
     public function isAuth()
     {
-        return $this->mUser->isAuth($this->request, $this->mSession);
+        return $this->mUser->isAuth($this->request, $this->mSession, $this->session, $this);
+    }
+
+    public function checkAccess()
+    {
+        if(!$this->current){
+            return false;
+        }
+
+        return $this->mRole->checkPriv($this->current['id_user']);
+    }
+
+    public function setCurrent($user)
+    {
+        $this->current = $user;
+    }
+
+    public function getCurrent()
+    {
+        return $this->current;
     }
 
     private function comparePass($password)

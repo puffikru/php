@@ -1,5 +1,3 @@
-.*
-!.gitignore
-!.htaccess
-
 /vendor/
+.idea/
+.env

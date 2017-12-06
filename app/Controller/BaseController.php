@@ -10,6 +10,7 @@ namespace NTSchool\Phpblog\Controller;
 
 
 use NTSchool\Phpblog\Core\Exceptions\Error404;
+use NTSchool\Phpblog\Core\Http\Response;
 use NTSchool\Phpblog\Core\Request;
 use NTSchool\Phpblog\Core\ServiceContainer;
 
@@ -23,11 +24,13 @@ class BaseController
     protected $texts;
 
     protected $request;
+    protected $response;
     protected $container;
 
-    public function __construct(Request $request, ServiceContainer $container)
+    public function __construct(Request $request, Response $response, ServiceContainer $container)
     {
         $this->request = $request;
+        $this->response = $response;
         $this->container = $container;
     }
 
@@ -41,10 +44,6 @@ class BaseController
         echo $this->build('v_main', ['title' => $this->title, 'content' => $this->content, 'menu' => $this->menu, 'sidebar' => $this->sidebar, 'texts' => $this->texts]);
     }
 
-    public function redirect($dest){
-        header('Location:' . $dest);
-    }
-
     protected function build($fname, $params = [])
     {
         extract($params);
@@ -52,5 +51,19 @@ class BaseController
         ob_start();
         include "app/View/$fname.php";
         return ob_get_clean();
+    }
+
+    public function getFullTemplate()
+    {
+        return $this->build(
+            'v_main',
+            [
+                'title' => $this->title,
+                'content' => $this->content,
+                'menu' => $this->menu,
+                'sidebar' => $this->sidebar,
+                'texts' => $this->texts
+            ]
+        );
     }
 }

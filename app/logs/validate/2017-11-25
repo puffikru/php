@@ -9,3 +9,14 @@ Stack trace:
 #2 /Applications/MAMP/htdocs/blog-php3/index.php(3): NTSchool\Phpblog\Core\Core->run()
 #3 {main}
 -------------------------------------------------------------------------------------
+
+02:21:11
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Controller/PostController.php(78): NTSchool\Phpblog\Model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php(41): NTSchool\Phpblog\Controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(4): NTSchool\Phpblog\Core\Core->run()
+#3 {main}
+-------------------------------------------------------------------------------------

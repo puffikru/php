@@ -8,8 +8,7 @@
 
 namespace NTSchool\Phpblog\Model;
 
-
-use NTSchool\Phpblog\Core\Session;
+use NTSchool\Phpblog\Core\Http\Session;
 
 class Sessions extends BaseModel
 {
@@ -43,8 +42,8 @@ class Sessions extends BaseModel
         $obj['time_last'] = $now;
         $this->db->insert('sessions', $obj);
 
-        $session = new Session();
-        $session->set('sid', $sid);
+        $session = Session::instance();
+        $session->collection()->set('sid', $sid);
 
         return $sid;
     }

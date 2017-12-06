@@ -17,7 +17,7 @@ class UserController extends BaseController
         if($this->request->isPost()) {
             try {
                 $this->container->get('service.user', $this->request)->signUp($form->handleRequest($this->request));
-                $this->redirect(ROOT);
+                $this->response->redirect(ROOT);
             }catch(ValidateException $e) {
                 $form->addErrors($e->getErrors());
             }
@@ -40,7 +40,7 @@ class UserController extends BaseController
         if($this->request->isPost()){
             try {
                 $this->container->get('service.user', $this->request)->login($form->handleRequest($this->request));
-                $this->redirect(ROOT);
+                $this->response->redirect(ROOT);
             }catch(ValidateException $e){
                 $form->addErrors($e->getErrors());
             }
@@ -56,7 +56,7 @@ class UserController extends BaseController
     public function logoutAction()
     {
         $this->container->get('service.user', $this->request)->logOut();
-        $this->redirect(ROOT);
+        $this->response->redirect(ROOT);
     }
 
     public function listAction()
@@ -65,14 +65,19 @@ class UserController extends BaseController
 
         $users = $mUser->all();
 
-        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
+        $user = $this->container->get('service.user', $this->request);
+        $user->isAuth();
+        $access = $user->checkAccess();
 
-        $cUser = $mUser->getBySid($this->request->session('sid'));
+        if(!$access){
+            $this->response->redirect(ROOT);
+            exit();
+        }
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
+        $this->menu = $this->build('v_menu', ['access' => $access]);
         $this->sidebar = $this->build('v_left');
         $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
         $this->title = 'Пользователи';
-        $this->content = $this->build('v_users', ['users' => $users, 'isAuth' => $isAuth, 'header' => $this->title]);
+        $this->content = $this->build('v_users', ['users' => $users, 'access' => $access, 'header' => $this->title]);
     }
 }

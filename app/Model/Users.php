@@ -5,11 +5,11 @@ namespace NTSchool\Phpblog\Model;
 use NTSchool\Phpblog\Core\Cookie;
 use NTSchool\Phpblog\Core\Request;
 use NTSchool\Phpblog\Core\Exceptions\ValidateException;
-use NTSchool\Phpblog\Core\Session;
+use NTSchool\Phpblog\Core\Http\Session;
+use NTSchool\Phpblog\Core\User;
 
 class Users extends BaseModel
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -95,33 +95,41 @@ class Users extends BaseModel
         return true;
     }
 
-    public function isAuth(Request $request, Sessions $sessions)
+    public function isAuth(Request $request, Sessions $sessions, Session $session, User &$user)
     {
-        $sid = $request->session('sid');
-        $login = $request->cookie('login');
+        if($user->getCurrent()){
+            return true;
+        }
+
+        $sid = $session->collection()->get('sid');
+        $login = $request->cookie()->get('login');
 
         if(!$sid && !$login){
             return false;
         }
 
         if($sid){
-            $user = $this->getBySid($sid);
-            if($user){
-                $sessions->edit($user['id_session'], [
+            $user->setCurrent($this->getBySid($sid));
+
+            if($user->getCurrent()){
+                $sessions->edit($user->getCurrent()['id_session'], [
                     'time_last' => date("Y-m-d H:i:s")
                 ]);
                 return true;
             }
         }else {
-
             if($login) {
-                $user = $this->getByLogin($login);
-                if($user) {
+                $cUser = $this->getByLogin($login);
+                if($cUser) {
                     $token = $this->generateSid();
-                    $sessions->openSession($user['id_user'], $token);
+                    $sessions->openSession($cUser['id_user'], $token);
                     return true;
                 }
+            }else{
+                return false;
             }
+
+            return false;
         }
 
         return false;
@@ -140,7 +148,7 @@ class Users extends BaseModel
 
     public function getHash($pass)
     {
-        return hash('sha256', $pass . SALT);
+        return hash('sha256', $pass . getenv('SALT'));
     }
 
     private function generateSid($number = 10)
@@ -155,8 +163,8 @@ class Users extends BaseModel
 
     public function logout()
     {
-        $session = new Session();
-        $session->del('sid');
+        $session = Session::instance();
+        $session->remove('sid');
         Cookie::del('login');
         Cookie::del('pass');
     }

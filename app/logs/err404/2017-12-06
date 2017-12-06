@@ -1,0 +1,321 @@
+
+00:23:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Такой статьи не существует! in /Applications/MAMP/htdocs/blog-php3/app/Controller/PostController.php:44
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\PostController->oneAction()
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+00:23:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action  in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\BaseController->__call('', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+00:25:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action  in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\BaseController->__call('', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+00:31:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action  in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\BaseController->__call('', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+00:32:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action  in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\BaseController->__call('', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:116
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(88): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(62): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:116
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(88): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(62): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:116
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(88): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(62): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:116
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(88): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(62): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:116
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(88): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(62): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:116
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(88): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(62): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:116
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(88): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(62): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:116
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(88): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(62): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:116
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(88): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(62): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:116
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(88): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(62): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:116
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(88): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(62): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:116
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(88): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(62): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:52:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Такой статьи не существует! in /Applications/MAMP/htdocs/blog-php3/app/Controller/PostController.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(74): NTSchool\Phpblog\Controller\PostController->oneAction()
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+06:15:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:116
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(88): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(62): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+07:28:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action errorAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(78): NTSchool\Phpblog\Controller\BaseController->__call('errorAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+07:28:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action errorAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(78): NTSchool\Phpblog\Controller\BaseController->__call('errorAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+07:28:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action errorAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(78): NTSchool\Phpblog\Controller\BaseController->__call('errorAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+07:29:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:120
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(92): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(66): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+07:29:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:120
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(92): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(66): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+07:29:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:120
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(92): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(66): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+07:29:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:120
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(92): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(66): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+07:32:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:120
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(92): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(66): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+07:33:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:120
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(92): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(66): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+07:33:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:120
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(92): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(66): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+07:33:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:120
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(92): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(66): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(10): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------

@@ -10,6 +10,7 @@ namespace NTSchool\Phpblog\Core\providers;
 
 use NTSchool\Phpblog\Core\ServiceContainer;
 use NTSchool\Phpblog\Core\User;
+use NTSchool\Phpblog\Model\RoleModel;
 
 class UserProvider implements ProviderInterface
 {
@@ -19,7 +20,9 @@ class UserProvider implements ProviderInterface
             return new User(
                 $container->get('models', 'Users'),
                 $container->get('models', 'Sessions'),
-                $request
+                $request,
+                $container->get('http.session'),
+                $container->get('models', 'RoleModel')
             );
         });
     }

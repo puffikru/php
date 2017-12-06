@@ -1,0 +1,111 @@
+
+15:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/Users.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Core/User.php(42): NTSchool\Phpblog\Model\Users->login(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Controller/UserController.php(42): NTSchool\Phpblog\Core\User->login(Array)
+#2 /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php(41): NTSchool\Phpblog\Controller\UserController->loginAction()
+#3 /Applications/MAMP/htdocs/blog-php3/index.php(4): NTSchool\Phpblog\Core\Core->run()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+21:37:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Controller/PostController.php(78): NTSchool\Phpblog\Model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+21:37:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Controller/PostController.php(78): NTSchool\Phpblog\Model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+21:37:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Controller/PostController.php(78): NTSchool\Phpblog\Model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+21:40:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Controller/PostController.php(78): NTSchool\Phpblog\Model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+21:41:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Controller/PostController.php(78): NTSchool\Phpblog\Model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+21:43:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Controller/PostController.php(78): NTSchool\Phpblog\Model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+22:15:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Controller/PostController.php(79): NTSchool\Phpblog\Model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+22:15:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Controller/PostController.php(79): NTSchool\Phpblog\Model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\PostController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+22:22:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/BaseModel.php:45
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Controller/TextsController.php(60): NTSchool\Phpblog\Model\BaseModel->add(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(73): NTSchool\Phpblog\Controller\TextsController->addAction()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#3 {main}
+-------------------------------------------------------------------------------------

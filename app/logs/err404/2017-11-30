@@ -1,15 +1,5 @@
 
-00:03:11
-::1
-
-NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
-Stack trace:
-#0 /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php(30): NTSchool\Phpblog\Core\Core->getController()
-#1 /Applications/MAMP/htdocs/blog-php3/index.php(3): NTSchool\Phpblog\Core\Core->run()
-#2 {main}
--------------------------------------------------------------------------------------
-
-00:06:11
+22:17:11
 ::1
 
 NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
@@ -19,7 +9,7 @@ Stack trace:
 #2 {main}
 -------------------------------------------------------------------------------------
 
-00:06:11
+22:17:11
 ::1
 
 NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
@@ -29,7 +19,7 @@ Stack trace:
 #2 {main}
 -------------------------------------------------------------------------------------
 
-02:23:11
+22:17:11
 ::1
 
 NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
@@ -39,7 +29,7 @@ Stack trace:
 #2 {main}
 -------------------------------------------------------------------------------------
 
-02:23:11
+22:17:11
 ::1
 
 NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
@@ -49,7 +39,7 @@ Stack trace:
 #2 {main}
 -------------------------------------------------------------------------------------
 
-02:23:11
+22:17:11
 ::1
 
 NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
@@ -59,7 +49,7 @@ Stack trace:
 #2 {main}
 -------------------------------------------------------------------------------------
 
-02:23:11
+22:17:11
 ::1
 
 NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
@@ -69,7 +59,7 @@ Stack trace:
 #2 {main}
 -------------------------------------------------------------------------------------
 
-02:23:11
+22:17:11
 ::1
 
 NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
@@ -79,7 +69,7 @@ Stack trace:
 #2 {main}
 -------------------------------------------------------------------------------------
 
-02:23:11
+22:17:11
 ::1
 
 NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
@@ -89,7 +79,7 @@ Stack trace:
 #2 {main}
 -------------------------------------------------------------------------------------
 
-02:23:11
+22:17:11
 ::1
 
 NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
@@ -99,7 +89,7 @@ Stack trace:
 #2 {main}
 -------------------------------------------------------------------------------------
 
-02:23:11
+22:17:11
 ::1
 
 NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
@@ -109,7 +99,7 @@ Stack trace:
 #2 {main}
 -------------------------------------------------------------------------------------
 
-02:23:11
+22:17:11
 ::1
 
 NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
@@ -119,27 +109,7 @@ Stack trace:
 #2 {main}
 -------------------------------------------------------------------------------------
 
-02:23:11
-::1
-
-NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
-Stack trace:
-#0 /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php(30): NTSchool\Phpblog\Core\Core->getController()
-#1 /Applications/MAMP/htdocs/blog-php3/index.php(4): NTSchool\Phpblog\Core\Core->run()
-#2 {main}
--------------------------------------------------------------------------------------
-
-02:23:11
-::1
-
-NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87
-Stack trace:
-#0 /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php(30): NTSchool\Phpblog\Core\Core->getController()
-#1 /Applications/MAMP/htdocs/blog-php3/index.php(4): NTSchool\Phpblog\Core\Core->run()
-#2 {main}
--------------------------------------------------------------------------------------
-
-02:23:11
+22:17:11
 ::1
 
 NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Core/Core.php:87

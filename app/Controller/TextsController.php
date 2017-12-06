@@ -11,28 +11,27 @@ class TextsController extends BaseController
 {
     public function indexAction()
     {
-        $mUser = $this->container->get('models', 'Users');
         $user = $this->container->get('service.user', $this->request);
-        $isAuth = $user->isAuth();
+        $user->isAuth();
+        $access = $user->checkAccess();
 
-        if(!$isAuth) {
+        if(!$access) {
             $_SESSION['returnUrl'] = ROOT . 'texts';
-            $this->redirect(ROOT . 'user/login?auth=off');
+            $this->response->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
 
         if(isset($_GET['auth'])) {
             if($_GET['auth'] == 'off') {
                 $user->logout();
-                $this->redirect(ROOT . "texts");
+                $this->response->redirect(ROOT . "texts");
                 exit();
             }
         }
         $staticTexts = $this->container->get('models', 'Texts');
         $texts = $staticTexts->all();
-        $cUser = $mUser->getBySid($this->request->session('sid'));
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
+        $this->menu = $this->build('v_menu', ['access' => $access]);
         $this->sidebar = $this->build('v_left');
         $this->content = $this->build('v_texts', ['texts' => $texts]);
         $this->texts = $staticTexts->getTexts() ?? null;
@@ -41,32 +40,31 @@ class TextsController extends BaseController
 
     public function addAction()
     {
-        $mUser = $this->container->get('models', 'Users');
-        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
+        $user = $this->container->get('service.user', $this->request);
+        $user->isAuth();
+        $access = $user->checkAccess();
         $form = new AddText();
         $formBuilder = new FormBuilder($form);
 
-        if(!$isAuth) {
+        if(!$access) {
             $_SESSION['returnUrl'] = ROOT . 'add-text';
-            $this->redirect(ROOT . 'user/login?auth=off');
+            $this->response->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
 
         $staticTexts = $this->container->get('models', 'Texts');
-        $cUser = $mUser->getBySid($this->request->session('sid'));
 
         if($this->request->isPost()) {
             try {
                 $staticTexts->add($form->handleRequest($this->request));
-                $this->redirect(ROOT . "texts");
-                exit();
+                $this->response->redirect(ROOT . "texts");
             }catch(ValidateException $e){
                 $form->addErrors($e->getErrors());
             }
 
         }
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
+        $this->menu = $this->build('v_menu', ['access' => $access]);
         $this->sidebar = $this->build('v_left');
         $this->content = $this->build('v_add-text', ['form' => $formBuilder]);
         $this->texts = $staticTexts->getTexts() ?? null;
@@ -75,28 +73,27 @@ class TextsController extends BaseController
 
     public function editAction()
     {
-        $mUser = $this->container->get('models', 'Users');
-        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
+        $user = $this->container->get('service.user', $this->request);
+        $user->isAuth();
+        $access = $user->checkAccess();
         $form = new EditText();
         $formBuilder = new FormBuilder($form);
 
-        $id = $this->request->get('id');
+        $id = $this->request->get()->get('id');
 
         // Проверка авторизации
-        if(!$isAuth) {
+        if(!$access) {
             $_SESSION['returnUrl'] = ROOT . "edit-text/$id";
-            $this->redirect(ROOT . 'user/login?auth=off');
+            $this->response->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
 
         if(!isset($id) || $id == '' || !preg_match('/^[0-9]+$/', $id)) {
-            $err404 = true;
+            // throw new Ex
         }
 
         $staticTexts = $this->container->get('models', 'Texts');
         $text = $staticTexts->one($id);
-
-        $cUser = $mUser->getBySid($this->request->session('sid'));
 
         if(!$text) {
             $errors = $text;
@@ -107,7 +104,7 @@ class TextsController extends BaseController
         if($this->request->isPost()) {
             try {
                 $staticTexts->edit($id, $form->handleRequest($this->request));
-                $this->redirect(ROOT . "texts");
+                $this->response->redirect(ROOT . "texts");
                 exit();
             }catch(ValidateException $e){
                 $form->addErrors($e->getErrors());
@@ -115,7 +112,7 @@ class TextsController extends BaseController
 
         }
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
+        $this->menu = $this->build('v_menu', ['access' => $access]);
         $this->content = $this->build('v_edit-text', ['form' => $formBuilder]);
         $this->texts = $staticTexts->getTexts() ?? null;
         $this->title = 'Редактирование текста';
@@ -127,11 +124,11 @@ class TextsController extends BaseController
         unset($_SESSION['returnUrl']);
 
         if(!$isAuth) {
-            $this->redirect(ROOT . 'user/login?auth=off');
+            $this->response->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
 
-        $id = $this->request->get('id');
+        $id = $this->request->get()->get('id');
 
         if(!isset($id) || $id == '' || !preg_match('/^[0-9]+$/', $id)) {
             echo "Такого текста не существует!";

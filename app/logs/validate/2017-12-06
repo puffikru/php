@@ -1,0 +1,84 @@
+
+05:25:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/Users.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Core/User.php(51): NTSchool\Phpblog\Model\Users->login(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Controller/UserController.php(42): NTSchool\Phpblog\Core\User->login(Array)
+#2 /Applications/MAMP/htdocs/blog-php3/app/Application.php(74): NTSchool\Phpblog\Controller\UserController->loginAction()
+#3 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+05:25:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/Users.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Core/User.php(51): NTSchool\Phpblog\Model\Users->login(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Controller/UserController.php(42): NTSchool\Phpblog\Core\User->login(Array)
+#2 /Applications/MAMP/htdocs/blog-php3/app/Application.php(74): NTSchool\Phpblog\Controller\UserController->loginAction()
+#3 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+05:26:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/Users.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Core/User.php(51): NTSchool\Phpblog\Model\Users->login(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Controller/UserController.php(42): NTSchool\Phpblog\Core\User->login(Array)
+#2 /Applications/MAMP/htdocs/blog-php3/app/Application.php(74): NTSchool\Phpblog\Controller\UserController->loginAction()
+#3 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+05:26:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/Users.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Core/User.php(51): NTSchool\Phpblog\Model\Users->login(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Controller/UserController.php(42): NTSchool\Phpblog\Core\User->login(Array)
+#2 /Applications/MAMP/htdocs/blog-php3/app/Application.php(74): NTSchool\Phpblog\Controller\UserController->loginAction()
+#3 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+05:26:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/Users.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Core/User.php(51): NTSchool\Phpblog\Model\Users->login(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Controller/UserController.php(42): NTSchool\Phpblog\Core\User->login(Array)
+#2 /Applications/MAMP/htdocs/blog-php3/app/Application.php(74): NTSchool\Phpblog\Controller\UserController->loginAction()
+#3 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+08:03:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/Users.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Core/User.php(51): NTSchool\Phpblog\Model\Users->login(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Controller/UserController.php(42): NTSchool\Phpblog\Core\User->login(Array)
+#2 /Applications/MAMP/htdocs/blog-php3/app/Application.php(79): NTSchool\Phpblog\Controller\UserController->loginAction()
+#3 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#4 {main}
+-------------------------------------------------------------------------------------
+
+08:03:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/Users.php:76
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Core/User.php(51): NTSchool\Phpblog\Model\Users->login(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Controller/UserController.php(42): NTSchool\Phpblog\Core\User->login(Array)
+#2 /Applications/MAMP/htdocs/blog-php3/app/Application.php(79): NTSchool\Phpblog\Controller\UserController->loginAction()
+#3 /Applications/MAMP/htdocs/blog-php3/index.php(12): NTSchool\Phpblog\Application->run()
+#4 {main}
+-------------------------------------------------------------------------------------

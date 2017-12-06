@@ -51,17 +51,17 @@ abstract class Form
 
             $name = $field['name'];
 
-            if($request->post($name) !== null) {
-                $this->fields[$key]['value'] = $request->post($name);
-                $fields[$name] = $request->post($name);
+            if($request->post()->get($name) !== null) {
+                $this->fields[$key]['value'] = $request->post()->get($name);
+                $fields[$name] = $request->post()->get($name);
             }
         }
 
-        if($request->post('sign') !== null && $this->getSign() !== $request->post('sign')) {
+        if($request->post()->get('sign') !== null && $this->getSign() !== $request->post()->get('sign')) {
             die('Формы не совпадают!');
         }
 
-        if($request->post('remember') !== 'on'){
+        if($request->post()->get('remember') !== 'on'){
             unset($fields['remember']);
         }
 

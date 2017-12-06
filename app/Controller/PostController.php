@@ -13,27 +13,26 @@ class PostController extends BaseController
     public function indexAction()
     {
         unset($_SESSION['returnUrl']);
-        $mUser = $this->container->get('models', 'Users');
-
-        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
+        $user = $this->container->get('service.user', $this->request);
+        $user->isAuth();
+        $access = $user->checkAccess();
 
         $articles = $this->container->get('models', 'Messages')->getAll();
-        $cUser = $mUser->getBySid($this->request->session('sid'));
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
+        $this->menu = $this->build('v_menu', ['access' => $access]);
         $this->sidebar = $this->build('v_left');
         $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
         $this->title = 'Главная';
-        $this->content = $this->build('v_index', ['articles' => $articles, 'isAuth' => $isAuth]);
+        $this->content = $this->build('v_index', ['articles' => $articles, 'access' => $access]);
     }
 
     public function oneAction()
     {
-        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
+        $user = $this->container->get('service.user', $this->request);
+        $user->isAuth();
+        $access = $user->checkAccess();
 
-        $id = $this->request->get('id');
-
-        $cUser = $this->container->get('models', 'Users')->getBySid($this->request->session('sid'));
+        $id = $this->request->get()->get('id');
 
         if($id === null || $id == '' || !preg_match('/^[0-9]+$/', $id)) {
             throw new Error404("Статьи номер $id не существует!");
@@ -45,27 +44,29 @@ class PostController extends BaseController
             }
         }
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
+        $this->menu = $this->build('v_menu', ['access' => $access]);
         $this->sidebar = $this->build('v_left');
         $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
-        $this->content = $this->build('v_post', ['content' => $content, 'isAuth' => $isAuth]);
+        $this->content = $this->build('v_post', ['content' => $content]);
         $this->title = 'Просмотр сообщения';
 
     }
 
     public function addAction()
     {
-        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
+        $cUser = $this->container->get('service.user', $this->request);
+        $cUser->isAuth();
+        $access = $cUser->checkAccess();
         $form = new AddPost();
         $formBuilder = new FormBuilder($form);
 
-        if(!$isAuth) {
+        if(!$access) {
             $_SESSION['returnUrl'] = ROOT . 'add';
-            $this->redirect(ROOT . 'user/login?auth=off');
+            $this->response->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
 
-        $user = $this->container->get('models', 'Users')->getBySid($this->request->session('sid'));
+        $user = $this->container->get('models', 'Users')->getBySid($this->container->get('http.session')->collection()->get('sid'));
 
         if($this->request->isPost()) {
 
@@ -76,7 +77,7 @@ class PostController extends BaseController
 
             try {
                 $id = $this->container->get('models', 'Messages')->add($obj);
-                $this->redirect(ROOT . "post/$id");
+                $this->response->redirect(ROOT . "post/$id");
             }catch(ValidateException $e){
                 $form->addErrors($e->getErrors());
             }
@@ -85,7 +86,7 @@ class PostController extends BaseController
             $this->title = '';
         }
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $user['name']]);
+        $this->menu = $this->build('v_menu', ['access' => $access]);
         $this->sidebar = $this->build('v_left');
         $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
         $this->title = 'Новое сообщение';
@@ -94,18 +95,19 @@ class PostController extends BaseController
 
     public function editAction()
     {
-        $isAuth = $this->container->get('service.user', $this->request)->isAuth();
+        $user = $this->container->get('service.user', $this->request);
+        $user->isAuth();
+        $access = $user->checkAccess();
 
-        $id = $this->request->get('id');
-        $cUser = $this->container->get('models', 'Users')->getBySid($this->request->session('sid'));
+        $id = $this->request->get()->get('id');
+
         $form = new EditPost();
         $formBuilding = new FormBuilder($form);
 
         // Проверка авторизации
-        if(!$isAuth) {
+        if(!$access) {
             $_SESSION['returnUrl'] = ROOT . "edit/$id";
-            $this->redirect(ROOT . 'user/login?auth=off');
-            exit();
+            $this->response->redirect(ROOT . 'user/login?auth=off');
         }
 
         if(!isset($id) || $id == '' || !preg_match('/^[0-9]+$/', $id)) {
@@ -114,6 +116,10 @@ class PostController extends BaseController
 
         $messages = $this->container->get('models', 'Messages');
         $text = $messages->one($id);
+
+        if($access['id_priv'] < 2 && $access['id_user'] !== $text['id_user']){
+            $this->response->redirect(ROOT);
+        }
 
         if(!$text) {
             throw new Error404("Такой статьи не существует!");
@@ -124,14 +130,14 @@ class PostController extends BaseController
         if($this->request->isPost()) {
             try {
                 $messages->edit($id, $form->handleRequest($this->request));
-                $this->redirect(ROOT);
+                $this->response->redirect(ROOT);
             }catch(ValidateException $e){
                 $form->addErrors($e->getErrors());
             }
 
         }
 
-        $this->menu = $this->build('v_menu', ['isAuth' => $isAuth, 'user' => $cUser['name']]);
+        $this->menu = $this->build('v_menu', ['access' => $access]);
         $this->title = 'Редактирование сообщения';
         $this->sidebar = $this->build('v_left');
         $this->texts = $this->container->get('models', 'Texts')->getTexts() ?? null;
@@ -144,17 +150,16 @@ class PostController extends BaseController
         unset($_SESSION['returnUrl']);
 
         if(!$isAuth) {
-            $this->redirect(ROOT . 'user/login?auth=off');
+            $this->response->redirect(ROOT . 'user/login?auth=off');
             exit();
         }
-        $id = $this->request->get('id');
+        $id = $this->request->get()->get('id');
 
         if(!isset($id) || $id == '' || !preg_match('/^[0-9]+$/', $id)) {
             echo "Такой статьи не существует!";
         }else {
             $this->container->get('models', 'Messages')->delete($id);
-            $this->redirect(ROOT);
-            exit();
+            $this->response->redirect(ROOT);
         }
     }
 
