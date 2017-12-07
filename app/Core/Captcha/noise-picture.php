@@ -4,14 +4,14 @@ $let = '0123456789ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 // количество символов в капче
 $len = 6;
 // шрифт
-$font = 'app/Core/Captcha/fonts/bellb.ttf';
+$font = 'fonts/bellb.ttf';
 // Размер шрифта
 $fontsize = 24;
 // Размер капчи
-$width = 100;
-$height = 30;
+$width = 200;
+$height = 40;
 // создаем изображение
-$img = imagecreatetruecolor($width, $height);
+$img = imageCreateFromJpeg("img/noise.jpg");
 
 // фон
 $white = imagecolorallocate($img, 220, 220, 220);
@@ -35,5 +35,5 @@ for ($i = 0; $i < $len; $i++){
 // заголовок для браузера
 header('Content-type: image/jpeg');
 // вывод капчи на страницу
-imagepng($img);
+imagejpeg($img);
 imagedestroy($img);

@@ -8,9 +8,6 @@
 
 namespace NTSchool\Phpblog\Core\Forms;
 
-
-use NTSchool\Phpblog\Core\Captcha\Captcha;
-use NTSchool\Phpblog\Core\ServiceContainer;
 use NTSchool\Phpblog\Core\Tags\PairTag;
 use NTSchool\Phpblog\Core\Tags\SingleTag;
 
@@ -121,7 +118,7 @@ class FormBuilder
     {
         $label = $field['label'] . ':' ?? '';
         $span = (new PairTag('span'))->html($label)->render();
-        $img = (new SingleTag('img'))->attr('src', '/noise2.php')->attr('alt', 'captcha-image')->render();
+        $img = (new SingleTag('img'))->attr('src', '/app/Core/Captcha/noise2.php')->attr('alt', 'captcha-image')->render();
 
         $input = (new SingleTag('input'))->attr('name', $field['name'])->attr('placeholder', $field['placeholder'])->attr('type', $field['type'])->attr('size', $field['size'])->render();
         $div = (new PairTag('div'))->attr('class', 'captcha')->html($span . $img . $input)->render();

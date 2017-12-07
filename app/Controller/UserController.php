@@ -2,7 +2,6 @@
 
 namespace NTSchool\Phpblog\Controller;
 
-use NTSchool\Phpblog\Core\Captcha\Captcha;
 use NTSchool\Phpblog\Core\Exceptions\ValidateException;
 use NTSchool\Phpblog\Core\Forms\FormBuilder;
 use NTSchool\Phpblog\Forms\SignIn;
