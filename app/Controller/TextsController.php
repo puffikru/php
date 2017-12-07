@@ -9,6 +9,9 @@ use NTSchool\Phpblog\Forms\EditText;
 
 class TextsController extends BaseController
 {
+    /**
+     *
+     */
     public function indexAction()
     {
         $user = $this->container->get('service.user', $this->request);
@@ -38,6 +41,9 @@ class TextsController extends BaseController
         $this->title = 'Тексты';
     }
 
+    /**
+     *
+     */
     public function addAction()
     {
         $user = $this->container->get('service.user', $this->request);
@@ -71,6 +77,9 @@ class TextsController extends BaseController
         $this->title = 'Новый текст';
     }
 
+    /**
+     *
+     */
     public function editAction()
     {
         $user = $this->container->get('service.user', $this->request);
@@ -117,6 +126,9 @@ class TextsController extends BaseController
         $this->title = 'Редактирование текста';
     }
 
+    /**
+     *
+     */
     public function deleteAction()
     {
         $isAuth = $this->container->get('service.user', $this->request)->isAuth();

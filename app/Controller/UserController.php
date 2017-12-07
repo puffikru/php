@@ -9,6 +9,9 @@ use NTSchool\Phpblog\Forms\SignUp;
 
 class UserController extends BaseController
 {
+    /**
+     *
+     */
     public function signUpAction()
     {
         $form = new SignUp();
@@ -35,6 +38,9 @@ class UserController extends BaseController
         $this->content = $this->build('v_signup', ['form' => $formBuilder]);
     }
 
+    /**
+     *
+     */
     public function loginAction()
     {
         $this->container->get('models', 'Sessions')->clearSessions();
@@ -60,12 +66,18 @@ class UserController extends BaseController
         $this->title = 'Авторизация';
     }
 
+    /**
+     *
+     */
     public function logoutAction()
     {
         $this->container->get('service.user', $this->request)->logOut();
         $this->response->redirect(ROOT);
     }
 
+    /**
+     *
+     */
     public function listAction()
     {
         $mUser = $this->container->get('models', 'Users');

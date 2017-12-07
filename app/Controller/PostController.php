@@ -10,6 +10,9 @@ use NTSchool\Phpblog\Forms\EditPost;
 
 class PostController extends BaseController
 {
+    /**
+     *
+     */
     public function indexAction()
     {
         unset($_SESSION['returnUrl']);
@@ -26,6 +29,9 @@ class PostController extends BaseController
         $this->content = $this->build('v_index', ['articles' => $articles, 'access' => $access]);
     }
 
+    /**
+     * @throws \NTSchool\Phpblog\Core\Exceptions\Error404
+     */
     public function oneAction()
     {
         $user = $this->container->get('service.user', $this->request);
@@ -52,6 +58,9 @@ class PostController extends BaseController
 
     }
 
+    /**
+     *
+     */
     public function addAction()
     {
         $cUser = $this->container->get('service.user', $this->request);
@@ -93,6 +102,9 @@ class PostController extends BaseController
         $this->content = $this->build('v_add', ['form' => $formBuilder]);
     }
 
+    /**
+     * @throws \NTSchool\Phpblog\Core\Exceptions\Error404
+     */
     public function editAction()
     {
         $user = $this->container->get('service.user', $this->request);
@@ -144,6 +156,9 @@ class PostController extends BaseController
         $this->content = $this->build('v_edit', ['form' => $formBuilding]);
     }
 
+    /**
+     *
+     */
     public function deleteAction()
     {
         $isAuth = $this->container->get('service.user', $this->request)->isAuth();
@@ -163,6 +178,9 @@ class PostController extends BaseController
         }
     }
 
+    /**
+     * @param string $err
+     */
     public function error404($err = '')
     {
         $this->title = 'Ошибка 404';
@@ -171,6 +189,9 @@ class PostController extends BaseController
         $this->content = $this->build('v_err404', ['title' => $this->title, 'error' => $err]);
     }
 
+    /**
+     * @param string $err
+     */
     public function error503($err = '')
     {
         $this->title = 'Временная ошибка сервера!';

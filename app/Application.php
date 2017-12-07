@@ -50,6 +50,11 @@ class Application
      */
     protected $response;
 
+    /**
+     * Application constructor.
+     *
+     * @param \NTSchool\Phpblog\Core\ServiceContainer|null $container
+     */
     public function __construct(ServiceContainer $container = null)
     {
         $this->enableErrorsHandling();
@@ -73,6 +78,10 @@ class Application
 
     //TODO: Доделать обработчики ошибок
 
+
+    /**
+     *
+     */
     public function run()
     {
         try {
@@ -88,36 +97,18 @@ class Application
 
             $this->response->setContent($controller->getFullTemplate());
             $this->response->send();
-        }catch(\PDOException $e){
-            (
-                new ErrorHandler(
-                    new BaseController($this->request, $this->response, $this->container),
-                    new Logger('critical', 'critical'),
-                    $this->response,
-                    DEV_MODE
-                )
-            )->handle($e, 'Oooops... Something went wrong!');
-        }catch(Error404 $e){
-            (
-            new ErrorHandler(
-                new BaseController($this->request, $this->response, $this->container),
-                new Logger('Error404', 'err404'),
-                $this->response,
-                DEV_MODE
-            )
-            )->handle($e, 'Page not found!');
-        }catch(Fatal $e){
-            (
-            new ErrorHandler(
-                new BaseController($this->request, $this->response, $this->container),
-                new Logger('Fatal Error', LOG_DIR),
-                $this->response,
-                DEV_MODE
-            )
-            )->handle($e, 'Fatal Error');
+        }catch(\PDOException $e) {
+            (new ErrorHandler(new BaseController($this->request, $this->response, $this->container), new Logger('critical', 'critical'), $this->response, DEV_MODE))->handle($e, 'Oooops... Something went wrong!');
+        }catch(Error404 $e) {
+            (new ErrorHandler(new BaseController($this->request, $this->response, $this->container), new Logger('Error404', 'err404'), $this->response, DEV_MODE))->handle($e, 'Page not found!');
+        }catch(Fatal $e) {
+            (new ErrorHandler(new BaseController($this->request, $this->response, $this->container), new Logger('Fatal Error', LOG_DIR), $this->response, DEV_MODE))->handle($e, 'Fatal Error');
         }
     }
 
+    /**
+     *
+     */
     private function parseUrl()
     {
         $arr = $this->getUriAsArr();
@@ -125,6 +116,9 @@ class Application
         $this->currentAction = $this->getAction($arr);
     }
 
+    /**
+     * @return array|mixed|null
+     */
     private function getUriAsArr()
     {
         $uri = $this->request->server()->get('REQUEST_URI');
@@ -144,6 +138,12 @@ class Application
         return $uri;
     }
 
+    /**
+     * @param array $uri
+     *
+     * @return string
+     * @throws \NTSchool\Phpblog\Core\Exceptions\Error404
+     */
     private function getController(array $uri)
     {
         if(isset($uri[0]) && $uri[0] !== '') {
@@ -156,6 +156,12 @@ class Application
         return $controller ?? 'NTSchool\Phpblog\Controller\PostController';
     }
 
+
+    /**
+     * @param array $uri
+     *
+     * @return string
+     */
     private function getAction(array $uri)
     {
         if(isset($uri[1]) && $uri[1] !== '') {
@@ -183,6 +189,9 @@ class Application
         return $action ?? 'indexAction';
     }
 
+    /**
+     * @param $id
+     */
     private function setIdFromUri($id)
     {
         if($id) {
@@ -190,20 +199,29 @@ class Application
         }
     }
 
+    /**
+     *
+     */
     private function initRequest()
     {
         $this->request = new Request($_GET, $_POST, $_SERVER, $_COOKIE, $_FILES);
     }
 
+    /**
+     *
+     */
     protected function loadDotEnv()
     {
         $dotenv = new Dotenv();
         $dotenv->load(__DIR__ . '/../.env');
     }
 
+    /**
+     *
+     */
     public function enableErrorsHandling()
     {
-        set_exception_handler(function($e){
+        set_exception_handler(function($e) {
             $controller = new PageController($this->request, $this->response, $this->container);
             $controller->error($e);
             $this->response->setContent($controller->getFullTemplate());

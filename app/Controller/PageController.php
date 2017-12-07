@@ -11,6 +11,9 @@ namespace NTSchool\Phpblog\Controller;
 
 class PageController extends BaseController
 {
+    /**
+     * @param string $e
+     */
     public function error($e = '')
     {
         $this->title = 'Ошибка';
