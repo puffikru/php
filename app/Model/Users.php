@@ -19,7 +19,11 @@ class Users extends BaseModel
 
     public function validationMap()
     {
-        return ['fields' => ['login', 'pass', 'name'], 'not_empty' => ['login', 'pass'], 'min_length' => ['login' => 5, 'pass' => 6]];
+        return [
+            'fields' => ['login', 'pass', 'name'],
+            'not_empty' => ['name', 'login', 'pass', 'pass_confirm', 'answer'],
+            'min_length' => ['login' => 5, 'pass' => 6]
+        ];
     }
 
     public function getAllUsers()
@@ -42,6 +46,12 @@ class Users extends BaseModel
 
     public function signUp(array $fields)
     {
+        $session = Session::instance();
+        $session->save();
+        $checkSess = $session->collection()->get('randStr') ?? null;
+
+        $fields['randStr'] = $checkSess;
+
         $this->validation->execute($fields);
         if(!$this->validation->success()) {
             throw new ValidateException($this->validation->errors());
@@ -51,9 +61,10 @@ class Users extends BaseModel
             throw new ValidateException(['login' => 'Пользователь с таким именем уже существует!']);
         };
 
-        $this->db->insert('users', ['name' => $fields['name'], 'login' => $fields['login'], 'pass' => $this->getHash($fields['pass'])]);
+        $this->db->insert('users', ['name' => $fields['name'], 'login' => $fields['login'], 'pass' => $this->getHash($fields['pass']), 'id_role' => 3]);
 
         unset($fields['name']);
+        unset($fields['pass_confirm']);
         $this->login($fields);
     }
 

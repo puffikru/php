@@ -43,14 +43,15 @@ class FormBuilder
                 if(isset($field['errors'])){
                     $errors = $field['errors'];
                     unset($field['errors']);
-                    $errors = '<div class="login-error">' . $errors . '</div>';
+
+                    $errors = $this->generateErrDiv($errors);
+
                     $inputs[] = $tag_label . $errors;
                 }else {
                     $inputs[] = $tag_label;
                 }
             }elseif($field['tag'] === 'div'){
                 $div = $this->createCaptcha($field);
-
                 if(isset($field['errors'])){
                     $errors = $field['errors'];
                     unset($field['errors']);
@@ -77,7 +78,7 @@ class FormBuilder
             $errors = $attributes['errors'];
             unset($attributes['errors']);
 
-            $errors = '<div class="login-error">' . $errors . '</div>';
+            $errors = $this->generateErrDiv($errors);
         }
 
         if(isset($attributes['label'])){
@@ -144,6 +145,17 @@ class FormBuilder
         }
 
         return implode(' ', $arr);
+    }
+
+    public function checkForm()
+    {
+        return $this->form->form_name;
+    }
+
+    public function generateErrDiv(string $errors)
+    {
+        $className = $this->checkForm() . '-error';
+        return '<div class="' . $className . '">' . $errors . '</div>';
     }
 
 }

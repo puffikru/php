@@ -42,7 +42,6 @@ class User
         if(!$this->comparePass($fields)){
             throw new ValidateException(['Пароли не совпадают']);
         }
-        unset($fields['pass_confirm']);
 
         $this->mUser->signUp($fields);
     }

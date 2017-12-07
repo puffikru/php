@@ -1,4 +1,5 @@
 <?php
+session_start();
 // список символов, используемых в капче
 $let = '0123456789ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 // количество символов в капче
@@ -6,15 +7,16 @@ $len = 5;
 // шрифт
 $font = 'fonts/bellb.ttf';
 // Размер шрифта
-$fontsize = 24;
+$fontsize = 20;
 // Размер капчи
-$width = 100;
-$height = 30;
+$width = 150;
+$height = 37;
 // создаем изображение
 $img = imagecreatetruecolor($width, $height);
 
 // фон
 $white = imagecolorallocate($img, 220, 220, 220);
+
 imagefill($img, 0, 0, $white);
 // Переменная, для хранения значения капчи
 $capchaText = '';
@@ -32,6 +34,8 @@ for ($i = 0; $i < $len; $i++){
     $naklon = rand(-30, 30); // Рисуем символ
     imagettftext($img, $fontsize, $naklon, $x, $y, $color, $font, $capchaText[$i]);
 }
+
+$_SESSION["randStr"] = $capchaText;
 // заголовок для браузера
 header('Content-type: image/png');
 // вывод капчи на страницу

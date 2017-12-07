@@ -15,13 +15,18 @@ class Validation
             $value = trim(strip_tags($v));
 
             if(in_array($k, $this->rules['not_empty']) && $value == '') {
-                $this->errors[$k] = "Заполните поле $k!";
+                $this->errors[$k] = "Заполните поле!";
             }elseif(isset($this->rules['min_length'][$k]) && $this->minLength($value, $k)) {
                 $this->errors[$k] = "Длина поля $k не может быть меньше {$this->rules['min_length'][$k]} символов!";
             }else {
                 $this->clean[$k] = $value;
             }
         }
+
+        if(isset($obj['answer']) && $this->validateCaptcha($obj) == false) {
+            $this->errors['answer'] = "Капча введена неверно!";
+        }
+
     }
 
     public function setRules($rules)
@@ -48,6 +53,15 @@ class Validation
     public function clean()
     {
         return $this->clean;
+    }
+
+    public function validateCaptcha(array $obj)
+    {
+        if(isset($obj['randStr'])) {
+            return $obj['randStr'] === $obj['answer'];
+        }
+
+        return false;
     }
 
 }

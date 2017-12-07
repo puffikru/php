@@ -13,7 +13,7 @@ use NTSchool\Phpblog\Core\Http\Request;
 
 abstract class Form
 {
-    protected $form_name;
+    public $form_name;
     protected $action;
     protected $method;
     protected $fields;

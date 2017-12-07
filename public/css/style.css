@@ -322,7 +322,7 @@ em { color: #5d6d1e; }
     padding-top: 10px;
     font-size: 16px;
     font-weight: bold;
-    background: url(../images/templatemo_comment.png) no-repeat;
+    /*background: url(../images/templatemo_comment.png) no-repeat;*/
 }
 
 .post_section .comment a {
@@ -349,7 +349,7 @@ em { color: #5d6d1e; }
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-    background: url(../images/templatemo_rss.png) left center no-repeat;
+    /*background: url(../images/templatemo_rss.png) left center no-repeat;*/
 }
 
 #templatemo_header #templatemo_rss a:hover {
@@ -640,7 +640,7 @@ em { color: #5d6d1e; }
     cursor: pointer;
 }
 
-.login-error{
+.add-post-error, .add-text-error, .edit-post-error, .edit-text-error, .sign-in-error, .sign-up-error, .captcha-error{
     padding: 10px;
     font-size: 15px;
     color: red;
@@ -688,4 +688,5 @@ table.users .thead th{
 
 .line label .captcha img{
     margin: 0 5px;
+    width: 40%;
 }

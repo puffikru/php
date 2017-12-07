@@ -17,6 +17,7 @@ class UserController extends BaseController
         $form = new SignUp();
         $formBuilder = new FormBuilder($form);
 
+
         $user = $this->container->get('service.user', $this->request);
         $user->isAuth();
         $access = $user->checkAccess();

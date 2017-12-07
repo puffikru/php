@@ -1,6 +1,6 @@
 <?php
-
-$symbols = 6;
+session_start();
+$symbols = 5;
 
 $img = imageCreateFromJpeg("img/noise.jpg");
 $background = imageColorAllocate($img, 64, 64, 64);
