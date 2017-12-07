@@ -5,6 +5,7 @@ Options FollowSymLinks
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* index.php?qstring=$0 [QSA]
 </IfModule>
@@ -13,7 +14,7 @@ RewriteRule .* index.php?qstring=$0 [QSA]
 DirectoryIndex index.php
 
 <FilesMatch "\.(php)$">
-    Deny from all
+    Allow from all
 </FilesMatch>
 
 <FilesMatch "index.(php)$">

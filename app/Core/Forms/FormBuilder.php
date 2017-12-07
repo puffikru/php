@@ -9,7 +9,10 @@
 namespace NTSchool\Phpblog\Core\Forms;
 
 
+use NTSchool\Phpblog\Core\Captcha\Captcha;
+use NTSchool\Phpblog\Core\ServiceContainer;
 use NTSchool\Phpblog\Core\Tags\PairTag;
+use NTSchool\Phpblog\Core\Tags\SingleTag;
 
 class FormBuilder
 {
@@ -47,6 +50,17 @@ class FormBuilder
                     $inputs[] = $tag_label . $errors;
                 }else {
                     $inputs[] = $tag_label;
+                }
+            }elseif($field['tag'] === 'div'){
+                $div = $this->createCaptcha($field);
+
+                if(isset($field['errors'])){
+                    $errors = $field['errors'];
+                    unset($field['errors']);
+                    $errors = '<div class="captcha-error">' . $errors . '</div>';
+                    $inputs[] = $div . $errors;
+                }else{
+                    $inputs[] = $div;
                 }
             }
 
@@ -101,6 +115,19 @@ class FormBuilder
         $textarea = (new PairTag('textarea'))->attr('name', 'content')->attr('placeholder', $field['placeholder'])->attr('rows', '8')->html($this->form->getValues()['content'])->render();
 
         return $tag_label = (new PairTag('label'))->attr('class', 'textarea')->html($span . $textarea)->render();
+    }
+
+    public function createCaptcha(array $field)
+    {
+        $label = $field['label'] . ':' ?? '';
+        $span = (new PairTag('span'))->html($label)->render();
+        $img = (new SingleTag('img'))->attr('src', '/noise2.php')->attr('alt', 'captcha-image')->render();
+
+        $input = (new SingleTag('input'))->attr('name', $field['name'])->attr('placeholder', $field['placeholder'])->attr('type', $field['type'])->attr('size', $field['size'])->render();
+        $div = (new PairTag('div'))->attr('class', 'captcha')->html($span . $img . $input)->render();
+        $label_tag = (new PairTag('label'))->html($div)->render();
+
+        return $label_tag;
     }
 
     public function inputSign()

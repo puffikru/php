@@ -2,6 +2,7 @@
 
 namespace NTSchool\Phpblog\Controller;
 
+use NTSchool\Phpblog\Core\Captcha\Captcha;
 use NTSchool\Phpblog\Core\Exceptions\ValidateException;
 use NTSchool\Phpblog\Core\Forms\FormBuilder;
 use NTSchool\Phpblog\Forms\SignIn;
@@ -13,6 +14,7 @@ class UserController extends BaseController
     {
         $form = new SignUp();
         $formBuilder = new FormBuilder($form);
+
         $user = $this->container->get('service.user', $this->request);
         $user->isAuth();
         $access = $user->checkAccess();

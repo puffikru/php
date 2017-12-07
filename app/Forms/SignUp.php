@@ -46,6 +46,14 @@ class SignUp extends Form
                 'tag' => 'input'
             ],
             [
+                'name' => 'answer',
+                'type' => 'text',
+                'placeholder' => 'Введите код с картинки',
+                'label' => 'Введите код',
+                'tag' => 'div',
+                'size' => '6'
+            ],
+            [
                 'type' => 'submit',
                 'value' => 'Зарегистрироваться',
                 'tag' => 'input'

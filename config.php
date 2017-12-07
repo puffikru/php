@@ -5,6 +5,7 @@ define('CHARSET', 'UTF-8');
 define('LOG_DIR', 'app/logs');
 define('DEV_MODE', 1);
 define('FORM_SIGN', '/#@=@/');
+define('CAPTCHA_IMG', 'noise-picture.php');
 
 // locale is RU excluding numeric
 setlocale(LC_ALL, 'ru_RU.UTF-8');

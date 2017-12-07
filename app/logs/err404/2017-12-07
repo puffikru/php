@@ -1,0 +1,1676 @@
+
+01:11:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:11:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:12:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:12:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:13:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:13:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:20:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:20:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:21:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:21:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:22:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:22:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:24:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:24:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:24:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:24:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:26:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:26:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:27:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:27:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:27:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:27:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:31:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:31:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:34:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:34:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:34:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:34:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:35:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:35:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:42:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:42:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:43:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:43:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:44:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:44:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:44:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:44:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:45:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:45:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:46:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:46:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:46:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:46:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:47:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:47:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:48:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:48:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:48:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:48:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:48:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:48:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:49:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action noise.jpgAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noise.jpgAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:49:12
+::1
+
+Undefined action noise.jpgAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noise.jpgAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:50:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:50:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:51:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:51:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:52:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:52:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+01:59:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+01:59:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:00:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:00:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:00:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:00:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:00:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:00:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:01:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:01:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:01:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:21:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:21:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:21:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:21:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:21:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:21:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+02:25:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:25:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:28:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:28:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:29:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:29:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:30:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:30:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:30:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:30:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:33:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:33:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:34:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:34:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:35:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action appAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:35:12
+::1
+
+Undefined action appAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('appAction', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:37:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:37:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:37:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:37:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:38:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:38:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:39:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:39:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:39:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:39:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:40:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:40:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:40:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:40:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:40:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:40:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:40:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:40:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:41:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:41:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:41:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:41:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:42:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action captcha_img.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:42:12
+::1
+
+Undefined action captcha_img.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('captcha_img.php...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:46:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action noisePicture.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:46:12
+::1
+
+Undefined action noisePicture.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+02:49:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action noisePicture.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+02:49:12
+::1
+
+Undefined action noisePicture.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+03:02:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:02:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action noisePicture.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+03:02:12
+::1
+
+Undefined action noisePicture.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+03:02:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:02:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action noisePicture.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+03:02:12
+::1
+
+Undefined action noisePicture.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+03:02:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:03:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action noisePicture.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+03:03:12
+::1
+
+Undefined action noisePicture.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+03:03:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:03:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:04:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:04:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:04:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:04:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:04:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:05:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:05:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:08:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:08:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:08:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:08:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:09:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action noisePicture.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+03:09:12
+::1
+
+Undefined action noisePicture.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+03:09:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:09:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:09:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:09:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:09:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:20:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:20:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action noisePicture.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+03:20:12
+::1
+
+Undefined action noisePicture.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+03:20:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:20:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:20:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:20:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:20:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Undefined action noisePicture.phpAction in /Applications/MAMP/htdocs/blog-php3/app/Controller/BaseController.php:39
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+-------------------------------------------------------------------------------------
+
+03:20:12
+::1
+
+Undefined action noisePicture.phpAction
+ #0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(85): NTSchool\Phpblog\Controller\BaseController->__call('noisePicture.ph...', Array)
+#1 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#2 {main}
+Error
+-------------------------------------------------------------------------------------
+
+03:20:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:21:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------
+
+03:21:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\Error404: Страница не найдейна in /Applications/MAMP/htdocs/blog-php3/app/Application.php:152
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Application.php(124): NTSchool\Phpblog\Application->getController(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Application.php(71): NTSchool\Phpblog\Application->parseUrl()
+#2 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->__construct()
+#3 {main}
+-------------------------------------------------------------------------------------

@@ -92,7 +92,7 @@ class Application
             (
                 new ErrorHandler(
                     new BaseController($this->request, $this->response, $this->container),
-                    new Logger('critical', LOG_DIR),
+                    new Logger('critical', 'critical'),
                     $this->response,
                     DEV_MODE
                 )
@@ -101,7 +101,7 @@ class Application
             (
             new ErrorHandler(
                 new BaseController($this->request, $this->response, $this->container),
-                new Logger('Error404', LOG_DIR),
+                new Logger('Error404', 'err404'),
                 $this->response,
                 DEV_MODE
             )

@@ -1,9 +1,9 @@
-<form <?=$form->method();?> class="sign-up">
-    <?=$form->inputSign();?>
-    <? foreach($form->fields() as $field):?>
+<form <?= $form->method(); ?> class="sign-up">
+    <?= $form->inputSign(); ?>
+    <? foreach($form->fields() as $field): ?>
         <div class="line">
-            <?=$field;?>
+            <?= $field; ?>
         </div>
-    <? endforeach;?>
+    <? endforeach; ?>
 </form>
-<a href="<?= ROOT;?>">На главную</a>
+<a href="<?= ROOT; ?>">На главную</a>

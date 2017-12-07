@@ -12,15 +12,14 @@ namespace NTSchool\Phpblog\Core;
 class Logger
 {
     private $file;
-    private $dir;
+    private $dir = LOG_DIR;
     private $path;
 
     public function __construct($filename, $dir)
     {
         $this->file = $filename . '.log';
-        $this->dir = $dir;
-        $this->path = $dir . '/' . $this->file;
-
+        $this->dir .= '/' . $dir;
+        $this->path = $this->dir;
         $this->prepareDir();
     }
 
