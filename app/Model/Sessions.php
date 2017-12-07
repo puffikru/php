@@ -12,6 +12,9 @@ use NTSchool\Phpblog\Core\Http\Session;
 
 class Sessions extends BaseModel
 {
+    /**
+     * Sessions constructor.
+     */
     public function __construct()
     {
         parent::__construct();
@@ -19,6 +22,9 @@ class Sessions extends BaseModel
         $this->pk = 'id_session';
     }
 
+    /**
+     * @return array
+     */
     public function validationMap()
     {
         return [
@@ -27,11 +33,22 @@ class Sessions extends BaseModel
         ];
     }
 
+    /**
+     * @param $sid
+     *
+     * @return mixed
+     */
     public function getBySid($sid)
     {
         return $this->db->select("SELECT * FROM {$this->table} WHERE 'sid' = :sid", ['sid' => $sid]);
     }
 
+    /**
+     * @param $id_user
+     * @param $sid
+     *
+     * @return mixed
+     */
     public function openSession($id_user, $sid)
     {
         $now = date("Y-m-d H:i:s");
@@ -48,6 +65,9 @@ class Sessions extends BaseModel
         return $sid;
     }
 
+    /**
+     *
+     */
     public function clearSessions()
     {
         $min = date('Y-m-d H:i:s', time() - 60 * 20);

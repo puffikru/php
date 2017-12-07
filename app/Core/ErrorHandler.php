@@ -14,11 +14,34 @@ use NTSchool\Phpblog\Core\Http\Response;
 
 class ErrorHandler implements ErrorHandlerInterface
 {
+    /**
+     * @var \NTSchool\Phpblog\Controller\BaseController
+     */
     private $controller;
+
+    /**
+     * @var \NTSchool\Phpblog\Core\Logger
+     */
     private $logger;
+
+    /**
+     * @var \NTSchool\Phpblog\Core\Http\Response
+     */
     private $response;
+
+    /**
+     * @var bool
+     */
     private $dev;
 
+    /**
+     * ErrorHandler constructor.
+     *
+     * @param \NTSchool\Phpblog\Controller\BaseController $controller
+     * @param \NTSchool\Phpblog\Core\Logger $logger
+     * @param \NTSchool\Phpblog\Core\Http\Response $response
+     * @param bool $dev
+     */
     public function __construct(BaseController $controller, Logger $logger, Response $response, $dev = true)
     {
         $this->controller = $controller;
@@ -27,6 +50,10 @@ class ErrorHandler implements ErrorHandlerInterface
         $this->dev = $dev;
     }
 
+    /**
+     * @param \Exception $e
+     * @param $message
+     */
     public function handle(\Exception $e, $message)
     {
         if(isset($this->logger)){

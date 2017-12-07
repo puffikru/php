@@ -8,11 +8,29 @@ use NTSchool\Phpblog\Core\Validation;
 
 abstract class BaseModel
 {
+    /**
+     * @var DBDriver
+     */
     protected $db;
+
+    /**
+     * @var
+     */
     protected $table;
+
+    /**
+     * @var
+     */
     protected $pk;
+
+    /**
+     * @var \NTSchool\Phpblog\Core\Validation
+     */
     protected $validation;
 
+    /**
+     * BaseModel constructor.
+     */
     public function __construct()
     {
         $this->db = DBDriver::instance();
@@ -20,19 +38,37 @@ abstract class BaseModel
         $this->validation->setRules($this->validationMap());
     }
 
+    /**
+     * @return mixed
+     */
     public abstract function validationMap();
 
+    /**
+     * @return array
+     */
     public function all()
     {
         return $this->db->select("SELECT * FROM {$this->table}");
     }
 
+    /**
+     * @param $pk
+     *
+     * @return null
+     */
     public function one($pk)
     {
         $res = $this->db->select("SELECT * FROM {$this->table} WHERE {$this->pk} = :pk", ['pk' => $pk]);
         return $res[0] ?? null;
     }
 
+    /**
+     * @param array $obj
+     * @param bool $needValidation
+     *
+     * @return string
+     * @throws \NTSchool\Phpblog\Core\Exceptions\ValidateException
+     */
     public function add(array $obj, $needValidation = true)
     {
         if($needValidation){
@@ -50,6 +86,13 @@ abstract class BaseModel
 
     }
 
+    /**
+     * @param $pk
+     * @param array $obj
+     *
+     * @return int
+     * @throws \NTSchool\Phpblog\Core\Exceptions\ValidateException
+     */
     public function edit($pk, array $obj)
     {
         $this->validation->execute($obj);
@@ -61,6 +104,11 @@ abstract class BaseModel
         }
     }
 
+    /**
+     * @param $pk
+     *
+     * @return bool
+     */
     public function delete($pk)
     {
         return $this->db->delete($this->table, "{$this->pk} = :pk", ['pk' => $pk]);

@@ -13,6 +13,9 @@ use NTSchool\Phpblog\Core\Forms\Form;
 
 class SignIn extends Form
 {
+    /**
+     * SignIn constructor.
+     */
     public function __construct()
     {
         $this->fields = [

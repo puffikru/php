@@ -13,6 +13,9 @@ use NTSchool\Phpblog\Core\Forms\Form;
 
 class AddText extends Form
 {
+    /**
+     * AddText constructor.
+     */
     public function __construct()
     {
         $this->fields = [

@@ -13,6 +13,9 @@ use NTSchool\Phpblog\Core\Forms\Form;
 
 class SignUp extends Form
 {
+    /**
+     * SignUp constructor.
+     */
     public function __construct()
     {
         $this->fields = [

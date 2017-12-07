@@ -13,6 +13,9 @@ use NTSchool\Phpblog\Core\User;
 
 class UserProvider implements ProviderInterface
 {
+    /**
+     * @param \NTSchool\Phpblog\Core\ServiceContainer $container
+     */
     public function register(ServiceContainer &$container)
     {
         $container->register('service.user', function($request) use ($container){

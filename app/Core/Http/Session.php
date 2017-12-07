@@ -16,15 +16,27 @@ class Session
 
     use Singleton;
 
+    /**
+     * @var \NTSchool\Phpblog\Core\Bag
+     */
     protected $bag;
 
+    /**
+     * @var bool
+     */
     protected $isStarted = false;
 
+    /**
+     * Session constructor.
+     */
     public function __construct()
     {
         $this->bag = new Bag();
     }
 
+    /**
+     * @return $this
+     */
     public function start()
     {
         if(!session_start()){
@@ -36,11 +48,17 @@ class Session
         return $this;
     }
 
+    /**
+     * @return \NTSchool\Phpblog\Core\Bag
+     */
     public function collection()
     {
         return $this->bag;
     }
 
+    /**
+     * @return $this
+     */
     public function initialize()
     {
         if(!$this->isStarted){
@@ -52,6 +70,9 @@ class Session
         return $this;
     }
 
+    /**
+     * @return bool|string
+     */
     public function getId()
     {
         if($this->isStarted === false){
@@ -61,6 +82,9 @@ class Session
         return session_id();
     }
 
+    /**
+     * @return $this
+     */
     public function save()
     {
         if($this->bag->count() === 0){
@@ -78,6 +102,9 @@ class Session
         return $this;
     }
 
+    /**
+     * @param $name
+     */
     public function remove($name)
     {
         $this->bag->remove($name);

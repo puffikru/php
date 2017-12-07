@@ -10,6 +10,9 @@ use NTSchool\Phpblog\Core\User;
 
 class Users extends BaseModel
 {
+    /**
+     * Users constructor.
+     */
     public function __construct()
     {
         parent::__construct();
@@ -17,6 +20,9 @@ class Users extends BaseModel
         $this->pk = 'id_user';
     }
 
+    /**
+     * @return array
+     */
     public function validationMap()
     {
         return [
@@ -26,6 +32,9 @@ class Users extends BaseModel
         ];
     }
 
+    /**
+     * @return mixed
+     */
     public function getAllUsers()
     {
         $sql = "SELECT
@@ -44,6 +53,11 @@ class Users extends BaseModel
         return $this->db->select($sql);
     }
 
+    /**
+     * @param array $fields
+     *
+     * @throws \NTSchool\Phpblog\Core\Exceptions\ValidateException
+     */
     public function signUp(array $fields)
     {
         $session = Session::instance();
@@ -77,6 +91,12 @@ class Users extends BaseModel
         return false;
     }
 
+    /**
+     * @param array $fields
+     *
+     * @return bool
+     * @throws \NTSchool\Phpblog\Core\Exceptions\ValidateException
+     */
     public function login(array $fields)
     {
         $this->validation->execute($fields);
@@ -113,6 +133,14 @@ class Users extends BaseModel
         return true;
     }
 
+    /**
+     * @param \NTSchool\Phpblog\Core\Http\Request $request
+     * @param \NTSchool\Phpblog\Model\Sessions $sessions
+     * @param \NTSchool\Phpblog\Core\Http\Session $session
+     * @param \NTSchool\Phpblog\Core\User $user
+     *
+     * @return bool
+     */
     public function isAuth(Request $request, Sessions $sessions, Session $session, User &$user)
     {
         if($user->getCurrent()) {
@@ -151,23 +179,43 @@ class Users extends BaseModel
         return false;
     }
 
+    /**
+     * @param $login
+     *
+     * @return null
+     */
     public function getByLogin($login)
     {
         $query = $this->db->select("SELECT * FROM {$this->table} WHERE login= :login", ['login' => $login]);
         return $query[0] ?? null;
     }
 
+    /**
+     * @param $sid
+     *
+     * @return null
+     */
     public function getBySid($sid)
     {
         $query = $this->db->select("SELECT * FROM {$this->table} JOIN sessions USING($this->pk) WHERE sid=:sid", ['sid' => $sid]);
         return $query[0] ?? null;
     }
 
+    /**
+     * @param $pass
+     *
+     * @return string
+     */
     public function getHash($pass)
     {
         return hash('sha256', $pass . getenv('SALT'));
     }
 
+    /**
+     * @param int $number
+     *
+     * @return string
+     */
     private function generateSid($number = 10)
     {
         $pattern = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -178,6 +226,9 @@ class Users extends BaseModel
         return $code;
     }
 
+    /**
+     *
+     */
     public function logout()
     {
         $session = Session::instance();

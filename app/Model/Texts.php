@@ -5,6 +5,9 @@ namespace NTSchool\Phpblog\Model;
 
 class Texts extends BaseModel
 {
+    /**
+     * Texts constructor.
+     */
     public function __construct()
     {
         parent::__construct();
@@ -12,6 +15,9 @@ class Texts extends BaseModel
         $this->pk = 'id_text';
     }
 
+    /**
+     * @return array
+     */
     public function getTexts()
     {
         $query = $this->db->query("SELECT * FROM {$this->table}");
@@ -22,6 +28,9 @@ class Texts extends BaseModel
         return $texts;
     }
 
+    /**
+     * @return array
+     */
     public function validationMap(){
         return [
             'fields' => ['alias', 'content'],

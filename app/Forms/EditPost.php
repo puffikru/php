@@ -13,6 +13,9 @@ use NTSchool\Phpblog\Core\Forms\Form;
 
 class EditPost extends Form
 {
+    /**
+     * EditPost constructor.
+     */
     public function __construct()
     {
         $this->fields = [

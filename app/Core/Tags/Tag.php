@@ -11,21 +11,46 @@ namespace NTSchool\Phpblog\Core\Tags;
 
 abstract class Tag
 {
+    /**
+     * @var
+     */
     protected $name;
+
+    /**
+     * @var array
+     */
     protected $attributes = [];
+
+    /**
+     * @var string
+     */
     protected $pattern = "<%name% %attr%>";
 
+    /**
+     * Tag constructor.
+     *
+     * @param $name
+     */
     public function __construct($name)
     {
         $this->name = $name;
     }
 
+    /**
+     * @param $name
+     * @param $value
+     *
+     * @return $this
+     */
     public function attr($name, $value)
     {
         $this->attributes[$name] = $value;
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function render()
     {
         $tag = str_replace('%name%', $this->name, $this->pattern);

@@ -11,8 +11,17 @@ namespace NTSchool\Phpblog\Core;
 
 class ServiceContainer
 {
+    /**
+     * @var array
+     */
     private $container = [];
 
+    /**
+     * @param string $name
+     * @param \Closure $closure
+     *
+     * @return bool
+     */
     public function register(string $name, \Closure $closure)
     {
         if(isset($this->container[$name])){
@@ -22,6 +31,12 @@ class ServiceContainer
         $this->container[$name] = $closure;
     }
 
+    /**
+     * @param string $name
+     * @param array ...$params
+     *
+     * @return bool|mixed
+     */
     public function get(string $name, ...$params)
     {
         if(!isset($this->container[$name])){

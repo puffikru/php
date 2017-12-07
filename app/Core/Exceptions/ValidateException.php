@@ -13,8 +13,19 @@ use Throwable;
 
 class ValidateException extends BaseException
 {
+    /**
+     * @var array
+     */
     private $errors;
 
+    /**
+     * ValidateException constructor.
+     *
+     * @param array $errors
+     * @param string $message
+     * @param int $code
+     * @param \Throwable|null $previous
+     */
     public function __construct(array $errors, $message = "validation exception", $code = 403, Throwable $previous = null)
     {
         $this->dest .= '/validate';
@@ -22,6 +33,9 @@ class ValidateException extends BaseException
         $this->errors = $errors;
     }
 
+    /**
+     * @return array
+     */
     public function getErrors()
     {
         return $this->errors;

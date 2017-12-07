@@ -13,6 +13,9 @@ use NTSchool\Phpblog\Core\Forms\Form;
 
 class EditText extends Form
 {
+    /**
+     * EditText constructor.
+     */
     public function __construct()
     {
         $this->fields = [

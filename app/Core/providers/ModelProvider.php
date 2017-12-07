@@ -12,6 +12,9 @@ use NTSchool\Phpblog\Core\ServiceContainer;
 
 class ModelProvider implements ProviderInterface
 {
+    /**
+     * @param \NTSchool\Phpblog\Core\ServiceContainer $container
+     */
     public function register(ServiceContainer &$container)
     {
         $container->register('models', function($name){

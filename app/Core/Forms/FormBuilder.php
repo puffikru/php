@@ -13,13 +13,24 @@ use NTSchool\Phpblog\Core\Tags\SingleTag;
 
 class FormBuilder
 {
+    /**
+     * @var \NTSchool\Phpblog\Core\Forms\Form
+     */
     public $form;
 
+    /**
+     * FormBuilder constructor.
+     *
+     * @param \NTSchool\Phpblog\Core\Forms\Form $form
+     */
     public function __construct(Form &$form)
     {
         $this->form = $form;
     }
 
+    /**
+     * @return string
+     */
     public function method()
     {
         $method = $this->form->getMethod();
@@ -31,6 +42,9 @@ class FormBuilder
         return sprintf('method=%s', $method);
     }
 
+    /**
+     * @return array
+     */
     public function fields()
     {
         $inputs = [];
@@ -67,6 +81,12 @@ class FormBuilder
         return $inputs;
     }
 
+    /**
+     * @param array $attributes
+     * @param array $value
+     *
+     * @return string
+     */
     public function input(array $attributes, $value = [])
     {
         $errors = '';
@@ -104,6 +124,11 @@ class FormBuilder
         return sprintf('<label><span>%s</span><input %s></label>%s', $label, $this->buildAttributes($attributes), $errors);
     }
 
+    /**
+     * @param array $field
+     *
+     * @return mixed
+     */
     public function textArea(array $field)
     {
         $label = $field['label'] . ':' ?? '';
@@ -115,6 +140,11 @@ class FormBuilder
         return $tag_label = (new PairTag('label'))->attr('class', 'textarea')->html($span . $textarea)->render();
     }
 
+    /**
+     * @param array $field
+     *
+     * @return mixed
+     */
     public function createCaptcha(array $field)
     {
         $label = $field['label'] . ':' ?? '';
@@ -128,6 +158,9 @@ class FormBuilder
         return $label_tag;
     }
 
+    /**
+     * @return string
+     */
     public function inputSign()
     {
         return $this->input([
@@ -137,6 +170,11 @@ class FormBuilder
         ]);
     }
 
+    /**
+     * @param array $attributes
+     *
+     * @return string
+     */
     public function buildAttributes(array $attributes)
     {
         $arr = [];
@@ -147,11 +185,19 @@ class FormBuilder
         return implode(' ', $arr);
     }
 
+    /**
+     * @return mixed
+     */
     public function checkForm()
     {
         return $this->form->form_name;
     }
 
+    /**
+     * @param string $errors
+     *
+     * @return string
+     */
     public function generateErrDiv(string $errors)
     {
         $className = $this->checkForm() . '-error';

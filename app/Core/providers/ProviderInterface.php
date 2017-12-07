@@ -13,5 +13,10 @@ use NTSchool\Phpblog\Core\ServiceContainer;
 
 Interface ProviderInterface
 {
+    /**
+     * @param \NTSchool\Phpblog\Core\ServiceContainer $container
+     *
+     * @return mixed
+     */
     public function register(ServiceContainer &$container);
 }

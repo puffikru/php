@@ -27,6 +27,9 @@ class Response
     const HTTP_SERVICE_UNAVAILABLE = 503;
     const HTTP_GATEWAY_TIMEOUT = 504;
 
+    /**
+     * @var array
+     */
     public static $statusTexts = [
         self::HTTP_OK => 'OK',
         self::HTTP_MOVED_PERMANENTLY => 'Moved Permanently',
@@ -56,20 +59,41 @@ class Response
      */
     protected $content;
 
+    /**
+     * @var
+     */
     protected $statusCode;
 
+    /**
+     * @var
+     */
     protected $statusText;
 
+    /**
+     * Response constructor.
+     *
+     * @param string $content
+     * @param int $status
+     * @param array $headers
+     */
     public function __construct(string $content = '', int $status = 200, array $headers = [])
     {
         $this->headers = new Bag($headers);
     }
 
+    /**
+     * @return \NTSchool\Phpblog\Core\Bag
+     */
     public function headers()
     {
         return $this->headers;
     }
 
+    /**
+     * @param string $content
+     *
+     * @return $this
+     */
     public function setContent(string $content)
     {
         $this->content = $content;
@@ -77,6 +101,12 @@ class Response
         return $this;
     }
 
+    /**
+     * @param int $code
+     * @param string|null $text
+     *
+     * @return $this
+     */
     public function setStatus(int $code, string $text = null)
     {
         $this->statusCode = $code;
@@ -102,6 +132,11 @@ class Response
         return $this;
     }
 
+    /**
+     * @param string $url
+     *
+     * @return $this
+     */
     public function redirect(string $url)
     {
         $this->headers->set('redirect', "Location: $url");
@@ -110,6 +145,11 @@ class Response
         return $this;
     }
 
+    /**
+     * @param \NTSchool\Phpblog\Core\Http\Cookie $cookie
+     *
+     * @return $this
+     */
     public function setCookie(Cookie $cookie)
     {
         setcookie($cookie->name, $cookie->value, $cookie->expire, $cookie->path, $cookie->domain);
@@ -117,6 +157,9 @@ class Response
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function sendHeaders()
     {
         if($this->headers->count() === 0){
@@ -136,6 +179,9 @@ class Response
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function sendContent()
     {
         echo $this->content;
@@ -143,6 +189,9 @@ class Response
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function send()
     {
         $this->sendHeaders();
@@ -151,6 +200,9 @@ class Response
         return $this;
     }
 
+    /**
+     * @return bool
+     */
     private function isInvalid() : bool
     {
         return $this->statusCode < 100 || $this->statusCode >= 600;

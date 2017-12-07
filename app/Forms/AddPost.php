@@ -12,6 +12,9 @@ use NTSchool\Phpblog\Core\Forms\Form;
 
 class AddPost extends Form
 {
+    /**
+     * AddPost constructor.
+     */
     public function __construct()
     {
         $this->fields = [

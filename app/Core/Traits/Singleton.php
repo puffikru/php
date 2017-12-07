@@ -11,8 +11,14 @@ namespace NTSchool\Phpblog\Core\Traits;
 
 trait Singleton
 {
+    /**
+     * @var
+     */
     protected static $singleton_instance;
 
+    /**
+     * @return mixed
+     */
     public static function instance()
     {
         if(static::$singleton_instance === null) {
@@ -21,18 +27,30 @@ trait Singleton
         return static::$singleton_instance;
     }
 
+    /**
+     * Singleton constructor.
+     */
     protected function __construct()
     {
     }
 
+    /**
+     *
+     */
     protected function __clone()
     {
     }
 
+    /**
+     *
+     */
     protected function __sleep()
     {
     }
 
+    /**
+     *
+     */
     protected function __wakeup()
     {
     }

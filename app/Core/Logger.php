@@ -11,10 +11,27 @@ namespace NTSchool\Phpblog\Core;
 
 class Logger
 {
+    /**
+     * @var string
+     */
     private $file;
+
+    /**
+     * @var string
+     */
     private $dir = LOG_DIR;
+
+    /**
+     * @var string
+     */
     private $path;
 
+    /**
+     * Logger constructor.
+     *
+     * @param $filename
+     * @param $dir
+     */
     public function __construct($filename, $dir)
     {
         $this->file = $filename . '.log';
@@ -23,6 +40,10 @@ class Logger
         $this->prepareDir();
     }
 
+    /**
+     * @param $log
+     * @param string $level
+     */
     public function write($log, $level = '')
     {
         $msg = "\n" . date('H:i:m') . "\n" . $_SERVER['REMOTE_ADDR'] . "\n\n" . $log . "\n" . $level .
@@ -30,6 +51,9 @@ class Logger
         file_put_contents($this->path . '/' . date('Y-m-d'), $msg, FILE_APPEND);
     }
 
+    /**
+     *
+     */
     protected function prepareDir()
     {
         if(!file_exists($this->dir)){

@@ -14,6 +14,9 @@ use NTSchool\Phpblog\Core\ServiceContainer;
 
 class SessionProvider implements ProviderInterface
 {
+    /**
+     * @param \NTSchool\Phpblog\Core\ServiceContainer $container
+     */
     public function register(ServiceContainer &$container)
     {
         $container->register('http.session', function(){

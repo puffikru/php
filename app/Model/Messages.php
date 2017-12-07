@@ -4,6 +4,9 @@ namespace NTSchool\Phpblog\Model;
 
 class Messages extends BaseModel
 {
+    /**
+     * Messages constructor.
+     */
     public function __construct()
     {
         parent::__construct();
@@ -11,6 +14,9 @@ class Messages extends BaseModel
         $this->pk = 'id_news';
     }
 
+    /**
+     * @return array
+     */
     public function validationMap()
     {
         return [
@@ -23,6 +29,9 @@ class Messages extends BaseModel
         ];
     }
 
+    /**
+     * @return mixed
+     */
     public function getAll()
     {
         return $this->db->select("SELECT * FROM {$this->table} LEFT JOIN users USING(id_user) ORDER BY pub_date DESC");

@@ -11,6 +11,9 @@ namespace NTSchool\Phpblog\Model;
 
 class RoleModel extends BaseModel
 {
+    /**
+     * RoleModel constructor.
+     */
     public function __construct()
     {
         parent::__construct();
@@ -18,12 +21,20 @@ class RoleModel extends BaseModel
         $this->pk = 'id_role';
     }
 
+    /**
+     * @return array
+     */
     public function validationMap()
     {
         return ['fields' => ['name', 'description'], 'not_empty' => ['name', 'description']];
     }
 
 
+    /**
+     * @param int $userId
+     *
+     * @return null
+     */
     public function checkPriv(int $userId)
     {
         $sql = "SELECT 

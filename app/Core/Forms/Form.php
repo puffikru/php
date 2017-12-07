@@ -13,32 +13,68 @@ use NTSchool\Phpblog\Core\Http\Request;
 
 abstract class Form
 {
+    /**
+     * @var
+     */
     public $form_name;
+
+    /**
+     * @var
+     */
     protected $action;
+
+    /**
+     * @var
+     */
     protected $method;
+
+    /**
+     * @var
+     */
     protected $fields;
+
+    /**
+     * @var
+     */
     protected $values;
 
+    /**
+     * @return mixed
+     */
     public function getName()
     {
         return $this->form_name;
     }
 
+    /**
+     * @return mixed
+     */
     public function getAction()
     {
         return $this->action();
     }
 
+    /**
+     * @return mixed
+     */
     public function getMethod()
     {
         return $this->method;
     }
 
+    /**
+     * @return \ArrayIterator
+     */
     public function getFields()
     {
         return new \ArrayIterator($this->fields);
     }
 
+    /**
+     * @param \NTSchool\Phpblog\Core\Http\Request $request
+     *
+     * @return array
+     */
     public function handleRequest(Request $request)
     {
 
@@ -68,6 +104,9 @@ abstract class Form
         return $fields;
     }
 
+    /**
+     * @return string
+     */
     public function getSign()
     {
         $string = '';
@@ -80,6 +119,9 @@ abstract class Form
         return md5($string);
     }
 
+    /**
+     * @param array $errors
+     */
     public function addErrors(array $errors)
     {
         foreach($this->fields as $key => $field) {
@@ -90,6 +132,11 @@ abstract class Form
         }
     }
 
+    /**
+     * @param array $params
+     *
+     * @return bool
+     */
     public function saveValues(array $params)
     {
         if(!empty($params)){
@@ -101,6 +148,9 @@ abstract class Form
         return true;
     }
 
+    /**
+     * @return mixed
+     */
     public function getValues()
     {
         return $this->values;
