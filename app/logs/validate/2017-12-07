@@ -586,3 +586,15 @@ Stack trace:
 #3 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
 #4 {main}
 -------------------------------------------------------------------------------------
+
+14:05:12
+::1
+
+NTSchool\Phpblog\Core\Exceptions\ValidateException: validation exception in /Applications/MAMP/htdocs/blog-php3/app/Model/Users.php:57
+Stack trace:
+#0 /Applications/MAMP/htdocs/blog-php3/app/Core/User.php(46): NTSchool\Phpblog\Model\Users->signUp(Array)
+#1 /Applications/MAMP/htdocs/blog-php3/app/Controller/UserController.php(27): NTSchool\Phpblog\Core\User->signUp(Array)
+#2 /Applications/MAMP/htdocs/blog-php3/app/Application.php(94): NTSchool\Phpblog\Controller\UserController->signUpAction()
+#3 /Applications/MAMP/htdocs/blog-php3/index.php(6): NTSchool\Phpblog\Application->run()
+#4 {main}
+-------------------------------------------------------------------------------------
