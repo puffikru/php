@@ -41,14 +41,13 @@ class Users extends BaseModel
 	              `users`.`name` AS 'username',
                   `users`.`login` AS 'login',
                   `roles`.`description` AS 'role',
-                  COUNT(*) AS 'post_number'
+                  COUNT(`news`.`id_news`) AS 'post_number'
                   FROM `users`
-                  JOIN `news` 
+                  LEFT JOIN `news` 
                     ON `users`.`id_user`=`news`.`id_user`
-                  JOIN `roles` 
+                  LEFT JOIN `roles` 
                     ON `users`.`id_role`=`roles`.`id_role`
-                  WHERE `news`.`id_user`=`users`.`id_user`
-                  GROUP BY `users`.`name`";
+                    GROUP BY `users`.`login`";
 
         return $this->db->select($sql);
     }
